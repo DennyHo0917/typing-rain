@@ -3729,54 +3729,39 @@
                 seoDescs[1].textContent = lang.mainDesc2;
             }
             
-            // 更新下方完整的SEO内容区域
+            // 完全重建SEO内容区域
             const belowGameDiv = document.querySelector('.below-game');
             if (belowGameDiv && lang.seoTitle1) {
-                // 更新所有h2标题
-                const h2Elements = belowGameDiv.querySelectorAll('h2');
-                if (h2Elements[0] && lang.seoTitle1) h2Elements[0].textContent = lang.seoTitle1;
+                // 生成游戏规则列表HTML
+                const seoRulesHTML = lang.seoRules ? lang.seoRules.map(rule => `<li>${rule}</li>`).join('') : '';
                 
-                // 更新所有h3标题  
-                const h3Elements = belowGameDiv.querySelectorAll('h3');
-                if (h3Elements[0] && lang.seoTitle2) h3Elements[0].textContent = lang.seoTitle2;
-                if (h3Elements[1] && lang.seoTitle3) h3Elements[1].textContent = lang.seoTitle3;
-                if (h3Elements[2] && lang.seoTitle4) h3Elements[2].textContent = lang.seoTitle4;
+                // 生成提示列表HTML
+                const seoTipsHTML = lang.seoTips ? lang.seoTips.map((tip, index) => `<li><strong>Tip ${index + 1}:</strong> ${tip}</li>`).join('') : '';
                 
-                // 更新所有段落内容
-                const pElements = belowGameDiv.querySelectorAll('p:not(.footer-link)');
-                if (pElements[0] && lang.seoPara1) pElements[0].textContent = lang.seoPara1;
-                if (pElements[1] && lang.seoPara2) pElements[1].textContent = lang.seoPara2;
-                if (pElements[2] && lang.seoPara3) pElements[2].textContent = lang.seoPara3;
-                if (pElements[3] && lang.seoPara4) pElements[3].textContent = lang.seoPara4;
-                if (pElements[4] && lang.seoConclusion) pElements[4].textContent = lang.seoConclusion;
-                
-                // 更新游戏规则列表
-                const ulElement = belowGameDiv.querySelector('ul');
-                if (ulElement && lang.seoRules) {
-                    const liElements = ulElement.querySelectorAll('li');
-                    lang.seoRules.forEach((rule, index) => {
-                        if (liElements[index]) {
-                            liElements[index].textContent = rule;
-                        }
-                    });
-                }
-                
-                // 更新提示列表
-                const olElements = belowGameDiv.querySelectorAll('ul');
-                if (olElements[1] && lang.seoTips) { // 第二个ul是提示列表
-                    const tipLiElements = olElements[1].querySelectorAll('li');
-                    lang.seoTips.forEach((tip, index) => {
-                        if (tipLiElements[index]) {
-                            // 保留strong标签
-                            const strongText = tipLiElements[index].querySelector('strong');
-                            if (strongText) {
-                                tipLiElements[index].innerHTML = `<strong>Tip ${index + 1}:</strong> ${tip}`;
-                            } else {
-                                tipLiElements[index].textContent = tip;
-                            }
-                        }
-                    });
-                }
+                // 完全替换整个SEO内容
+                belowGameDiv.innerHTML = `
+                    <h2>${lang.seoTitle1}</h2>
+                    <p>${lang.seoPara1}</p>
+                    
+                    <h3>${lang.seoTitle2}</h3>
+                    <p>${lang.seoPara2}</p>
+                    <ul style="text-align: left; max-width: 800px;">
+                        ${seoRulesHTML}
+                    </ul>
+
+                    <h3>${lang.seoTitle3}</h3>
+                    <p>${lang.seoPara3}</p>
+                    <ul style="text-align: left; max-width: 800px;">
+                        ${seoRulesHTML}
+                    </ul>
+
+                    <h3>${lang.seoTitle4}</h3>
+                    <p>${lang.seoPara4}</p>
+                    <ul style="text-align: left; max-width: 800px;">
+                        ${seoTipsHTML}
+                    </ul>
+                    <p>${lang.seoConclusion}</p>
+                `;
             }
             
             // 更新隐私政策内容
