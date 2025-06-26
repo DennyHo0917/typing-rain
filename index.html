@@ -819,6 +819,70 @@
             box-shadow: 0 8px 25px rgba(149, 165, 166, 0.3);
         }
 
+        .lang-btn {
+            font-size: 1.2em;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5253);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        .lang-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+        }
+
+        .language-switcher {
+            position: relative;
+            display: inline-block;
+        }
+
+        .lang-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 5px 0;
+            min-width: 160px;
+            display: none;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+            margin-top: 5px;
+        }
+
+        .lang-menu.show {
+            display: block;
+        }
+
+        .lang-option {
+            padding: 8px 15px;
+            color: white;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .lang-option:last-child {
+            border-bottom: none;
+        }
+
+        .lang-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #00f5ff;
+        }
+
+        .lang-option.active {
+            background: rgba(0, 245, 255, 0.2);
+            color: #00f5ff;
+        }
+
         /* 连击效果 */
         .combo-display {
             font-family: 'Orbitron', monospace;
@@ -1165,6 +1229,17 @@
 </head>
 <body>
     <div class="top-right-nav">
+        <div class="language-switcher">
+            <button class="lang-btn" onclick="toggleLanguageMenu()" id="lang-toggle" title="Change Language">🌐</button>
+            <div class="lang-menu" id="lang-menu">
+                <div class="lang-option" onclick="switchLanguage('en')">🇺🇸 English</div>
+                <div class="lang-option" onclick="switchLanguage('zh-tw')">🇹🇼 繁體中文</div>
+                <div class="lang-option" onclick="switchLanguage('ja')">🇯🇵 日本語</div>
+                <div class="lang-option" onclick="switchLanguage('ko')">🇰🇷 한국어</div>
+                <div class="lang-option" onclick="switchLanguage('de')">🇩🇪 Deutsch</div>
+                <div class="lang-option" onclick="switchLanguage('fr')">🇫🇷 Français</div>
+            </div>
+        </div>
         <button class="share-btn" onclick="shareToTwitter()" title="Share on X (Twitter)">📤</button>
         <button class="privacy-btn" onclick="showPrivacyPolicy()" title="Privacy Policy">🔒</button>
         <button class="sound-btn" onclick="toggleSound()" id="sound-toggle">🔊</button>
@@ -1195,13 +1270,13 @@
                     <p>• 🛡️ <strong>Shield</strong> (4) - Protects from missing words</p>
                     <p>• 🌟 <strong>Combo Protect</strong> (5) - Maintains combo streak</p>
                     <p>• 🔄 <strong>Word Refresh</strong> (6) - Clears screen, adds easy words</p>
-                    <p style="font-size: 0.9em; color: #4ecdc4;">Earn power-ups by completing words and building combos!</p>
+                                            <p style="font-size: 0.9em; color: #4ecdc4;">Earn power-ups by completing words and building combos! Each power-up has a fixed key.</p>
                 </div>
             </div>
 
             <!-- 道具栏 -->
             <div class="power-ups-container">
-                <div class="power-ups-title">Power-ups (Press 1-6)</div>
+                                    <div class="power-ups-title">Power-ups (1:⏰ 2:🎯 3:💎 4:🛡️ 5:🌟 6:🔄)</div>
                 <div class="power-ups-grid" id="power-ups-grid">
                     <!-- 道具将在这里动态显示 -->
                 </div>
@@ -1357,32 +1432,732 @@
     </div>
 
     <div class="below-game">
-        <h2>Play Free Typing Rain Game Now!</h2>
-        <p>Typing Rain is one of the most popular and engaging typing games ever created. The goal of Typing Rain is to type falling words before they reach the bottom of the screen, helping you improve your typing speed, accuracy, and reflexes. As a skill-building game, Typing Rain is also an excellent brain training exercise. If you play Typing Rain every day, you'll quickly notice improvements in your typing speed, accuracy, and overall cognitive focus. Start playing now. Before long, Typing Rain will become your favorite free online typing game.</p>
+        <h2>Master Your Keyboard with Typing Rain – The Ultimate Free Typing Game</h2>
+        <p>Welcome to Typing Rain, one of the most engaging <strong>free online typing games</strong> designed to elevate your keyboarding skills. Whether you're looking to boost your <strong>typing speed and accuracy</strong>, test your WPM, or simply enjoy a fun challenge, Typing Rain is your perfect destination. It's more than just a game—it's a dynamic <strong>typing tutor</strong> that serves as an excellent brain training exercise. Play daily and watch your WPM (Words Per Minute) and overall cognitive focus improve dramatically. Start your journey to becoming a typing master now!</p>
         
-        <h3>About Typing Rain Game</h3>
-        <p>The captivating typing game "Typing Rain" is based on word recognition and keyboard skills. As an online typing game, Typing Rain doesn't require any special knowledge or complex setup; all you need is focus and dedication to improve your typing abilities.</p>
-        
-        <h3>How to Play Typing Rain</h3>
-        <p>The objective of Typing Rain is to type the falling words before they reach the bottom of the screen. At the start of each level, words will begin falling from the top at varying speeds. Your task is to type each word accurately and quickly to score points and advance through the levels. Remember, if you miss too many words, the game will end. The key rules are:</p>
+        <h3>What Makes Typing Rain Unique?</h3>
+        <p>Unlike other standard <strong>typing practice</strong> tools, "Typing Rain" combines skill-building with exciting gameplay features. It's an online game based on rapid word recognition and requires no complex setup. Key features include:</p>
         <ul style="text-align: left; max-width: 800px;">
-            <li>Type each falling word exactly as it appears on screen</li>
-            <li>Press Enter or Space to submit your typed word</li>
-            <li>Build combos by typing consecutive words without mistakes</li>
-            <li>Complete all words in each difficulty level to advance</li>
+            <li><strong>Dynamic Levels:</strong> Progress through levels with increasing speed and word complexity.</li>
+            <li><strong>Powerful Power-Ups:</strong> Unleash game-changing abilities like Slow Time, Precision Mode, and Shields to maximize your score.</li>
+            <li><strong>Live Performance Tracking:</strong> Instantly see your WPM and Accuracy statistics to monitor your improvement in real-time.</li>
+            <li><strong>Competitive Leaderboards:</strong> Challenge friends and players worldwide to claim the top spot.</li>
         </ul>
-        
-        <h3>Typing Rain Tips and Strategies</h3>
-        <p>Once you master the basics, Typing Rain becomes an incredibly rewarding typing game. However, learning to play Typing Rain effectively can be challenging for beginners. Here are some typing tips to improve your Typing Rain gameplay:</p>
+
+        <h3>How to Play and Improve Your Typing Speed</h3>
+        <p>The objective is simple: type the words as they fall before they hit the bottom. Each correctly typed word scores points and contributes to powerful combos. The core rules for an effective <strong>typing test</strong> and practice session are:</p>
         <ul style="text-align: left; max-width: 800px;">
-            <li><strong>Tip 1:</strong> Focus on accuracy over speed initially. Look for words that appear frequently and practice typing them without looking at the keyboard. In many cases, muscle memory will help you type common words automatically.</li>
-            <li><strong>Tip 2:</strong> Use proper finger positioning on the home row keys (ASDF for left hand, JKL; for right hand). Each finger should be responsible for specific keys. This technique will dramatically improve your typing speed and reduce errors.</li>
-            <li><strong>Tip 3:</strong> Practice the rhythm of typing. Try to maintain a steady pace rather than rushing through easy words and struggling with difficult ones. Consistent rhythm leads to better accuracy and higher scores.</li>
+            <li>Type each word exactly as it appears.</li>
+            <li>Press Enter or Space to submit your word.</li>
+            <li>Build error-free combos to multiply your score.</li>
+            <li>Advance through all difficulty levels to prove your skill.</li>
         </ul>
-        <p>Now that you know more about "Typing Rain," start playing and enjoy this free online typing game!</p>
+
+        <h3>Pro Tips & Strategies for a Higher WPM Score</h3>
+        <p>Learning to play effectively is key to becoming a top player. Here are some strategies to enhance your <strong>keyboarding skills</strong>:</p>
+        <ul style="text-align: left; max-width: 800px;">
+            <li><strong>Tip 1 (Accuracy First):</strong> Focus on precision before speed. Muscle memory for common words will build naturally, reducing errors and improving your net WPM.</li>
+            <li><strong>Tip 2 (Home Row Positioning):</strong> Keep your fingers on the home row keys (ASDF and JKL;). This fundamental technique is the fastest way to improve speed and reduce hand movement.</li>
+            <li><strong>Tip 3 (Consistent Rhythm):</strong> Maintain a steady typing pace. A consistent rhythm is more effective for accuracy and high scores than rushing through easy words and stumbling on hard ones.</li>
+        </ul>
+        <p>Ready to test your skills? <strong>Start playing Typing Rain now</strong> and enjoy the most rewarding free online typing game!</p>
     </div>
 
+
+
     <script>
+        // 多语言系统
+        let currentLanguage = 'en';
+        
+        // 语言数据
+        const languages = {
+            en: {
+                // Game UI
+                gameTitle: 'TYPING RAIN',
+                gameSubtitle: 'Modern Word Game',
+                startGame: 'START GAME',
+                playAgain: 'PLAY AGAIN',
+                gameOver: 'GAME OVER',
+                highScore: 'HIGH SCORE!',
+                leaderboard: 'LEADERBOARD',
+                close: 'CLOSE',
+                submit: 'SUBMIT',
+                skip: 'SKIP',
+                
+                // Stats
+                score: 'SCORE',
+                level: 'LEVEL',
+                wpm: 'WPM',
+                accuracy: 'ACCURACY',
+                missed: 'MISSED',
+                
+                // Instructions
+                howToPlay: 'How to Play',
+                instructions: [
+                    '• Type the falling words before they reach the bottom',
+                    '• Press Enter or Space to submit your word',
+                    '• Build combos by typing words consecutively',
+                    '• Higher levels bring faster and more challenging words',
+                    '• You have 5 chances to miss words before game over'
+                ],
+                powerUpsTitle: 'Power-ups',
+                powerUpsDesc: 'Earn power-ups by completing words and building combos! Each power-up has a fixed key.',
+                
+                // Power-up names
+                powerUpNames: {
+                    slowTime: 'Slow Time',
+                    precisionMode: 'Precision Mode', 
+                    doubleScore: 'Double Score',
+                    shield: 'Shield',
+                    comboProtect: 'Combo Protect',
+                    refreshWords: 'Word Refresh'
+                },
+                
+                // SEO Content
+                mainTitle: 'Typing Rain - Modern Word Game',
+                mainDesc1: 'Challenge your typing speed! Words fall like raindrops from the sky, and you need to type them quickly and accurately.',
+                mainDesc2: 'Improve your WPM (Words Per Minute), increase typing accuracy, and unlock higher difficulty levels!',
+                
+                // Below game SEO content
+                seoTitle1: 'Play Free Typing Rain Game Now!',
+                seoPara1: 'Typing Rain is one of the most popular and engaging typing games ever created. The goal of Typing Rain is to type falling words before they reach the bottom of the screen, helping you improve your typing speed, accuracy, and reflexes. As a skill-building game, Typing Rain is also an excellent brain training exercise. If you play Typing Rain every day, you\'ll quickly notice improvements in your typing speed, accuracy, and overall cognitive focus. Start playing now. Before long, Typing Rain will become your favorite free online typing game.',
+                seoTitle2: 'About Typing Rain Game',
+                seoPara2: 'The captivating typing game "Typing Rain" is based on word recognition and keyboard skills. As an online typing game, Typing Rain doesn\'t require any special knowledge or complex setup; all you need is focus and dedication to improve your typing abilities.',
+                seoTitle3: 'How to Play Typing Rain',
+                seoPara3: 'The objective of Typing Rain is to type the falling words before they reach the bottom of the screen. At the start of each level, words will begin falling from the top at varying speeds. Your task is to type each word accurately and quickly to score points and advance through the levels. Remember, if you miss too many words, the game will end. The key rules are:',
+                seoRules: [
+                    'Type each falling word exactly as it appears on screen',
+                    'Press Enter or Space to submit your typed word',
+                    'Build combos by typing consecutive words without mistakes',
+                    'Complete all words in each difficulty level to advance'
+                ],
+                seoTitle4: 'Typing Rain Tips and Strategies',
+                seoPara4: 'Once you master the basics, Typing Rain becomes an incredibly rewarding typing game. However, learning to play Typing Rain effectively can be challenging for beginners. Here are some typing tips to improve your Typing Rain gameplay:',
+                seoTips: [
+                    'Focus on accuracy over speed initially. Look for words that appear frequently and practice typing them without looking at the keyboard. In many cases, muscle memory will help you type common words automatically.',
+                    'Use proper finger positioning on the home row keys (ASDF for left hand, JKL; for right hand). Each finger should be responsible for specific keys. This technique will dramatically improve your typing speed and reduce errors.',
+                    'Practice the rhythm of typing. Try to maintain a steady pace rather than rushing through easy words and struggling with difficult ones. Consistent rhythm leads to better accuracy and higher scores.'
+                ],
+                seoConclusion: 'Now that you know more about "Typing Rain," start playing and enjoy this free online typing game!',
+                
+                // Privacy Policy
+                privacyPolicy: 'Privacy Policy',
+                dataCollection: 'Data Collection',
+                privacyIntro: 'Typing Rain is committed to protecting your privacy. This policy explains how we handle your data:',
+                localStorage: 'Local Storage',
+                localStorageDesc: [
+                    '• Your high scores and player names are stored locally in your browser using localStorage',
+                    '• This data never leaves your device and is only accessible to you',
+                    '• You can clear this data at any time through your browser settings'
+                ],
+                analytics: 'Usage Analytics',
+                analyticsDesc: [
+                    '• We use Google Analytics to understand how players interact with the game',
+                    '• This helps us improve the game experience',
+                    '• No personally identifiable information is collected',
+                    '• You can opt out by using browser extensions or privacy settings'
+                ],
+                advertising: 'Advertising',
+                advertisingDesc: [
+                    '• We use Google AdSense to display relevant advertisements',
+                    '• Ad personalization follows Google\'s privacy policies',
+                    '• You can manage ad preferences through Google\'s Ad Settings'
+                ],
+                yourRights: 'Your Rights',
+                rightsDesc: [
+                    '• You can clear your local scores at any time',
+                    '• You can disable analytics through browser settings',
+                    '• You can block advertisements using ad blockers'
+                ],
+                contact: 'Contact Us',
+                contactDesc: 'If you have questions about this privacy policy, please contact us through our website.',
+                lastUpdated: 'Last updated:',
+                clearMyData: 'Clear My Data',
+                clearDataConfirm: 'Are you sure you want to clear all your local data? This will permanently delete your leaderboard scores and cannot be undone.',
+                dataCleared: 'Your local data has been cleared successfully.',
+                
+                // Share functionality
+                shareScore: 'Share Score',
+                shareText1: '🌧️ Just played Typing Rain! 🎯 Score: {score} | ⚡ WPM: {wpm} | 🎯 Accuracy: {accuracy} | Level: {level}\n\nChallenge your typing speed! 💪',
+                shareText2: '🌧️ Typing Rain - An amazing typing game that improves your speed and accuracy! 🎯\n\nCatch falling words, build combos, and become a typing master! 💪\n\nPlay now and challenge your skills! ⚡',
+                
+                // Tooltips
+                changeLanguage: 'Change Language',
+                shareOnTwitter: 'Share on X (Twitter)',
+                privacyPolicyTooltip: 'Privacy Policy',
+                soundOn: 'Turn sound off',
+                soundOff: 'Turn sound on',
+                
+                // Footer
+                moreGames: 'More games at'
+            },
+            'zh-tw': {
+                gameTitle: '打字雨',
+                gameSubtitle: '現代打字遊戲',
+                startGame: '開始遊戲',
+                playAgain: '再玩一次',
+                gameOver: '遊戲結束',
+                highScore: '高分紀錄！',
+                leaderboard: '排行榜',
+                close: '關閉',
+                submit: '提交',
+                skip: '跳過',
+                
+                score: '分數',
+                level: '等級',
+                wpm: '每分鐘字數',
+                accuracy: '準確度',
+                missed: '錯過',
+                
+                howToPlay: '遊戲玩法',
+                instructions: [
+                    '• 在單詞落到底部之前輸入它們',
+                    '• 按 Enter 或空格鍵提交單詞',
+                    '• 連續輸入單詞建立連擊',
+                    '• 更高等級帶來更快更具挑戰性的單詞',
+                    '• 您有5次錯過單詞的機會'
+                ],
+                powerUpsTitle: '道具',
+                powerUpsDesc: '通過完成單詞和建立連擊獲得道具！每個道具都有固定的按鍵。',
+                
+                powerUpNames: {
+                    slowTime: '時間減速',
+                    precisionMode: '精準模式', 
+                    doubleScore: '雙倍得分',
+                    shield: '護盾',
+                    comboProtect: '連擊保護',
+                    refreshWords: '刷新單詞'
+                },
+                
+                mainTitle: '打字雨 - 最好玩的線上打字練習遊戲',
+                mainDesc1: '體驗最刺激的打字挑戰！文字如雨滴般從天而降，考驗你的反應與精準度。',
+                mainDesc2: '透過遊戲提升打字速度與準確率，成為鍵盤高手就是這麼簡單！',
+                
+                seoTitle1: '打字雨 - 最好玩的線上打字練習和中英文輸入法訓練神器',
+                seoPara1: '厭倦了無聊的打字練習嗎？打字雨讓你在遊戲中輕鬆成為<strong>鍵盤高手</strong>！這款台灣最受歡迎的<strong>免費打字遊戲</strong>結合了刺激的反應挑戰與科學的指法訓練，專為想要提升<strong>WPM打字速度</strong>和準確率的玩家設計。不管你是上班族想提高工作效率，還是學生準備電腦檢定，每天10分鐘讓你從菜鳥變身打字達人！',
+                seoTitle2: '為什麼選擇打字雨？獨家遊戲功能大公開',
+                seoPara2: '與一般死板的<strong>鍵盤練習軟體</strong>不同，打字雨採用最新遊戲化學習技術，讓枯燥的練習變成上癮的娛樂！獨家功能包括：',
+                seoRules: [
+                    '<strong>漸進式關卡系統：</strong>從基礎單字到高級詞彙，循序漸進挑戰你的極限',
+                    '<strong>超強道具系統：</strong>時間減速、精準模式、護盾保護等6種神級道具助你破關',
+                    '<strong>即時數據分析：</strong>WPM、正確率、反應時間一目了然，進步看得見',
+                    '<strong>全球排行榜：</strong>與世界各地打字高手一較高下，爭奪王者寶座'
+                ],
+                seoTitle3: '打字技巧完全攻略 - 從零基礎到專業水準',
+                seoPara3: '遊戲規則超簡單：看到英文單字從天而降，搶在落地前正確輸入就能得分！但要成為真正的<strong>打字大師</strong>，你需要掌握這些核心技巧。遊戲內建完整的<strong>指法訓練</strong>系統，讓你快速建立肌肉記憶：',
+                seoTips: [
+                    '<strong>盲打養成計畫：</strong>從注音輸入法到英文鍵盤，培養不看鍵盤就能飛速打字的神技。先練習高頻單字，建立手指記憶後自然能達到行雲流水的境界。',
+                    '<strong>標準指法是王道：</strong>左手掌管ASDF區域，右手負責JKL;區域，十根手指各司其職。這是所有打字高手的基本功，也是突破速度瓶頸的關鍵秘密。',
+                    '<strong>節拍感訓練：</strong>像彈鋼琴一樣保持穩定韻律，避免時快時慢。穩定的節奏不僅提升準確度，更能在高壓狀態下維持最佳表現。'
+                ],
+                seoTitle4: '立即開始你的打字進化之旅',
+                seoPara4: '準備好挑戰自己的極限了嗎？<strong>打字雨</strong>不只是遊戲，更是你通往數位世界的高速公路。無論是想在職場上脫穎而出，還是純粹享受破關的快感，這裡都是最棒的練習場！',
+                seoConclusion: '馬上體驗台灣最夯的<strong>免費線上打字遊戲</strong>，讓每一次練習都充滿樂趣和成就感！你的打字傳奇，從這一刻開始！',
+                
+                // Privacy Policy
+                privacyPolicy: '隱私政策',
+                dataCollection: '資料收集',
+                privacyIntro: '打字雨致力於保護您的隱私。本政策說明我們如何處理您的資料：',
+                localStorage: '本地儲存',
+                localStorageDesc: [
+                    '• 您的高分紀錄和玩家名稱會儲存在瀏覽器的本地空間中',
+                    '• 這些資料不會離開您的裝置，只有您能存取',
+                    '• 您可以隨時透過瀏覽器設定清除這些資料'
+                ],
+                analytics: '使用分析',
+                analyticsDesc: [
+                    '• 我們使用 Google Analytics 了解玩家如何與遊戲互動',
+                    '• 這有助於我們改善遊戲體驗',
+                    '• 不會收集任何個人身份資訊',
+                    '• 您可以透過瀏覽器擴充功能或隱私設定選擇退出'
+                ],
+                advertising: '廣告',
+                advertisingDesc: [
+                    '• 我們使用 Google AdSense 顯示相關廣告',
+                    '• 廣告個人化遵循 Google 的隱私政策',
+                    '• 您可以透過 Google 的廣告設定管理廣告偏好'
+                ],
+                yourRights: '您的權利',
+                rightsDesc: [
+                    '• 您可以隨時清除本地分數記錄',
+                    '• 您可以透過瀏覽器設定停用分析功能',
+                    '• 您可以使用廣告攔截器封鎖廣告'
+                ],
+                contact: '聯絡我們',
+                contactDesc: '如果您對此隱私政策有任何疑問，請透過我們的網站聯絡我們。',
+                lastUpdated: '最後更新：',
+                clearMyData: '清除我的資料',
+                clearDataConfirm: '您確定要清除所有本地資料嗎？這將永久刪除您的排行榜分數且無法復原。',
+                dataCleared: '您的本地資料已成功清除。',
+                
+                // Share functionality
+                shareScore: '分享分數',
+                shareText1: '🌧️ 我剛玩了打字雨！🎯 分數：{score} | ⚡ WPM：{wpm} | 🎯 準確度：{accuracy} | 等級：{level}\n\n挑戰你的打字速度！💪',
+                shareText2: '🌧️ 打字雨 - 超棒的打字遊戲，提升你的速度和準確度！🎯\n\n接住掉落的單字，建立連擊，成為打字高手！💪\n\n立即遊玩，挑戰你的技能！⚡',
+                
+                // Tooltips
+                changeLanguage: '切換語言',
+                shareOnTwitter: '在 X (Twitter) 上分享',
+                privacyPolicyTooltip: '隱私政策',
+                soundOn: '關閉聲音',
+                soundOff: '開啟聲音',
+                
+                moreGames: '更多遊戲在'
+            },
+            ja: {
+                gameTitle: 'タイピングレイン',
+                gameSubtitle: 'モダンワードゲーム',
+                startGame: 'ゲーム開始',
+                playAgain: 'もう一度',
+                gameOver: 'ゲームオーバー',
+                highScore: 'ハイスコア！',
+                leaderboard: 'ランキング',
+                close: '閉じる',
+                submit: '送信',
+                skip: 'スキップ',
+                
+                score: 'スコア',
+                level: 'レベル',
+                wpm: 'WPM',
+                accuracy: '正確性',
+                missed: 'ミス',
+                
+                howToPlay: '遊び方',
+                instructions: [
+                    '• 落下する単語が底に到達する前に入力してください',
+                    '• EnterまたはSpaceキーで単語を送信',
+                    '• 連続して単語を入力してコンボを作る',
+                    '• 高いレベルではより速くより困難な単語が現れます',
+                    '• ゲームオーバーまでに5回単語を逃すことができます'
+                ],
+                powerUpsTitle: 'パワーアップ',
+                powerUpsDesc: '単語の完成とコンボの構築でパワーアップを獲得！各パワーアップには固定キーがあります。',
+                
+                powerUpNames: {
+                    slowTime: 'スローモーション',
+                    precisionMode: 'プレシジョンモード', 
+                    doubleScore: 'ダブルスコア',
+                    shield: 'シールド',
+                    comboProtect: 'コンボプロテクト',
+                    refreshWords: '単語リフレッシュ'
+                },
+                
+                mainTitle: 'タイピングレイン - モダンワードゲーム',
+                mainDesc1: 'あなたのタイピング速度に挑戦！単語が雨粒のように空から落ちてきて、素早く正確に入力する必要があります。',
+                mainDesc2: 'WPM（1分間の単語数）を向上させ、タイピングの正確性を高め、より高い難易度レベルをアンロック！',
+                
+                seoTitle1: 'タイピングレイン - 日本で話題沸騰！無料のタイピング練習ゲーム',
+                seoPara1: 'PCスキルアップを目指すあなたへ！<strong>タイピング練習</strong>がこんなに楽しいなんて驚きです。タイピングレインは日本のゲーマーとビジネスパーソンから絶大な支持を受ける<strong>無料タイピングゲーム</strong>です。ただの練習ソフトウェアではありません - これは<strong>WPM向上</strong>と正確性を同時に鍛える革新的な学習ツールです。毎日のちょっとした空き時間で、あなたのキーボードスキルが劇的に変わります！',
+                seoTitle2: 'なぜタイピングレインが選ばれるのか？他とは違う特別な機能',
+                seoPara2: '一般的な<strong>タイピングソフト</strong>や<strong>キーボード練習アプリ</strong>では味わえない、ゲーム要素満載の学習体験をご提供。特徴的な機能：',
+                seoRules: [
+                    '<strong>段階的レベルシステム：</strong>初心者から上級者まで、あなたのペースで確実にスキルアップ',
+                    '<strong>パワーアップアイテム：</strong>スローモーション、精密モードなど6つの特殊能力でハイスコアを狙う',
+                    '<strong>リアルタイム分析：</strong>WPM、正確率、反応速度を瞬時に表示、成長が実感できる',
+                    '<strong>世界ランキング：</strong>グローバルプレイヤーと競い合い、日本代表として世界に挑戦'
+                ],
+                seoTitle3: 'プロ級タイピング技術の習得方法 - ゼロから始める完全ガイド',
+                seoPara3: 'ゲームルールはシンプル：降ってくる英単語を画面下に落ちる前に正確にタイプするだけ！でも真の<strong>タイピングマスター</strong>になるには、科学的なアプローチが必要です。本ゲームには日本人向けに最適化された<strong>ブラインドタッチ練習</strong>機能を搭載：',
+                seoTips: [
+                    '<strong>ブラインドタッチ完全マスター：</strong>ローマ字入力からアルファベット入力まで、キーボードを見ずに高速タイピングする技術を段階的に習得。日常的な単語から練習し、指の筋肉記憶を確実に構築します。',
+                    '<strong>正しい指使いが成功の鍵：</strong>左手はASDFエリア、右手はJKL;エリアを担当。この基本ポジションをマスターすることで、すべてのタイピング上達への道が開けます。プロのタイピストが必ず実践する基礎技術です。',
+                    '<strong>一定リズムの重要性：</strong>ピアノ演奏のように一定のテンポを保つことが重要。焦って入力速度を上げるより、安定したリズムを維持する方が結果的に高いスコアと正確性を実現できます。'
+                ],
+                seoTitle4: '今すぐ始めよう - あなたのタイピング革命',
+                seoPara4: '準備はできましたか？<strong>タイピングレイン</strong>は単なるゲームではありません。これはデジタル時代を生き抜くための必須スキルを楽しく習得できる最高のプラットフォームです。就職活動、資格試験、業務効率化、すべてに活かせるスキルがここで身につきます！',
+                seoConclusion: '日本最高峰の<strong>無料オンラインタイピングゲーム</strong>で、あなたの可能性を最大限に引き出しましょう。楽しみながら確実にスキルアップ！',
+                
+                // Privacy Policy
+                privacyPolicy: 'プライバシーポリシー',
+                dataCollection: 'データ収集',
+                privacyIntro: 'タイピングレインはお客様のプライバシー保護に努めています。本ポリシーは当社がお客様のデータをどのように扱うかについて説明します：',
+                localStorage: 'ローカルストレージ',
+                localStorageDesc: [
+                    '• お客様のハイスコアとプレイヤー名はブラウザのローカルストレージに保存されます',
+                    '• このデータはお客様のデバイスから離れることはなく、お客様のみがアクセス可能です',
+                    '• ブラウザ設定からいつでもこのデータを削除できます'
+                ],
+                analytics: '使用分析',
+                analyticsDesc: [
+                    '• プレイヤーがゲームとどのように対話するかを理解するためにGoogle Analyticsを使用しています',
+                    '• これによりゲーム体験の向上に役立ちます',
+                    '• 個人を特定できる情報は収集されません',
+                    '• ブラウザ拡張機能やプライバシー設定でオプトアウトできます'
+                ],
+                advertising: '広告',
+                advertisingDesc: [
+                    '• 関連する広告を表示するためにGoogle AdSenseを使用しています',
+                    '• 広告のパーソナライゼーションはGoogleのプライバシーポリシーに従います',
+                    '• Googleの広告設定で広告の設定を管理できます'
+                ],
+                yourRights: 'お客様の権利',
+                rightsDesc: [
+                    '• いつでもローカルスコア記録を削除できます',
+                    '• ブラウザ設定で分析機能を無効にできます',
+                    '• 広告ブロッカーを使用して広告をブロックできます'
+                ],
+                contact: 'お問い合わせ',
+                contactDesc: 'このプライバシーポリシーに関してご質問がございましたら、ウェブサイトを通じてお問い合わせください。',
+                lastUpdated: '最終更新：',
+                clearMyData: 'データを削除',
+                clearDataConfirm: 'すべてのローカルデータを削除してもよろしいですか？これによりリーダーボードのスコアが永久に削除され、元に戻すことはできません。',
+                dataCleared: 'ローカルデータが正常に削除されました。',
+                
+                // Share functionality
+                shareScore: 'スコアを共有',
+                shareText1: '🌧️ タイピングレインをプレイしました！🎯 スコア：{score} | ⚡ WPM：{wpm} | 🎯 正確性：{accuracy} | レベル：{level}\n\nあなたのタイピング速度に挑戦！💪',
+                shareText2: '🌧️ タイピングレイン - 速度と正確性を向上させる素晴らしいタイピングゲーム！🎯\n\n落下する単語をキャッチし、コンボを作り、タイピングマスターになろう！💪\n\n今すぐプレイして、あなたのスキルに挑戦！⚡',
+                
+                // Tooltips
+                changeLanguage: '言語を変更',
+                shareOnTwitter: 'X (Twitter) で共有',
+                privacyPolicyTooltip: 'プライバシーポリシー',
+                soundOn: '音をオフ',
+                soundOff: '音をオン',
+                
+                moreGames: 'より多くのゲームは'
+            },
+            ko: {
+                gameTitle: '타이핑 레인',
+                gameSubtitle: '모던 워드 게임',
+                startGame: '게임 시작',
+                playAgain: '다시 플레이',
+                gameOver: '게임 오버',
+                highScore: '최고 기록!',
+                leaderboard: '순위표',
+                close: '닫기',
+                submit: '제출',
+                skip: '건너뛰기',
+                
+                score: '점수',
+                level: '레벨',
+                wpm: 'WPM',
+                accuracy: '정확도',
+                missed: '놓친 횟수',
+                
+                howToPlay: '게임 방법',
+                instructions: [
+                    '• 떨어지는 단어가 바닥에 닿기 전에 입력하세요',
+                    '• Enter 또는 Space 키를 눌러 단어를 제출하세요',
+                    '• 연속으로 단어를 입력하여 콤보를 만드세요',
+                    '• 높은 레벨에서는 더 빠르고 도전적인 단어가 나타납니다',
+                    '• 게임 오버 전까지 5번의 단어를 놓칠 수 있습니다'
+                ],
+                powerUpsTitle: '파워업',
+                powerUpsDesc: '단어를 완성하고 콤보를 만들어 파워업을 얻으세요! 각 파워업은 고정 키가 있습니다.',
+                
+                powerUpNames: {
+                    slowTime: '시간 느리게',
+                    precisionMode: '정밀 모드', 
+                    doubleScore: '더블 스코어',
+                    shield: '보호막',
+                    comboProtect: '콤보 보호',
+                    refreshWords: '단어 새로고침'
+                },
+                
+                mainTitle: '타이핑 레인 - 모던 워드 게임',
+                mainDesc1: '당신의 타이핑 속도에 도전하세요! 단어가 하늘에서 빗방울처럼 떨어지고, 빠르고 정확하게 입력해야 합니다.',
+                mainDesc2: 'WPM(분당 단어 수)를 향상시키고, 타이핑 정확도를 높이며, 더 높은 난이도 레벨을 잠금 해제하세요!',
+                
+                seoTitle1: '타이핑 레인 - 한국 직장인이 가장 많이 하는 무료 타이핑 연습 게임',
+                seoPara1: '한글 타자 연습만으로는 부족하다고 느끼시나요? 이제 영문 타이핑까지 완벽하게 마스터하세요! <strong>타이핑 레인</strong>은 한국에서 가장 인기 있는 <strong>무료 타이핑 게임</strong>으로, 직장인, 학생, 취준생들이 <strong>WPM 속도 향상</strong>과 정확도 개선을 위해 선택하는 최고의 온라인 도구입니다. 컴활 자격증 준비부터 업무 효율성 증대까지, 매일 10분만 투자하면 당신의 키보드 실력이 확실히 달라집니다!',
+                seoTitle2: '왜 타이핑 레인인가? 차원이 다른 학습 경험',
+                seoPara2: '지루한 <strong>타자 연습 프로그램</strong>은 이제 그만! 게임화된 학습 시스템으로 재미있게 실력 향상이 가능합니다. 독보적인 기능들:',
+                seoRules: [
+                    '<strong>단계별 레벨 시스템:</strong> 초보자부터 고수까지, 개인 수준에 맞춘 맞춤형 훈련',
+                    '<strong>특수 아이템 시스템:</strong> 슬로우 모션, 정밀 모드 등 6가지 파워업으로 높은 점수 달성',
+                    '<strong>실시간 성과 분석:</strong> WPM, 정확도, 반응속도를 즉시 확인하며 실력 향상 체감',
+                    '<strong>글로벌 랭킹:</strong> 전 세계 유저들과 경쟁하며 한국의 위상을 보여주세요'
+                ],
+                seoTitle3: '프로 수준 타이핑 기술 완전 정복 - 초보부터 고수까지',
+                seoPara3: '게임 방법은 간단합니다: 하늘에서 떨어지는 영어 단어를 바닥에 닿기 전에 정확히 입력하면 됩니다! 하지만 진정한 <strong>타이핑 마스터</strong>가 되려면 체계적인 접근이 필요합니다. 한국인에게 최적화된 <strong>블라인드 터치 연습</strong> 시스템을 제공합니다:',
+                seoTips: [
+                    '<strong>블라인드 터치 완성:</strong> 한글 자판에서 영문 자판까지, 키보드를 보지 않고도 빠른 타이핑이 가능한 신기술을 단계별로 습득하세요. 자주 사용하는 단어부터 연습하여 손가락 근육 기억을 확실히 만듭니다.',
+                    '<strong>올바른 손가락 배치가 핵심:</strong> 왼손은 ASDF 영역, 오른손은 JKL; 영역을 담당합니다. 이는 모든 타이핑 고수들의 기본기이자, 속도 한계를 돌파하는 비밀 기술입니다.',
+                    '<strong>일정한 리듬감 유지:</strong> 피아노 연주처럼 일정한 박자를 유지하는 것이 중요합니다. 급하게 속도를 내려 하지 말고 안정적인 리듬을 유지하면 결과적으로 더 높은 점수와 정확도를 얻을 수 있습니다.'
+                ],
+                seoTitle4: '지금 바로 시작하세요 - 당신의 타이핑 혁신',
+                seoPara4: '준비되셨나요? <strong>타이핑 레인</strong>은 단순한 게임이 아닙니다. 이는 디지털 시대의 필수 역량을 재미있게 기를 수 있는 최고의 플랫폼입니다. 취업 준비, 업무 효율성, 자격증 취득 - 모든 영역에서 활용 가능한 핵심 스킬을 여기서 완성하세요!',
+                seoConclusion: '한국 최고의 <strong>무료 온라인 타이핑 게임</strong>으로 여러분의 잠재력을 최대한 발휘해보세요. 즐겁게 플레이하며 확실한 실력 향상을 경험하세요!',
+                
+                // Privacy Policy
+                privacyPolicy: '개인정보처리방침',
+                dataCollection: '데이터 수집',
+                privacyIntro: '타이핑 레인은 귀하의 개인정보 보호에 최선을 다하고 있습니다. 본 정책은 저희가 귀하의 데이터를 어떻게 처리하는지 설명합니다:',
+                localStorage: '로컬 저장소',
+                localStorageDesc: [
+                    '• 귀하의 최고 점수와 플레이어 이름은 브라우저의 로컬 저장소에 저장됩니다',
+                    '• 이 데이터는 귀하의 기기를 떠나지 않으며 오직 귀하만 접근할 수 있습니다',
+                    '• 브라우저 설정을 통해 언제든지 이 데이터를 삭제할 수 있습니다'
+                ],
+                analytics: '사용 분석',
+                analyticsDesc: [
+                    '• 플레이어가 게임과 어떻게 상호작용하는지 이해하기 위해 Google Analytics를 사용합니다',
+                    '• 이는 게임 경험을 개선하는 데 도움이 됩니다',
+                    '• 개인을 식별할 수 있는 정보는 수집되지 않습니다',
+                    '• 브라우저 확장 프로그램이나 개인정보 설정을 통해 거부할 수 있습니다'
+                ],
+                advertising: '광고',
+                advertisingDesc: [
+                    '• 관련 광고를 표시하기 위해 Google AdSense를 사용합니다',
+                    '• 광고 개인화는 Google의 개인정보처리방침을 따릅니다',
+                    '• Google 광고 설정을 통해 광고 기본설정을 관리할 수 있습니다'
+                ],
+                yourRights: '귀하의 권리',
+                rightsDesc: [
+                    '• 언제든지 로컬 점수 기록을 삭제할 수 있습니다',
+                    '• 브라우저 설정을 통해 분석 기능을 비활성화할 수 있습니다',
+                    '• 광고 차단기를 사용하여 광고를 차단할 수 있습니다'
+                ],
+                contact: '문의하기',
+                contactDesc: '이 개인정보처리방침에 대해 질문이 있으시면 저희 웹사이트를 통해 문의해 주세요.',
+                lastUpdated: '최종 업데이트:',
+                clearMyData: '내 데이터 삭제',
+                clearDataConfirm: '모든 로컬 데이터를 삭제하시겠습니까? 이렇게 하면 순위표 점수가 영구적으로 삭제되며 되돌릴 수 없습니다.',
+                dataCleared: '로컬 데이터가 성공적으로 삭제되었습니다.',
+                
+                // Share functionality
+                shareScore: '점수 공유',
+                shareText1: '🌧️ 타이핑 레인을 플레이했습니다! 🎯 점수: {score} | ⚡ WPM: {wpm} | 🎯 정확도: {accuracy} | 레벨: {level}\n\n당신의 타이핑 속도에 도전하세요! 💪',
+                shareText2: '🌧️ 타이핑 레인 - 속도와 정확성을 향상시키는 놀라운 타이핑 게임! 🎯\n\n떨어지는 단어를 잡고, 콤보를 만들고, 타이핑 마스터가 되어보세요! 💪\n\n지금 플레이하고 당신의 실력에 도전하세요! ⚡',
+                
+                // Tooltips
+                changeLanguage: '언어 변경',
+                shareOnTwitter: 'X (Twitter)에서 공유',
+                privacyPolicyTooltip: '개인정보처리방침',
+                soundOn: '소리 끄기',
+                soundOff: '소리 켜기',
+                
+                moreGames: '더 많은 게임은'
+            },
+            de: {
+                gameTitle: 'TYPING RAIN',
+                gameSubtitle: 'Modernes Wortspiel',
+                startGame: 'SPIEL STARTEN',
+                playAgain: 'NOCHMAL SPIELEN',
+                gameOver: 'SPIEL VORBEI',
+                highScore: 'HIGHSCORE!',
+                leaderboard: 'BESTENLISTE',
+                close: 'SCHLIEßEN',
+                submit: 'SENDEN',
+                skip: 'ÜBERSPRINGEN',
+                
+                score: 'PUNKTE',
+                level: 'LEVEL',
+                wpm: 'WPM',
+                accuracy: 'GENAUIGKEIT',
+                missed: 'VERPASST',
+                
+                howToPlay: 'Spielanleitung',
+                instructions: [
+                    '• Tippe die fallenden Wörter bevor sie den Boden erreichen',
+                    '• Drücke Enter oder Leertaste um dein Wort zu senden',
+                    '• Baue Kombos durch aufeinanderfolgende Wörter',
+                    '• Höhere Level bringen schnellere und schwierigere Wörter',
+                    '• Du hast 5 Chancen Wörter zu verpassen bevor das Spiel endet'
+                ],
+                powerUpsTitle: 'Power-ups',
+                powerUpsDesc: 'Verdiene Power-ups durch das Vervollständigen von Wörtern und Kombos! Jedes Power-up hat eine feste Taste.',
+                
+                powerUpNames: {
+                    slowTime: 'Zeitlupe',
+                    precisionMode: 'Präzisionsmodus', 
+                    doubleScore: 'Doppelpunkte',
+                    shield: 'Schild',
+                    comboProtect: 'Kombo-Schutz',
+                    refreshWords: 'Wörter aktualisieren'
+                },
+                
+                mainTitle: 'Typing Rain - Modernes Wortspiel',
+                mainDesc1: 'Fordere deine Tippgeschwindigkeit heraus! Wörter fallen wie Regentropfen vom Himmel und du musst sie schnell und genau tippen.',
+                mainDesc2: 'Verbessere deine WPM (Wörter pro Minute), erhöhe die Tippgenauigkeit und schalte höhere Schwierigkeitsgrade frei!',
+                
+                seoTitle1: 'Typing Rain - Deutschlands beliebtestes kostenloses Tipptraining-Spiel',
+                seoPara1: 'Schluss mit langweiligen Tippübungen! Entdecken Sie <strong>Typing Rain</strong>, das revolutionäre <strong>kostenlose Tippspiel</strong>, das Deutsche Berufstätige und Studenten zur Verbesserung ihrer <strong>Tastaturfertigkeiten</strong> bevorzugen. Dieses innovative <strong>10-Finger-Schreibtraining</strong> kombiniert professionelle Schreibmaschinen-Techniken mit modernster Spieletechnologie. Ob für Bewerbungen, Büroarbeit oder Programmierfähigkeiten - täglich 15 Minuten reichen aus, um Ihre <strong>WPM-Geschwindigkeit</strong> und Präzision dramatisch zu steigern!',
+                seoTitle2: 'Warum Typing Rain? Einzigartige Funktionen für maximalen Lernerfolg',
+                seoPara2: 'Im Gegensatz zu herkömmlichen <strong>Schreibprogrammen</strong> und <strong>Tipptrainern</strong> bietet Typing Rain eine vollständig gamifizierte Lernerfahrung. Premium-Features ohne Kosten:',
+                seoRules: [
+                    '<strong>Progressives Stufensystem:</strong> Vom Anfänger zum Profi-Tipper durch wissenschaftlich optimierte Schwierigkeitsgrade',
+                    '<strong>Power-Up Arsenal:</strong> Zeitlupen-Modus, Präzisions-Boost und 4 weitere Spezialfähigkeiten für Höchstleistungen',
+                    '<strong>Live-Performance-Analyse:</strong> WPM, Fehlerquote und Reaktionszeiten werden in Echtzeit gemessen und visualisiert',
+                    '<strong>Internationale Bestenlisten:</strong> Messen Sie sich mit Tippern aus der ganzen Welt und repräsentieren Sie Deutschland'
+                ],
+                seoTitle3: 'Professionelle Tipptechnik meistern - Vom Anfänger zum Experten',
+                seoPara3: 'Das Spielprinzip ist einfach: Englische Wörter fallen vom Himmel und müssen vor dem Aufprall korrekt getippt werden! Doch um ein echter <strong>Tipp-Meister</strong> zu werden, braucht es systematisches Training. Unser Programm basiert auf bewährten deutschen <strong>Schreibmaschinen-Methoden</strong> und modernen ergonomischen Erkenntnissen:',
+                seoTips: [
+                    '<strong>Blindschreiben-Perfektion:</strong> Von QWERTZ-Layout bis zur vollständigen Tastaturbeherrschung - lernen Sie das professionelle 10-Finger-System schrittweise. Häufige deutsche und englische Wörter werden zur Muskelgedächtnis-Grundlage.',
+                    '<strong>Ergonomische Fingerhaltung:</strong> Linke Hand beherrscht ASDF-Bereich, rechte Hand JKL;-Zone. Diese Grundposition ist das Fundament aller Schreibprofis und der Schlüssel zur Geschwindigkeitssteigerung ohne Ermüdung.',
+                    '<strong>Rhythmus-Training:</strong> Wie beim Klavierspielen ist ein gleichmäßiger Takt entscheidend. Konstante Geschwindigkeit übertrifft hektisches Tippen bei der Fehlerminimierung und Endleistung.'
+                ],
+                seoTitle4: 'Starten Sie Ihre Tipp-Karriere heute',
+                seoPara4: 'Bereit für den nächsten Level? <strong>Typing Rain</strong> ist mehr als ein Spiel - es ist Ihr Sprungbrett in die digitale Zukunft. Von Bürojobs über IT-Karrieren bis hin zu Gaming-Performance: Diese Fertigkeit öffnet Türen und steigert Ihre Produktivität messbar!',
+                seoConclusion: 'Erleben Sie Deutschlands führendes <strong>kostenloses Online-Tippspiel</strong> und transformieren Sie Ihre Tastaturfertigkeiten. Spielend lernen, messbar verbessern!',
+                
+                // Privacy Policy
+                privacyPolicy: 'Datenschutzerklärung',
+                dataCollection: 'Datensammlung',
+                privacyIntro: 'Typing Rain ist dem Schutz Ihrer Privatsphäre verpflichtet. Diese Richtlinie erklärt, wie wir mit Ihren Daten umgehen:',
+                localStorage: 'Lokaler Speicher',
+                localStorageDesc: [
+                    '• Ihre Highscores und Spielernamen werden lokal in Ihrem Browser gespeichert',
+                    '• Diese Daten verlassen Ihr Gerät nie und sind nur für Sie zugänglich',
+                    '• Sie können diese Daten jederzeit über Ihre Browsereinstellungen löschen'
+                ],
+                analytics: 'Nutzungsanalyse',
+                analyticsDesc: [
+                    '• Wir verwenden Google Analytics, um zu verstehen, wie Spieler mit dem Spiel interagieren',
+                    '• Dies hilft uns, die Spielerfahrung zu verbessern',
+                    '• Es werden keine persönlich identifizierbaren Informationen gesammelt',
+                    '• Sie können über Browsererweiterungen oder Datenschutzeinstellungen widersprechen'
+                ],
+                advertising: 'Werbung',
+                advertisingDesc: [
+                    '• Wir verwenden Google AdSense zur Anzeige relevanter Werbung',
+                    '• Die Personalisierung von Anzeigen folgt Googles Datenschutzrichtlinien',
+                    '• Sie können Anzeigeneinstellungen über Googles Anzeigeneinstellungen verwalten'
+                ],
+                yourRights: 'Ihre Rechte',
+                rightsDesc: [
+                    '• Sie können Ihre lokalen Scoredaten jederzeit löschen',
+                    '• Sie können Analytics über Browsereinstellungen deaktivieren',
+                    '• Sie können Werbeblocker verwenden, um Anzeigen zu blockieren'
+                ],
+                contact: 'Kontakt',
+                contactDesc: 'Wenn Sie Fragen zu dieser Datenschutzerklärung haben, kontaktieren Sie uns bitte über unsere Website.',
+                lastUpdated: 'Zuletzt aktualisiert:',
+                clearMyData: 'Meine Daten löschen',
+                clearDataConfirm: 'Sind Sie sicher, dass Sie alle lokalen Daten löschen möchten? Dies wird Ihre Bestenlisten-Ergebnisse dauerhaft löschen und kann nicht rückgängig gemacht werden.',
+                dataCleared: 'Ihre lokalen Daten wurden erfolgreich gelöscht.',
+                
+                // Share functionality
+                shareScore: 'Ergebnis teilen',
+                shareText1: '🌧️ Ich habe gerade Typing Rain gespielt! 🎯 Punkte: {score} | ⚡ WPM: {wpm} | 🎯 Genauigkeit: {accuracy} | Level: {level}\n\nFordere deine Tippgeschwindigkeit heraus! 💪',
+                shareText2: '🌧️ Typing Rain - Ein erstaunliches Tippspiel, das deine Geschwindigkeit und Genauigkeit verbessert! 🎯\n\nFange fallende Wörter, baue Kombinationen und werde ein Tipp-Meister! 💪\n\nSpiele jetzt und fordere deine Fähigkeiten heraus! ⚡',
+                
+                // Tooltips
+                changeLanguage: 'Sprache wechseln',
+                shareOnTwitter: 'Auf X (Twitter) teilen',
+                privacyPolicyTooltip: 'Datenschutzerklärung',
+                soundOn: 'Ton ausschalten',
+                soundOff: 'Ton einschalten',
+                
+                moreGames: 'Mehr Spiele auf'
+            },
+            fr: {
+                gameTitle: 'TYPING RAIN',
+                gameSubtitle: 'Jeu de Mots Moderne',
+                startGame: 'COMMENCER LE JEU',
+                playAgain: 'REJOUER',
+                gameOver: 'JEU TERMINÉ',
+                highScore: 'MEILLEUR SCORE!',
+                leaderboard: 'CLASSEMENT',
+                close: 'FERMER',
+                submit: 'SOUMETTRE',
+                skip: 'PASSER',
+                
+                score: 'SCORE',
+                level: 'NIVEAU',
+                wpm: 'MPM',
+                accuracy: 'PRÉCISION',
+                missed: 'RATÉS',
+                
+                howToPlay: 'Comment Jouer',
+                instructions: [
+                    '• Tapez les mots qui tombent avant qu\'ils atteignent le bas',
+                    '• Appuyez sur Entrée ou Espace pour soumettre votre mot',
+                    '• Créez des combos en tapant des mots consécutivement',
+                    '• Les niveaux plus élevés apportent des mots plus rapides et plus difficiles',
+                    '• Vous avez 5 chances de rater des mots avant la fin du jeu'
+                ],
+                powerUpsTitle: 'Améliorations',
+                powerUpsDesc: 'Gagnez des améliorations en complétant des mots et en créant des combos! Chaque amélioration a une touche fixe.',
+                
+                powerUpNames: {
+                    slowTime: 'Ralenti',
+                    precisionMode: 'Mode Précision', 
+                    doubleScore: 'Score Double',
+                    shield: 'Bouclier',
+                    comboProtect: 'Protection Combo',
+                    refreshWords: 'Rafraîchir Mots'
+                },
+                
+                mainTitle: 'Typing Rain - Jeu de Mots Moderne',
+                mainDesc1: 'Défiez votre vitesse de frappe! Les mots tombent comme des gouttes de pluie du ciel, et vous devez les taper rapidement et précisément.',
+                mainDesc2: 'Améliorez votre MPM (Mots Par Minute), augmentez la précision de frappe et débloquez des niveaux de difficulté plus élevés!',
+                
+                seoTitle1: 'Typing Rain - Le jeu de frappe gratuit préféré des Français',
+                seoPara1: 'Marre des exercices de dactylographie ennuyeux? Découvrez <strong>Typing Rain</strong>, le <strong>jeu de frappe gratuit</strong> révolutionnaire qui transforme l\'apprentissage du clavier en aventure passionnante! Plébiscité par les professionnels, étudiants et passionnés français, ce <strong>logiciel d\'entraînement à la saisie</strong> combine méthodes pédagogiques éprouvées et gamification moderne. De la préparation aux concours administratifs à l\'optimisation de votre productivité bureautique, 15 minutes quotidiennes suffisent pour maîtriser la <strong>frappe rapide</strong> et précise!',
+                seoTitle2: 'Pourquoi choisir Typing Rain? Des fonctionnalités uniques pour exceller',
+                seoPara2: 'Contrairement aux <strong>logiciels de dactylographie</strong> traditionnels et aux <strong>cours de frappe</strong> classiques, Typing Rain propose une expérience ludique complète. Fonctionnalités exclusives:',
+                seoRules: [
+                    '<strong>Système de progression adaptatif:</strong> Du débutant au dactylographe expert grâce à des niveaux calibrés scientifiquement',
+                    '<strong>Arsenal de bonus:</strong> Mode ralenti, précision maximale et 4 autres super-pouvoirs pour des performances exceptionnelles',
+                    '<strong>Analyse temps réel:</strong> MPM, taux d\'erreur et vitesse de réaction mesurés instantanément pour un suivi optimal',
+                    '<strong>Classements internationaux:</strong> Affrontez les meilleurs dactylographes mondiaux et représentez la France avec fierté'
+                ],
+                seoTitle3: 'Maîtrisez la dactylographie professionnelle - Guide complet du débutant à l\'expert',
+                seoPara3: 'Le principe est simple: des mots anglais tombent du ciel et doivent être tapés avant de toucher le sol! Mais devenir un véritable <strong>maître de la frappe</strong> demande une approche méthodique. Notre programme s\'appuie sur les techniques françaises traditionnelles de <strong>dactylo</strong> et les innovations ergonomiques modernes:',
+                seoTips: [
+                    '<strong>Frappe à l\'aveugle parfaite:</strong> Du clavier AZERTY à la maîtrise complète, apprenez la méthode des 10 doigts progressivement. Les mots français et anglais fréquents deviennent des automatismes par la mémoire musculaire.',
+                    '<strong>Positionnement digital optimal:</strong> Main gauche sur QSDF, main droite sur JKL;. Cette base fondamentale est le secret de tous les dactylos professionnels pour augmenter la vitesse sans fatigue.',
+                    '<strong>Entraînement rythmique:</strong> Comme au piano, maintenir une cadence régulière est crucial. Une vitesse constante surpasse la précipitation pour minimiser les erreurs et maximiser les performances.'
+                ],
+                seoTitle4: 'Lancez votre carrière de dactylo dès aujourd\'hui',
+                seoPara4: 'Prêt pour le niveau supérieur? <strong>Typing Rain</strong> dépasse le simple jeu - c\'est votre passeport vers l\'excellence numérique. Concours publics, emplois de bureau, carrières IT: cette compétence ouvre des portes et booste votre efficacité de façon mesurable!',
+                seoConclusion: 'Découvrez le <strong>jeu de frappe en ligne gratuit</strong> de référence en France et révolutionnez vos compétences clavier. Apprendre en s\'amusant, progresser de façon visible!',
+                
+                // Privacy Policy
+                privacyPolicy: 'Politique de Confidentialité',
+                dataCollection: 'Collecte de Données',
+                privacyIntro: 'Typing Rain s\'engage à protéger votre vie privée. Cette politique explique comment nous traitons vos données:',
+                localStorage: 'Stockage Local',
+                localStorageDesc: [
+                    '• Vos meilleurs scores et noms de joueur sont stockés localement dans votre navigateur',
+                    '• Ces données ne quittent jamais votre appareil et ne sont accessibles qu\'à vous',
+                    '• Vous pouvez supprimer ces données à tout moment via les paramètres de votre navigateur'
+                ],
+                analytics: 'Analyse d\'Usage',
+                analyticsDesc: [
+                    '• Nous utilisons Google Analytics pour comprendre comment les joueurs interagissent avec le jeu',
+                    '• Cela nous aide à améliorer l\'expérience de jeu',
+                    '• Aucune information personnellement identifiable n\'est collectée',
+                    '• Vous pouvez vous désinscrire via les extensions de navigateur ou les paramètres de confidentialité'
+                ],
+                advertising: 'Publicité',
+                advertisingDesc: [
+                    '• Nous utilisons Google AdSense pour afficher des publicités pertinentes',
+                    '• La personnalisation des publicités suit les politiques de confidentialité de Google',
+                    '• Vous pouvez gérer les préférences publicitaires via les paramètres publicitaires de Google'
+                ],
+                yourRights: 'Vos Droits',
+                rightsDesc: [
+                    '• Vous pouvez supprimer vos données de score locales à tout moment',
+                    '• Vous pouvez désactiver l\'analyse via les paramètres du navigateur',
+                    '• Vous pouvez utiliser des bloqueurs de publicités pour bloquer les annonces'
+                ],
+                contact: 'Contact',
+                contactDesc: 'Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter via notre site Web.',
+                lastUpdated: 'Dernière mise à jour:',
+                clearMyData: 'Effacer mes données',
+                clearDataConfirm: 'Êtes-vous sûr de vouloir effacer toutes vos données locales? Cela supprimera définitivement vos scores du classement et ne peut pas être annulé.',
+                dataCleared: 'Vos données locales ont été effacées avec succès.',
+                
+                // Share functionality
+                shareScore: 'Partager le score',
+                shareText1: '🌧️ Je viens de jouer à Typing Rain! 🎯 Score: {score} | ⚡ MPM: {wpm} | 🎯 Précision: {accuracy} | Niveau: {level}\n\nDéfiez votre vitesse de frappe! 💪',
+                shareText2: '🌧️ Typing Rain - Un jeu de frappe formidable qui améliore votre vitesse et précision! 🎯\n\nAttrapez les mots qui tombent, créez des combos et devenez un maître de la frappe! 💪\n\nJouez maintenant et défiez vos compétences! ⚡',
+                
+                // Tooltips
+                changeLanguage: 'Changer de langue',
+                shareOnTwitter: 'Partager sur X (Twitter)',
+                privacyPolicyTooltip: 'Politique de Confidentialité',
+                soundOn: 'Désactiver le son',
+                soundOff: 'Activer le son',
+                
+                moreGames: 'Plus de jeux sur'
+            }
+        };
+
         // 游戏变量
         const canvas = document.getElementById('game-canvas');
         const ctx = canvas.getContext('2d');
@@ -1567,8 +2342,8 @@
                                 levelStarted: false,
                 gameCompleted: false,
                 gameStarted: false,
-                // 重置道具系统
-                powerUps: [],
+                // 重置道具系统 - 固定位置槽
+                powerUpSlots: [null, null, null, null, null, null], // 6个固定位置的道具槽
                 activePowerUps: {},
                 wordsSinceLastPowerUp: 0
         };
@@ -1697,14 +2472,14 @@
         let particles = [];
         let backgroundParticles = [];
 
-        // 道具定义
+        // 道具定义 - 固定位置映射
         const powerUpTypes = {
-            slowTime: { name: 'Slow Time', icon: '⏰', duration: 5000, key: '1' },
-            precisionMode: { name: 'Precision Mode', icon: '🎯', count: 5, key: '2' },
-            doubleScore: { name: 'Double Score', icon: '💎', count: 10, key: '3' },
-            shield: { name: 'Shield', icon: '🛡️', count: 1, key: '4' },
-            comboProtect: { name: 'Combo Protect', icon: '🌟', count: 3, key: '5' },
-            refreshWords: { name: 'Word Refresh', icon: '🔄', instant: true, key: '6' }
+            slowTime: { name: 'Slow Time', icon: '⏰', duration: 5000, slot: 0 },
+            precisionMode: { name: 'Precision Mode', icon: '🎯', count: 5, slot: 1 },
+            doubleScore: { name: 'Double Score', icon: '💎', count: 10, slot: 2 },
+            shield: { name: 'Shield', icon: '🛡️', count: 1, slot: 3 },
+            comboProtect: { name: 'Combo Protect', icon: '🌟', count: 3, slot: 4 },
+            refreshWords: { name: 'Word Refresh', icon: '🔄', instant: true, slot: 5 }
         };
 
         // 粒子类
@@ -1965,7 +2740,7 @@
             }
         }
 
-        // 道具管理函数
+        // 道具管理函数 - 固定位置系统
         function generatePowerUp() {
             const types = Object.keys(powerUpTypes);
             const randomType = types[Math.floor(Math.random() * types.length)];
@@ -1973,19 +2748,24 @@
                 type: randomType,
                 ...powerUpTypes[randomType]
             };
-            gameState.powerUps.push(powerUp);
-            playPowerUpObtainedSound();
             
-            // 限制道具数量为6个
-            if (gameState.powerUps.length > 6) {
-                gameState.powerUps.shift();
+            // 将道具放到固定位置
+            const slot = powerUpTypes[randomType].slot;
+            
+            // 如果该位置已经有道具，不重复生成相同类型
+            if (gameState.powerUpSlots[slot] && gameState.powerUpSlots[slot].type === randomType) {
+                return; // 相同类型道具已存在，不生成新的
             }
+            
+            gameState.powerUpSlots[slot] = powerUp;
+            playPowerUpObtainedSound();
         }
 
-        function usePowerUp(index) {
-            if (index >= gameState.powerUps.length) return;
+        function usePowerUp(slotIndex) {
+            // 检查该槽位是否有道具
+            if (!gameState.powerUpSlots[slotIndex]) return;
             
-            const powerUp = gameState.powerUps[index];
+            const powerUp = gameState.powerUpSlots[slotIndex];
             playPowerUpSound();
             
             switch (powerUp.type) {
@@ -2028,7 +2808,7 @@
             }
             
             // 移除使用的道具
-            gameState.powerUps.splice(index, 1);
+            gameState.powerUpSlots[slotIndex] = null;
         }
 
         function updatePowerUps() {
@@ -2064,18 +2844,23 @@
             updatePowerUpDisplay();
         }
 
-        // 更新道具显示
+        // 更新道具显示 - 固定位置映射
         function updatePowerUpDisplay() {
             const grid = document.getElementById('power-ups-grid');
             grid.innerHTML = '';
+            
+            // 定义固定的道具类型对应关系（显示用）
+            const slotLabels = ['⏰', '🎯', '💎', '🛡️', '🌟', '🔄'];
+            const slotNames = ['Slow Time', 'Precision Mode', 'Double Score', 'Shield', 'Combo Protect', 'Word Refresh'];
             
             // 显示6个道具槽
             for (let i = 0; i < 6; i++) {
                 const slot = document.createElement('div');
                 slot.className = 'power-up-slot';
                 
-                if (i < gameState.powerUps.length) {
-                    const powerUp = gameState.powerUps[i];
+                if (gameState.powerUpSlots[i]) {
+                    // 有道具时显示实际道具
+                    const powerUp = gameState.powerUpSlots[i];
                     slot.innerHTML = `
                         <div class="power-up-icon">${powerUp.icon}</div>
                         <div class="power-up-key">${i + 1}</div>
@@ -2083,11 +2868,13 @@
                     slot.title = powerUp.name;
                     slot.onclick = () => usePowerUp(i);
                 } else {
+                    // 没有道具时显示对应的空槽位和固定图标
                     slot.classList.add('empty');
                     slot.innerHTML = `
-                        <div class="power-up-icon">⬜</div>
+                        <div class="power-up-icon" style="opacity: 0.3;">${slotLabels[i]}</div>
                         <div class="power-up-key">${i + 1}</div>
                     `;
+                    slot.title = `${slotNames[i]} (Empty)`;
                 }
                 
                 grid.appendChild(slot);
@@ -2574,7 +3361,11 @@
         }
 
         function clearLocalData() {
-            if (confirm('Are you sure you want to clear all your local data? This will permanently delete your leaderboard scores and cannot be undone.')) {
+            const lang = languages[currentLanguage];
+            const confirmMessage = lang.clearDataConfirm || 'Are you sure you want to clear all your local data? This will permanently delete your leaderboard scores and cannot be undone.';
+            const successMessage = lang.dataCleared || 'Your local data has been cleared successfully.';
+            
+            if (confirm(confirmMessage)) {
                 // Clear leaderboard data
                 localStorage.removeItem(LEADERBOARD_KEY);
                 
@@ -2582,7 +3373,7 @@
                 currentPlayerEntry = null;
                 
                 // Show confirmation
-                alert('Your local data has been cleared successfully.');
+                alert(successMessage);
                 
                 // Close privacy policy
                 closePrivacyPolicy();
@@ -2611,8 +3402,8 @@
                 levelStarted: false,
                 gameCompleted: false,
                 gameStarted: false,
-                // 重置道具系统
-                powerUps: [],
+                // 重置道具系统 - 固定位置槽
+                powerUpSlots: [null, null, null, null, null, null], // 6个固定位置的道具槽
                 activePowerUps: {},
                 wordsSinceLastPowerUp: 0
             };
@@ -2643,9 +3434,12 @@
         function toggleSound() {
             soundEnabled = !soundEnabled;
             const soundBtn = document.getElementById('sound-toggle');
+            const lang = languages[currentLanguage];
+            
             if (soundEnabled) {
                 soundBtn.textContent = '🔊';
                 soundBtn.classList.remove('muted');
+                soundBtn.setAttribute('title', lang.soundOn || 'Turn sound off');
                 // 如果音频上下文被暂停，恢复它
                 if (audioContext && audioContext.state === 'suspended') {
                     audioContext.resume();
@@ -2653,23 +3447,33 @@
             } else {
                 soundBtn.textContent = '🔇';
                 soundBtn.classList.add('muted');
+                soundBtn.setAttribute('title', lang.soundOff || 'Turn sound on');
             }
         }
 
         // 分享到Twitter/X
         function shareToTwitter() {
             const gameUrl = window.location.href;
-            const gameTitle = 'Typing Rain - Modern Word Game';
+            const lang = languages[currentLanguage];
             
             let shareText;
             if (gameState.gameRunning || gameState.score > 0) {
                 // 如果游戏进行中或有分数，分享成绩
                 const currentWPM = document.getElementById('wpm').textContent;
                 const currentAccuracy = document.getElementById('accuracy').textContent;
-                shareText = `🌧️ Just played Typing Rain! 🎯 Score: ${gameState.score} | ⚡ WPM: ${currentWPM} | 🎯 Accuracy: ${currentAccuracy} | Level: ${gameState.level}\n\nChallenge your typing speed! 💪`;
+                
+                if (lang.shareText1) {
+                    shareText = lang.shareText1
+                        .replace('{score}', gameState.score)
+                        .replace('{wpm}', currentWPM)
+                        .replace('{accuracy}', currentAccuracy)
+                        .replace('{level}', gameState.level);
+                } else {
+                    shareText = `🌧️ Just played Typing Rain! 🎯 Score: ${gameState.score} | ⚡ WPM: ${currentWPM} | 🎯 Accuracy: ${currentAccuracy} | Level: ${gameState.level}\n\nChallenge your typing speed! 💪`;
+                }
             } else {
                 // 默认分享文本
-                shareText = `🌧️ Typing Rain - An amazing typing game that improves your speed and accuracy! 🎯\n\nCatch falling words, build combos, and become a typing master! 💪\n\nPlay now and challenge your skills! ⚡`;
+                shareText = lang.shareText2 || `🌧️ Typing Rain - An amazing typing game that improves your speed and accuracy! 🎯\n\nCatch falling words, build combos, and become a typing master! 💪\n\nPlay now and challenge your skills! ⚡`;
             }
             
             const twitterUrl = `https://x.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(gameUrl)}`;
@@ -2690,12 +3494,12 @@
 
         // 全局键盘事件监听（道具使用）
         document.addEventListener('keydown', (e) => {
-            // 数字键1-6使用道具
+            // 数字键1-6使用道具 - 固定位置系统
             if (e.key >= '1' && e.key <= '6') {
-                const index = parseInt(e.key) - 1;
-                if (index < gameState.powerUps.length) {
+                const slotIndex = parseInt(e.key) - 1;
+                if (gameState.powerUpSlots[slotIndex]) {
                     e.preventDefault(); // 阻止数字输入到文本框
-                    usePowerUp(index);
+                    usePowerUp(slotIndex);
                 }
             }
         });
@@ -2722,8 +3526,429 @@
             gameLoop();
         }
 
+        // 多语言功能
+        function detectLanguageByIP() {
+            // 尝试通过浏览器语言检测
+            const browserLang = navigator.language || navigator.userLanguage;
+            console.log('Detected browser language:', browserLang);
+            
+            // 检测繁体中文
+            if (browserLang.startsWith('zh-TW') || browserLang.startsWith('zh-Hant') || 
+                browserLang === 'zh-HK' || browserLang === 'zh-MO') {
+                return 'zh-tw';
+            }
+            // 检测日语
+            else if (browserLang.startsWith('ja')) {
+                return 'ja';
+            }
+            // 检测韩语
+            else if (browserLang.startsWith('ko')) {
+                return 'ko';
+            }
+            // 检测德语
+            else if (browserLang.startsWith('de')) {
+                return 'de';
+            }
+            // 检测法语
+            else if (browserLang.startsWith('fr')) {
+                return 'fr';
+            }
+            
+            // 尝试通过时区推测（作为后备）
+            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            if (timezone) {
+                if (timezone.includes('Taipei') || timezone.includes('Hong_Kong') || timezone.includes('Macau')) {
+                    return 'zh-tw';
+                } else if (timezone.includes('Tokyo') || timezone.includes('Osaka')) {
+                    return 'ja';
+                } else if (timezone.includes('Seoul')) {
+                    return 'ko';
+                } else if (timezone.includes('Berlin') || timezone.includes('Vienna') || timezone.includes('Zurich')) {
+                    return 'de';
+                } else if (timezone.includes('Paris') || timezone.includes('Brussels')) {
+                    return 'fr';
+                }
+            }
+            
+            return 'en'; // 默认英语
+        }
+
+        function initLanguage() {
+            // 检查本地存储的语言设置
+            const savedLang = localStorage.getItem('typingRainLanguage');
+            if (savedLang && languages[savedLang]) {
+                currentLanguage = savedLang;
+            } else {
+                // 自动检测语言
+                currentLanguage = detectLanguageByIP();
+                localStorage.setItem('typingRainLanguage', currentLanguage);
+            }
+            
+            updateLanguage();
+        }
+
+        function switchLanguage(lang) {
+            if (languages[lang]) {
+                currentLanguage = lang;
+                localStorage.setItem('typingRainLanguage', lang);
+                updateLanguage();
+                toggleLanguageMenu(); // 关闭菜单
+            }
+        }
+
+        function updateLanguage() {
+            const lang = languages[currentLanguage];
+            
+            // 更新游戏标题
+            const gameTitle = document.querySelector('.game-title');
+            if (gameTitle) gameTitle.textContent = lang.gameTitle;
+            
+            const startTitle = document.querySelector('.start-title');
+            if (startTitle) startTitle.textContent = lang.gameTitle;
+            
+            const startSubtitle = document.querySelector('.start-subtitle');
+            if (startSubtitle) startSubtitle.textContent = lang.gameSubtitle;
+            
+            // 更新按钮文本
+            const startBtn = document.querySelector('.start-btn');
+            if (startBtn) startBtn.textContent = lang.startGame;
+            
+            const restartBtns = document.querySelectorAll('.restart-btn');
+            restartBtns.forEach(btn => {
+                if (btn.textContent.includes('PLAY AGAIN') || btn.textContent.includes('再玩一次') || 
+                    btn.textContent.includes('もう一度') || btn.textContent.includes('다시 플레이') ||
+                    btn.textContent.includes('NOCHMAL SPIELEN') || btn.textContent.includes('REJOUER')) {
+                    btn.textContent = lang.playAgain;
+                }
+            });
+            
+            // 更新游戏结束屏幕
+            const gameOverTitle = document.querySelector('.game-over-title');
+            if (gameOverTitle) gameOverTitle.textContent = lang.gameOver;
+            
+            const nameInputTitle = document.querySelector('.name-input-title');
+            if (nameInputTitle) nameInputTitle.textContent = lang.highScore;
+            
+            const leaderboardTitle = document.querySelector('.leaderboard-title');
+            if (leaderboardTitle) leaderboardTitle.textContent = lang.leaderboard;
+            
+            // 更新统计标签
+            const statLabels = document.querySelectorAll('.stat-label');
+            statLabels.forEach(label => {
+                const text = label.textContent.trim();
+                if (text === 'SCORE' || text === '分數' || text === 'スコア' || text === '점수' || text === 'PUNKTE') {
+                    label.textContent = lang.score;
+                } else if (text === 'LEVEL' || text === '等級' || text === 'レベル' || text === '레벨') {
+                    label.textContent = lang.level;
+                } else if (text === 'WPM' || text === '每分鐘字數' || text === 'MPM') {
+                    label.textContent = lang.wpm;
+                } else if (text === 'ACCURACY' || text === '準確度' || text === '正確性' || text === '정확도' || text === 'GENAUIGKEIT' || text === 'PRÉCISION') {
+                    label.textContent = lang.accuracy;
+                } else if (text === 'MISSED' || text === '錯過' || text === 'ミス' || text === '놓친 횟수' || text === 'VERPASST' || text === 'RATÉS') {
+                    label.textContent = lang.missed;
+                }
+            });
+            
+            // 更新说明
+            const instructionsTitle = document.querySelector('.instructions-content h3');
+            if (instructionsTitle) instructionsTitle.textContent = lang.howToPlay;
+            
+            // 更新说明列表
+            const instructionsParagraphs = document.querySelectorAll('.instructions-content p');
+            instructionsParagraphs.forEach((p, index) => {
+                if (index < lang.instructions.length) {
+                    p.innerHTML = lang.instructions[index];
+                }
+            });
+            
+            // 更新道具标题
+            const powerUpsTitle = document.querySelector('.power-ups-title');
+            if (powerUpsTitle) {
+                powerUpsTitle.textContent = lang.powerUpsTitle + ' (1:⏰ 2:🎯 3:💎 4:🛡️ 5:🌟 6:🔄)';
+            }
+            
+            // 更新道具描述
+            const powerUpsDesc = document.querySelectorAll('.instructions-content p');
+            if (powerUpsDesc.length > 0) {
+                const lastP = powerUpsDesc[powerUpsDesc.length - 1];
+                if (lastP.style.fontSize === '0.9em') {
+                    lastP.textContent = lang.powerUpsDesc;
+                }
+            }
+            
+            // 更新道具名称
+            if (lang.powerUpNames) {
+                // 更新左侧固定显示的道具列表
+                const powerUpItems = document.querySelectorAll('.power-ups-list .power-up-item');
+                if (powerUpItems.length >= 6) {
+                    powerUpItems[0].textContent = `1:⏰ ${lang.powerUpNames.slowTime}`;
+                    powerUpItems[1].textContent = `2:🎯 ${lang.powerUpNames.precisionMode}`;
+                    powerUpItems[2].textContent = `3:💎 ${lang.powerUpNames.doubleScore}`;
+                    powerUpItems[3].textContent = `4:🛡️ ${lang.powerUpNames.shield}`;
+                    powerUpItems[4].textContent = `5:🌟 ${lang.powerUpNames.comboProtect}`;
+                    powerUpItems[5].textContent = `6:🔄 ${lang.powerUpNames.refreshWords}`;
+                }
+                
+                // 更新道具槽中的道具名称
+                const powerUpElements = document.querySelectorAll('.power-up-slot');
+                powerUpElements.forEach((slot, index) => {
+                    const tooltipSpan = slot.querySelector('span[title]');
+                    if (tooltipSpan) {
+                        // 根据槽位索引直接更新对应的道具名称
+                        switch(index) {
+                            case 0:
+                                tooltipSpan.setAttribute('title', lang.powerUpNames.slowTime);
+                                break;
+                            case 1:
+                                tooltipSpan.setAttribute('title', lang.powerUpNames.precisionMode);
+                                break;
+                            case 2:
+                                tooltipSpan.setAttribute('title', lang.powerUpNames.doubleScore);
+                                break;
+                            case 3:
+                                tooltipSpan.setAttribute('title', lang.powerUpNames.shield);
+                                break;
+                            case 4:
+                                tooltipSpan.setAttribute('title', lang.powerUpNames.comboProtect);
+                                break;
+                            case 5:
+                                tooltipSpan.setAttribute('title', lang.powerUpNames.refreshWords);
+                                break;
+                        }
+                    }
+                });
+            }
+            
+            // 更新完整的SEO内容（游戏下方的所有内容）
+            const seoTitle = document.querySelector('.seo-content h1');
+            if (seoTitle) seoTitle.textContent = lang.mainTitle;
+            
+            const seoDescs = document.querySelectorAll('.seo-content p');
+            if (seoDescs.length >= 2) {
+                seoDescs[0].textContent = lang.mainDesc1;
+                seoDescs[1].textContent = lang.mainDesc2;
+            }
+            
+            // 更新下方完整的SEO内容区域
+            const belowGameDiv = document.querySelector('.below-game');
+            if (belowGameDiv && lang.seoTitle1) {
+                // 更新所有h2标题
+                const h2Elements = belowGameDiv.querySelectorAll('h2');
+                if (h2Elements[0] && lang.seoTitle1) h2Elements[0].textContent = lang.seoTitle1;
+                
+                // 更新所有h3标题  
+                const h3Elements = belowGameDiv.querySelectorAll('h3');
+                if (h3Elements[0] && lang.seoTitle2) h3Elements[0].textContent = lang.seoTitle2;
+                if (h3Elements[1] && lang.seoTitle3) h3Elements[1].textContent = lang.seoTitle3;
+                if (h3Elements[2] && lang.seoTitle4) h3Elements[2].textContent = lang.seoTitle4;
+                
+                // 更新所有段落内容
+                const pElements = belowGameDiv.querySelectorAll('p:not(.footer-link)');
+                if (pElements[0] && lang.seoPara1) pElements[0].textContent = lang.seoPara1;
+                if (pElements[1] && lang.seoPara2) pElements[1].textContent = lang.seoPara2;
+                if (pElements[2] && lang.seoPara3) pElements[2].textContent = lang.seoPara3;
+                if (pElements[3] && lang.seoPara4) pElements[3].textContent = lang.seoPara4;
+                if (pElements[4] && lang.seoConclusion) pElements[4].textContent = lang.seoConclusion;
+                
+                // 更新游戏规则列表
+                const ulElement = belowGameDiv.querySelector('ul');
+                if (ulElement && lang.seoRules) {
+                    const liElements = ulElement.querySelectorAll('li');
+                    lang.seoRules.forEach((rule, index) => {
+                        if (liElements[index]) {
+                            liElements[index].textContent = rule;
+                        }
+                    });
+                }
+                
+                // 更新提示列表
+                const olElements = belowGameDiv.querySelectorAll('ul');
+                if (olElements[1] && lang.seoTips) { // 第二个ul是提示列表
+                    const tipLiElements = olElements[1].querySelectorAll('li');
+                    lang.seoTips.forEach((tip, index) => {
+                        if (tipLiElements[index]) {
+                            // 保留strong标签
+                            const strongText = tipLiElements[index].querySelector('strong');
+                            if (strongText) {
+                                tipLiElements[index].innerHTML = `<strong>Tip ${index + 1}:</strong> ${tip}`;
+                            } else {
+                                tipLiElements[index].textContent = tip;
+                            }
+                        }
+                    });
+                }
+            }
+            
+            // 更新隐私政策内容
+            if (lang.privacyPolicy) {
+                const privacyTitle = document.querySelector('.privacy-title');
+                if (privacyTitle) privacyTitle.textContent = lang.privacyPolicy;
+                
+                // 更新隐私政策的所有文本内容
+                const privacyText = document.querySelector('.privacy-text');
+                if (privacyText && lang.localStorageDesc) {
+                    const h3Elements = privacyText.querySelectorAll('h3');
+                    const h4Elements = privacyText.querySelectorAll('h4');
+                    const pElements = privacyText.querySelectorAll('p:not(.privacy-update)');
+                    
+                    // 更新主要段落标题和内容
+                    if (h3Elements[0]) h3Elements[0].textContent = lang.dataCollection;
+                    if (pElements[0]) pElements[0].textContent = lang.privacyIntro;
+                    
+                    // 更新各部分标题
+                    if (h4Elements[0]) h4Elements[0].textContent = lang.localStorage;
+                    if (h4Elements[1]) h4Elements[1].textContent = lang.analytics;
+                    if (h4Elements[2]) h4Elements[2].textContent = lang.advertising;
+                    if (h4Elements[3]) h4Elements[3].textContent = lang.yourRights;
+                    if (h4Elements[4]) h4Elements[4].textContent = lang.contact;
+                    
+                    // 更新本地储存部分的内容
+                    let pIndex = 1;
+                    if (lang.localStorageDesc && pElements[pIndex]) {
+                        lang.localStorageDesc.forEach((text, i) => {
+                            if (pElements[pIndex + i]) {
+                                pElements[pIndex + i].textContent = text;
+                            }
+                        });
+                        pIndex += lang.localStorageDesc.length;
+                    }
+                    
+                    // 更新分析部分的内容
+                    if (lang.analyticsDesc && pElements[pIndex]) {
+                        lang.analyticsDesc.forEach((text, i) => {
+                            if (pElements[pIndex + i]) {
+                                pElements[pIndex + i].textContent = text;
+                            }
+                        });
+                        pIndex += lang.analyticsDesc.length;
+                    }
+                    
+                    // 更新广告部分的内容
+                    if (lang.advertisingDesc && pElements[pIndex]) {
+                        lang.advertisingDesc.forEach((text, i) => {
+                            if (pElements[pIndex + i]) {
+                                pElements[pIndex + i].textContent = text;
+                            }
+                        });
+                        pIndex += lang.advertisingDesc.length;
+                    }
+                    
+                    // 更新权利部分的内容
+                    if (lang.rightsDesc && pElements[pIndex]) {
+                        lang.rightsDesc.forEach((text, i) => {
+                            if (pElements[pIndex + i]) {
+                                pElements[pIndex + i].textContent = text;
+                            }
+                        });
+                        pIndex += lang.rightsDesc.length;
+                    }
+                    
+                    // 更新联系部分的内容
+                    if (lang.contactDesc && pElements[pIndex]) {
+                        pElements[pIndex].textContent = lang.contactDesc;
+                    }
+                    
+                    // 更新最后更新日期
+                    const lastUpdatedP = privacyText.querySelector('.privacy-update');
+                    if (lastUpdatedP) {
+                        lastUpdatedP.innerHTML = `${lang.lastUpdated} <span id="privacy-date"></span>`;
+                        // 重新设置日期
+                        const currentDate = new Date().toLocaleDateString();
+                        document.getElementById('privacy-date').textContent = currentDate;
+                    }
+                }
+                
+                // 更新隐私政策按钮
+                const clearDataBtn = document.querySelector('.clear-data-btn');
+                if (clearDataBtn) clearDataBtn.textContent = lang.clearMyData;
+            }
+            
+            // 更新分享按钮
+            if (lang.shareScore) {
+                const shareBtn = document.querySelector('button[onclick="shareToTwitter()"]');
+                if (shareBtn && shareBtn.textContent.includes('SHARE SCORE')) {
+                    shareBtn.innerHTML = `📤 ${lang.shareScore}`;
+                }
+            }
+            
+            // 更新按钮tooltips
+            if (lang.changeLanguage) {
+                const langBtn = document.querySelector('#lang-toggle');
+                if (langBtn) langBtn.setAttribute('title', lang.changeLanguage);
+            }
+            
+            if (lang.shareOnTwitter) {
+                const shareBtn = document.querySelector('.share-btn');
+                if (shareBtn) shareBtn.setAttribute('title', lang.shareOnTwitter);
+            }
+            
+            if (lang.privacyPolicyTooltip) {
+                const privacyBtn = document.querySelector('.privacy-btn');
+                if (privacyBtn) privacyBtn.setAttribute('title', lang.privacyPolicyTooltip);
+            }
+            
+            // 更新声音按钮tooltip
+            const soundBtn = document.getElementById('sound-toggle');
+            if (soundBtn && lang.soundOn && lang.soundOff) {
+                if (soundEnabled) {
+                    soundBtn.setAttribute('title', lang.soundOn);
+                } else {
+                    soundBtn.setAttribute('title', lang.soundOff);
+                }
+            }
+            
+            // 更新页脚
+            const footerText = document.querySelector('footer p');
+            if (footerText) {
+                footerText.innerHTML = `${lang.moreGames} <a href="https://playful.cafe" target="_blank" style="color: #00f5ff; text-decoration: none; font-weight: bold;">Playful.cafe</a>`;
+            }
+            
+            // 更新其他按钮
+            const submitBtn = document.querySelector('.submit-score-btn');
+            if (submitBtn) submitBtn.textContent = lang.submit;
+            
+            const skipBtn = document.querySelector('.skip-btn');
+            if (skipBtn) skipBtn.textContent = lang.skip;
+            
+            const closeBtns = document.querySelectorAll('.close-leaderboard-btn, .close-privacy-btn');
+            closeBtns.forEach(btn => btn.textContent = lang.close);
+            
+            const leaderboardBtn = document.querySelector('.leaderboard-btn');
+            if (leaderboardBtn) leaderboardBtn.textContent = lang.leaderboard;
+            
+            // 更新语言菜单中的活动状态
+            document.querySelectorAll('.lang-option').forEach(option => {
+                option.classList.remove('active');
+                const langCode = option.getAttribute('onclick').match(/'(.+?)'/)[1];
+                if (langCode === currentLanguage) {
+                    option.classList.add('active');
+                }
+            });
+        }
+
+        function toggleLanguageMenu() {
+            const menu = document.getElementById('lang-menu');
+            menu.classList.toggle('show');
+        }
+
+        // 点击外部关闭语言菜单
+        document.addEventListener('click', function(event) {
+            const languageSwitcher = document.querySelector('.language-switcher');
+            if (!languageSwitcher.contains(event.target)) {
+                document.getElementById('lang-menu').classList.remove('show');
+            }
+        });
+
         // 启动游戏
+        initLanguage(); // 初始化语言
         initGame();
     </script>
+    
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        <p style="color: rgba(255, 255, 255, 0.7); margin: 0;">
+            More games at <a href="https://playful.cafe" target="_blank" style="color: #00f5ff; text-decoration: none; font-weight: bold;">Playful.cafe</a>
+        </p>
+    </footer>
 </body>
 </html> 

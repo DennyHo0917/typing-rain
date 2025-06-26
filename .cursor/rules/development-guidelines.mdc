@@ -31,6 +31,15 @@ alwaysApply: false
 - **Performance**: Optimize for Core Web Vitals (LCP, FID, CLS)
 - **Keyboard navigation**: Ensure game is playable with keyboard only
 
+### Multilingual Localization Standards
+- **No direct translation**: Avoid word-for-word translation which creates stiff, unnatural content
+- **Native expression**: Generate content that feels naturally written in the target language
+- **Cultural adaptation**: Use local idioms, expressions, and cultural references where appropriate
+- **Target audience focus**: Write for native speakers, not literal translation readers
+- **Language-specific SEO**: Use keywords and phrases that local users actually search for
+- **Tone consistency**: Maintain appropriate formality level for each language's conventions
+- **Regional preferences**: Consider regional variations (e.g., Traditional vs Simplified Chinese)
+
 ### Game Design Principles
 - **Progressive difficulty**: Gradually increase word complexity and speed
 - **Clear feedback**: Visual and audio cues for successful/failed catches
