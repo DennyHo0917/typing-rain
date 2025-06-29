@@ -1,0 +1,101 @@
+{
+  "gameTitle": "TYPING RAIN",
+  "gameSubtitle": "Modernes Wortspiel",
+  "startGame": "SPIEL STARTEN",
+  "playAgain": "NOCHMAL SPIELEN",
+  "gameOver": "SPIEL VORBEI",
+  "highScore": "HIGHSCORE!",
+  "leaderboard": "BESTENLISTE",
+  "close": "SCHLIEßEN",
+  "submit": "SENDEN",
+  "skip": "ÜBERSPRINGEN",
+  "score": "PUNKTE",
+  "level": "LEVEL",
+  "wpm": "WPM",
+  "accuracy": "GENAUIGKEIT",
+  "missed": "VERPASST",
+  "howToPlay": "Spielanleitung",
+  "instructions": [
+    "• Tippe die fallenden Wörter bevor sie den Boden erreichen",
+    "• Drücke Enter oder Leertaste um dein Wort zu senden",
+    "• Baue Kombos durch aufeinanderfolgende Wörter",
+    "• Höhere Level bringen schnellere und schwierigere Wörter",
+    "• Du hast 5 Chancen Wörter zu verpassen bevor das Spiel endet"
+  ],
+  "powerUpsTitle": "Power-ups",
+  "powerUpsDesc": "Verdiene Power-ups durch das Vervollständigen von Wörtern und Kombos! Jedes Power-up hat eine feste Taste.",
+  "powerUpNames": {
+    "slowTime": "Zeitlupe",
+    "precisionMode": "Präzisionsmodus",
+    "doubleScore": "Doppelpunkte",
+    "shield": "Schild",
+    "comboProtect": "Kombo-Schutz",
+    "refreshWords": "Wörter aktualisieren"
+  },
+  "mainTitle": "Typing Rain - Modernes Wortspiel",
+  "mainDesc1": "Fordere deine Tippgeschwindigkeit heraus! Wörter fallen wie Regentropfen vom Himmel und du musst sie schnell und genau tippen.",
+  "mainDesc2": "Verbessere deine WPM (Wörter pro Minute), erhöhe die Tippgenauigkeit und schalte höhere Schwierigkeitsgrade frei!",
+  "seoTitle1": "Typing Rain - Deutschlands beliebtestes kostenloses Tipptraining-Spiel",
+  "seoPara1": "Schluss mit langweiligen Tippübungen! Entdecken Sie <strong>Typing Rain</strong>, das revolutionäre <strong>kostenlose Tippspiel</strong>, das Deutsche Berufstätige und Studenten zur Verbesserung ihrer <strong>Tastaturfertigkeiten</strong> bevorzugen. Dieses innovative <strong>10-Finger-Schreibtraining</strong> kombiniert professionelle Schreibmaschinen-Techniken mit modernster Spieletechnologie. Ob für Bewerbungen, Büroarbeit oder Programmierfähigkeiten - täglich 15 Minuten reichen aus, um Ihre <strong>WPM-Geschwindigkeit</strong> und Präzision dramatisch zu steigern!",
+  "seoTitle2": "Warum Typing Rain? Einzigartige Funktionen für maximalen Lernerfolg",
+  "seoPara2": "Im Gegensatz zu herkömmlichen <strong>Schreibprogrammen</strong> und <strong>Tipptrainern</strong> bietet Typing Rain eine vollständig gamifizierte Lernerfahrung. Premium-Features ohne Kosten:",
+  "seoRules": [
+    "<strong>Progressives Stufensystem:</strong> Vom Anfänger zum Profi-Tipper durch wissenschaftlich optimierte Schwierigkeitsgrade",
+    "<strong>Power-Up Arsenal:</strong> Zeitlupen-Modus, Präzisions-Boost und 4 weitere Spezialfähigkeiten für Höchstleistungen",
+    "<strong>Live-Performance-Analyse:</strong> WPM, Fehlerquote und Reaktionszeiten werden in Echtzeit gemessen und visualisiert",
+    "<strong>Internationale Bestenlisten:</strong> Messen Sie sich mit Tippern aus der ganzen Welt und repräsentieren Sie Deutschland"
+  ],
+  "seoTitle3": "Professionelle Tipptechnik meistern - Vom Anfänger zum Experten",
+  "seoPara3": "Das Spielprinzip ist einfach: Englische Wörter fallen vom Himmel und müssen vor dem Aufprall korrekt getippt werden! Doch um ein echter <strong>Tipp-Meister</strong> zu werden, braucht es systematisches Training. Unser Programm basiert auf bewährten deutschen <strong>Schreibmaschinen-Methoden</strong> und modernen ergonomischen Erkenntnissen:",
+  "seoTips": [
+    "<strong>Blindschreiben-Perfektion:</strong> Von QWERTZ-Layout bis zur vollständigen Tastaturbeherrschung - lernen Sie das professionelle 10-Finger-System schrittweise. Häufige deutsche und englische Wörter werden zur Muskelgedächtnis-Grundlage.",
+    "<strong>Ergonomische Fingerhaltung:</strong> Linke Hand beherrscht ASDF-Bereich, rechte Hand JKL;-Zone. Diese Grundposition ist das Fundament aller Schreibprofis und der Schlüssel zur Geschwindigkeitssteigerung ohne Ermüdung.",
+    "<strong>Rhythmus-Training:</strong> Wie beim Klavierspielen ist ein gleichmäßiger Takt entscheidend. Konstante Geschwindigkeit übertrifft hektisches Tippen bei der Fehlerminimierung und Endleistung."
+  ],
+  "seoTitle4": "Starten Sie Ihre Tipp-Karriere heute",
+  "seoPara4": "Bereit für den nächsten Level? <strong>Typing Rain</strong> ist mehr als ein Spiel - es ist Ihr Sprungbrett in die digitale Zukunft. Von Bürojobs über IT-Karrieren bis hin zu Gaming-Performance: Diese Fertigkeit öffnet Türen und steigert Ihre Produktivität messbar!",
+  "seoConclusion": "Erleben Sie Deutschlands führendes <strong>kostenloses Online-Tippspiel</strong> und transformieren Sie Ihre Tastaturfertigkeiten. Spielend lernen, messbar verbessern!",
+  "privacyPolicy": "Datenschutzerklärung",
+  "dataCollection": "Datensammlung",
+  "privacyIntro": "Typing Rain ist dem Schutz Ihrer Privatsphäre verpflichtet. Diese Richtlinie erklärt, wie wir mit Ihren Daten umgehen:",
+  "localStorage": "Lokaler Speicher",
+  "localStorageDesc": [
+    "• Ihre Highscores und Spielernamen werden lokal in Ihrem Browser gespeichert",
+    "• Diese Daten verlassen Ihr Gerät nie und sind nur für Sie zugänglich",
+    "• Sie können diese Daten jederzeit über Ihre Browsereinstellungen löschen"
+  ],
+  "analytics": "Nutzungsanalyse",
+  "analyticsDesc": [
+    "• Wir verwenden Google Analytics, um zu verstehen, wie Spieler mit dem Spiel interagieren",
+    "• Dies hilft uns, die Spielerfahrung zu verbessern",
+    "• Es werden keine persönlich identifizierbaren Informationen gesammelt",
+    "• Sie können über Browsererweiterungen oder Datenschutzeinstellungen widersprechen"
+  ],
+  "advertising": "Werbung",
+  "advertisingDesc": [
+    "• Wir verwenden Google AdSense zur Anzeige relevanter Werbung",
+    "• Die Personalisierung von Anzeigen folgt Googles Datenschutzrichtlinien",
+    "• Sie können Anzeigeneinstellungen über Googles Anzeigeneinstellungen verwalten"
+  ],
+  "yourRights": "Ihre Rechte",
+  "rightsDesc": [
+    "• Sie können Ihre lokalen Scoredaten jederzeit löschen",
+    "• Sie können Analytics über Browsereinstellungen deaktivieren",
+    "• Sie können Werbeblocker verwenden, um Anzeigen zu blockieren"
+  ],
+  "contact": "Kontakt",
+  "contactDesc": "Wenn Sie Fragen zu dieser Datenschutzerklärung haben, kontaktieren Sie uns bitte über unsere Website.",
+  "lastUpdated": "Zuletzt aktualisiert:",
+  "clearMyData": "Meine Daten löschen",
+  "clearDataConfirm": "Sind Sie sicher, dass Sie alle lokalen Daten löschen möchten? Dies wird Ihre Bestenlisten-Ergebnisse dauerhaft löschen und kann nicht rückgängig gemacht werden.",
+  "dataCleared": "Ihre lokalen Daten wurden erfolgreich gelöscht.",
+  "shareScore": "Ergebnis teilen",
+  "shareText1": "🌧️ Ich habe gerade Typing Rain gespielt! 🎯 Punkte: {score} | ⚡ WPM: {wpm} | 🎯 Genauigkeit: {accuracy} | Level: {level}\n\nFordere deine Tippgeschwindigkeit heraus! 💪",
+  "shareText2": "🌧️ Typing Rain - Ein erstaunliches Tippspiel, das deine Geschwindigkeit und Genauigkeit verbessert! 🎯\n\nFange fallende Wörter, baue Kombinationen und werde ein Tipp-Meister! 💪\n\nSpiele jetzt und fordere deine Fähigkeiten heraus! ⚡",
+  "changeLanguage": "Sprache wechseln",
+  "shareOnTwitter": "Auf X (Twitter) teilen",
+  "privacyPolicyTooltip": "Datenschutzerklärung",
+  "soundOn": "Ton ausschalten",
+  "soundOff": "Ton einschalten",
+  "moreGames": "Mehr Spiele auf"
+}
