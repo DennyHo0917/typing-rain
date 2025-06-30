@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Rain - Modern Word Game | Online Typing Practice</title>
+    <title>Typing Rain - Practice Mode | Online Typing Practice</title>
     <meta name="description" content="Typing Rain is a fun online typing game where you catch falling words to improve your typing speed and accuracy. Features multiple difficulty levels and real-time WPM tracking.">
     <meta name="keywords" content="typing game,typing practice,word game,online game,typing speed,WPM,typing skills">
     <meta name="author" content="Playful Cafe">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Typing Rain - Modern Word Game">
-    <meta property="og:description" content="Improve your typing speed by catching falling words in this engaging online game">
+    <meta property="og:title" content="Typing Rain - Practice Mode">
+    <meta property="og:description" content="Improve your typing speed in Practice Mode with infinite play.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://playful.cafe/games/typing-rain/">
-    <link rel="canonical" href="https://playful.cafe/games/typing-rain/">
+    <meta property="og:url" content="https://playful.cafe/games/typing-rain/practice.html">
+    <link rel="canonical" href="https://playful.cafe/games/typing-rain/practice.html">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SMTNW9G4V5"></script>
     <script>
@@ -22,6 +22,8 @@
 
       gtag('config', 'G-SMTNW9G4V5');
     </script>
+    <!-- Declare current mode before any game scripts -->
+    <script>window.currentMode='practice';</script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9244949928133071"
      crossorigin="anonymous"></script>
      <link rel="stylesheet" href="src/css/main.css">
@@ -121,6 +123,31 @@
                         Challenge your typing speed with falling words!<br>
                         Complete all levels to become a typing master.
                     </div>
+                    <div class="practice-settings" style="margin: 15px 0;">
+                        <label id="duration-label" style="font-family: 'Orbitron', monospace; font-size: 18px;">Duration:
+                            <select id="practice-duration-select" style="margin-left: 8px; padding: 4px 6px; font-family: inherit;">
+                                <option value="1">1 min</option>
+                                <option value="3" selected>3 min</option>
+                                <option value="5">5 min</option>
+                                <option value="10">10 min</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="practice-settings" style="margin: 15px 0;">
+                        <label id="difficulty-label" style="font-family: 'Orbitron', monospace; font-size: 18px;">Difficulty:
+                            <select id="practice-difficulty-select" style="margin-left: 8px; padding: 4px 6px; font-family: inherit;">
+                                <option value="1" selected>Easy</option>
+                                <option value="2">Medium</option>
+                                <option value="3">Hard</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="practice-settings" style="margin: 15px 0;">
+                        <label id="speed-label" style="font-family: 'Orbitron', monospace; font-size: 18px;">Word Speed:
+                            <input type="range" id="practice-speed-range" min="0.5" max="2" step="0.1" value="1" style="vertical-align: middle; margin: 0 8px;">
+                            <span id="practice-speed-label" style="display: inline-block; width: 40px;">1x</span>
+                        </label>
+                    </div>
                     <button class="start-btn" onclick="startGame()">START GAME</button>
                 </div>
             </div>
@@ -154,8 +181,8 @@
                     </div>
                     <input type="text" id="player-name-input" data-i18n-placeholder="enterYourName" placeholder="Enter your name..." maxlength="15" autocomplete="off">
                     <div class="name-input-buttons">
-                        <button class="submit-score-btn" onclick="submitScore()" data-i18n="submit">SUBMIT</button>
-                        <button class="skip-btn" onclick="skipNameInput()" data-i18n="skip">SKIP</button>
+                        <button class="submit-score-btn" onclick="submitScore()">SUBMIT</button>
+                        <button class="skip-btn" onclick="skipNameInput()">SKIP</button>
                     </div>
                 </div>
             </div>
@@ -284,4 +311,4 @@
         </p>
     </footer>
 </body>
-</html>
+</html> 

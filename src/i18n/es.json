@@ -1,0 +1,111 @@
+{
+  "gameTitle": "Lluvia de Teclas",
+  "gameSubtitle": "Juego de Palabras Moderno",
+  "startGame": "COMENZAR",
+  "playAgain": "JUGAR DE NUEVO",
+  "gameOver": "FIN DEL JUEGO",
+  "highScore": "¡NUEVA PUNTUACIÓN!",
+  "leaderboard": "CLASIFICACIÓN",
+  "close": "CERRAR",
+  "submit": "ENVIAR",
+  "skip": "OMITIR",
+
+  "score": "PUNTOS",
+  "level": "NIVEL",
+  "wpm": "PPM",
+  "accuracy": "PRECISIÓN",
+  "missed": "FALLADAS",
+
+  "howToPlay": "Cómo Jugar",
+  "instructions": [
+    "• Escribe las palabras que caen antes de que lleguen abajo",
+    "• Pulsa Enter o Espacio para validar la palabra",
+    "• Encadena palabras sin fallos para crear combos",
+    "• Cada nivel aumenta velocidad y dificultad",
+    "• Tienes 5 oportunidades antes de perder"
+  ],
+  "powerUpsTitle": "Potenciadores",
+  "powerUpsDesc": "¡Consigue potenciadores al completar palabras y combos! Cada uno tiene una tecla fija.",
+  "powerUpNames": {
+    "slowTime": "Tiempo Lento",
+    "precisionMode": "Modo Precisión",
+    "doubleScore": "Doble Puntuación",
+    "shield": "Escudo",
+    "comboProtect": "Protección Combo",
+    "refreshWords": "Reiniciar Palabras"
+  },
+  "powerUpDescriptions": {
+    "slowTime": "Ralentiza la caída de palabras",
+    "precisionMode": "Solo necesitas las primeras 3 letras",
+    "doubleScore": "Doble puntuación para siguientes palabras",
+    "shield": "Protege de palabras perdidas",
+    "comboProtect": "Mantiene la racha de combos",
+    "refreshWords": "Limpia pantalla, añade palabras fáciles"
+  },
+  "powerUpsKeysHint": "Potenciadores (1:⏰ 2:🎯 3:💎 4:🛡️ 5:🌟 6:🔄)",
+  "emptySlot": "Vacío",
+  "tournamentRules": "<strong>Reglas del Torneo</strong><br>• Cada partida dura <strong>2&nbsp;minutos</strong><br>• Puntuación total = 0.6×puntos de tecleo + 10×PPM + 5×precisión − 20×fallos<br>• Clasificación basada en la puntuación total más alta<br>• ¡Desafíate a ti mismo y compite por el primer puesto！",
+  "powerfulPowerUps": "Potenciadores Poderosos:",
+  "powerfulPowerUpsDesc": "Desata habilidades que cambian el juego como Tiempo Lento, Modo Precisión y Escudos para maximizar tu puntuación.",
+
+  "shareScore": "Compartir Puntuación",
+  "shareText1": "🌧️ ¡Acabo de jugar a Typing Rain! 🎯 Puntos: {score} | ⚡ PPM: {wpm} | 🎯 Precisión: {accuracy} | Nivel: {level}\n\n¡Desafía tu velocidad! 💪",
+  "shareText2": "🌧️ Typing Rain - Juego para mejorar tu velocidad y precisión 🎯\n\nAtrapa palabras, haz combos y domina el teclado. 💪",
+
+  "changeLanguage": "Cambiar idioma",
+  "shareOnTwitter": "Compartir en X (Twitter)",
+  "privacyPolicyTooltip": "Política de Privacidad",
+  "soundOn": "Desactivar sonido",
+  "soundOff": "Activar sonido",
+
+  "privacyPolicy": "Política de Privacidad",
+  "dataCollection": "Recopilación de Datos",
+  "privacyIntro": "Typing Rain se compromete a proteger tu privacidad. Así tratamos tus datos:",
+  "localStorage": "Almacenamiento Local",
+  "localStorageDesc": [
+    "• Tus puntuaciones se guardan solo en tu navegador",
+    "• Los datos no abandonan tu dispositivo",
+    "• Puedes borrarlos cuando quieras en la configuración del navegador"
+  ],
+  "analytics": "Analítica",
+  "analyticsDesc": [
+    "• Usamos Google Analytics para entender el uso del juego",
+    "• Mejora continua de la experiencia",
+    "• Sin datos personales identificables",
+    "• Puedes desactivarlo con extensiones o ajustes de privacidad"
+  ],
+  "advertising": "Publicidad",
+  "advertisingDesc": [
+    "• Google AdSense muestra anuncios relevantes",
+    "• Personalización sujeta a la política de Google",
+    "• Gestiona preferencias en Configuración de Anuncios de Google"
+  ],
+  "yourRights": "Tus Derechos",
+  "rightsDesc": [
+    "• Elimina puntuaciones locales cuando quieras",
+    "• Desactiva analítica en ajustes del navegador",
+    "• Bloquea anuncios con un adblocker"
+  ],
+  "contact": "Contacto",
+  "contactDesc": "Para dudas sobre privacidad contáctanos en la web.",
+  "lastUpdated": "Última actualización:",
+  "clearMyData": "Borrar mis datos",
+  "clearDataConfirm": "¿Seguro que quieres borrar los datos locales? No podrás recuperarlos.",
+  "dataCleared": "Datos locales eliminados correctamente.",
+
+  "moreGames": "Más juegos en",
+  "durationLabel": "Duración",
+  "difficultyLabel": "Dificultad",
+  "speedLabel": "Velocidad",
+  "totalScoreLabel": "Puntuación Total",
+  "startTournament": "INICIAR TORNEO",
+  "missedLabel": "Palabras Perdidas",
+  "finalScore": "Puntuación Final",
+  "levelReached": "Nivel Alcanzado",
+  "maxWPM": "PPM Máximo",
+  "wordsMatched": "Palabras Perdidas",
+  "duration": "Duración",
+  "nameInputSubtitle": "Introduce tu nombre para la clasificación",
+  "enterYourName": "Introduce tu nombre...",
+  "emptyLeaderboard": "Aún no hay puntuaciones. ¡Sé el primero en jugar！"
+} 

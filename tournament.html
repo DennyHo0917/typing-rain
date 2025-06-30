@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Rain - Modern Word Game | Online Typing Practice</title>
+    <title>Typing Rain - Tournament Mode | Timed Typing Challenge</title>
     <meta name="description" content="Typing Rain is a fun online typing game where you catch falling words to improve your typing speed and accuracy. Features multiple difficulty levels and real-time WPM tracking.">
     <meta name="keywords" content="typing game,typing practice,word game,online game,typing speed,WPM,typing skills">
     <meta name="author" content="Playful Cafe">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Typing Rain - Modern Word Game">
-    <meta property="og:description" content="Improve your typing speed by catching falling words in this engaging online game">
+    <meta property="og:title" content="Typing Rain - Tournament Mode">
+    <meta property="og:description" content="Challenge yourself in Tournament Mode with 2-minute timed sessions and compete for leaderboard rankings.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://playful.cafe/games/typing-rain/">
-    <link rel="canonical" href="https://playful.cafe/games/typing-rain/">
+    <meta property="og:url" content="https://playful.cafe/games/typing-rain/tournament.html">
+    <link rel="canonical" href="https://playful.cafe/games/typing-rain/tournament.html">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SMTNW9G4V5"></script>
     <script>
@@ -22,6 +22,8 @@
 
       gtag('config', 'G-SMTNW9G4V5');
     </script>
+    <!-- Declare current mode before any game scripts -->
+    <script>window.currentMode='tournament';</script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9244949928133071"
      crossorigin="anonymous"></script>
      <link rel="stylesheet" href="src/css/main.css">
@@ -64,7 +66,7 @@
             <!-- 游戏说明 -->
             <div class="game-instructions">
                 <div class="instructions-content">
-                    <h3>How to Play</h3>
+                    <h3>How to Play – Tournament</h3>
                     <p>• Type the falling words before they reach the bottom</p>
                     <p>• Press <kbd>Enter</kbd> or <kbd>Space</kbd> to submit your word</p>
                     <p>• Build combos by typing words consecutively</p>
@@ -78,7 +80,7 @@
                     <p>• 🛡️ <strong data-i18n="powerUpNames.shield">Shield</strong> (4) - <span data-i18n="powerUpDescriptions.shield">Protects from missing words</span></p>
                     <p>• 🌟 <strong data-i18n="powerUpNames.comboProtect">Combo Protect</strong> (5) - <span data-i18n="powerUpDescriptions.comboProtect">Maintains combo streak</span></p>
                     <p>• 🔄 <strong data-i18n="powerUpNames.refreshWords">Word Refresh</strong> (6) - <span data-i18n="powerUpDescriptions.refreshWords">Clears screen, adds easy words</span></p>
-                                            <p style="font-size: 0.9em; color: #4ecdc4;" data-i18n="powerUpsDesc">Earn power-ups by completing words and building combos! Each power-up has a fixed key.</p>
+                    <p style="font-size: 0.9em; color: #4ecdc4;" data-i18n="powerUpsDesc">Earn power-ups by completing words and building combos! Each power-up has a fixed key.</p>
                 </div>
             </div>
 
@@ -117,11 +119,13 @@
                 <div class="start-screen-content">
                     <div class="start-title">TYPING RAIN</div>
                     <div class="start-subtitle">Modern Word Game</div>
-                    <div class="start-description">
-                        Challenge your typing speed with falling words!<br>
-                        Complete all levels to become a typing master.
+                    <div class="start-description" style="text-align:left;font-size:1.05em;line-height:1.5;max-width:450px;">
+                        <strong>Tournament Rules</strong><br>
+                        • Each tournament run lasts <strong>2&nbsp;minutes</strong>.<br>
+                        • Final ranking is based on a composite score (typed score, WPM, accuracy, misses).<br>
+                        • Challenge yourself and compete for the top spot on the leaderboard!
                     </div>
-                    <button class="start-btn" onclick="startGame()">START GAME</button>
+                    <button class="start-btn" onclick="startGame()" id="start-tournament-btn">START TOURNAMENT</button>
                 </div>
             </div>
 
@@ -154,8 +158,8 @@
                     </div>
                     <input type="text" id="player-name-input" data-i18n-placeholder="enterYourName" placeholder="Enter your name..." maxlength="15" autocomplete="off">
                     <div class="name-input-buttons">
-                        <button class="submit-score-btn" onclick="submitScore()" data-i18n="submit">SUBMIT</button>
-                        <button class="skip-btn" onclick="skipNameInput()" data-i18n="skip">SKIP</button>
+                        <button class="submit-score-btn" onclick="submitScore()">SUBMIT</button>
+                        <button class="skip-btn" onclick="skipNameInput()">SKIP</button>
                     </div>
                 </div>
             </div>
@@ -284,4 +288,4 @@
         </p>
     </footer>
 </body>
-</html>
+</html> 
