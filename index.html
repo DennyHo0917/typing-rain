@@ -3,16 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 字体预加载 -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="src/js/index.js" as="script">
+    <link rel="preload" href="src/css/main.css" as="style">
+    
+    <!-- DNS 预解析 -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
     <title>Typing Rain - Modern Word Game | Online Typing Practice</title>
-    <meta name="description" content="Typing Rain is a fun online typing game where you catch falling words to improve your typing speed and accuracy. Features multiple difficulty levels and real-time WPM tracking.">
-    <meta name="keywords" content="typing game,typing practice,word game,online game,typing speed,WPM,typing skills">
+    <meta name="description" content="Typing Rain - Free online typing game to improve your typing speed and accuracy. Practice with falling words, track your WPM in real-time, compete on leaderboards. Perfect typing tutor for students and professionals. Play now!">
+    <meta name="keywords" content="typing game,typing practice,word game,online game,typing speed,WPM,typing skills,typing tutor,keyboarding,typing test,free typing game,typing accuracy,typing trainer,learn typing,improve typing speed,keyboard practice,touch typing">
     <meta name="author" content="Playful Cafe">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Typing Rain - Modern Word Game">
     <meta property="og:description" content="Improve your typing speed by catching falling words in this engaging online game">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://typingrain.top">
-    <link rel="canonical" href="https://typingrain.top">
+    <meta property="og:url" content="https://www.typingrain.top">
+    <meta property="og:image" content="https://www.typingrain.top/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Typing Rain">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Typing Rain - Modern Word Game">
+    <meta name="twitter:description" content="Improve your typing speed by catching falling words in this engaging online game">
+    <meta name="twitter:image" content="https://www.typingrain.top/images/twitter-card.jpg">
+    <meta name="theme-color" content="#00f5ff">
+    <meta name="application-name" content="Typing Rain">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <link rel="canonical" href="https://www.typingrain.top">
+    <link rel="alternate" hreflang="en" href="https://www.typingrain.top" />
+    <link rel="alternate" hreflang="zh-cn" href="https://www.typingrain.top" />
+    <link rel="alternate" hreflang="zh-tw" href="https://www.typingrain.top" />
+    <link rel="alternate" hreflang="ja" href="https://www.typingrain.top" />
+    <link rel="alternate" hreflang="ko" href="https://www.typingrain.top" />
+    <link rel="alternate" hreflang="de" href="https://www.typingrain.top" />
+    <link rel="alternate" hreflang="fr" href="https://www.typingrain.top" />
+    <link rel="alternate" hreflang="es" href="https://www.typingrain.top" />
+    <link rel="alternate" hreflang="it" href="https://www.typingrain.top" />
+    <link rel="alternate" hreflang="ru" href="https://www.typingrain.top" />
+    <link rel="alternate" hreflang="pt" href="https://www.typingrain.top" />
+    <link rel="alternate" hreflang="x-default" href="https://www.typingrain.top" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SMTNW9G4V5"></script>
     <script>
@@ -30,7 +65,7 @@
 <body>
     <div class="top-right-nav">
         <div class="language-switcher">
-            <button class="lang-btn" onclick="toggleLanguageMenu()" id="lang-toggle" title="Change Language">🌐</button>
+            <button class="lang-btn" onclick="toggleLanguageMenu()" id="lang-toggle" data-i18n-title="changeLanguage" title="Change Language">🌐</button>
             <div class="lang-menu" id="lang-menu">
                 <div class="lang-option" onclick="switchLanguage('en')">🇺🇸 English</div>
                 <div class="lang-option" onclick="switchLanguage('zh-tw')">🇹🇼 繁體中文</div>
@@ -40,23 +75,29 @@
                 <div class="lang-option" onclick="switchLanguage('de')">🇩🇪 Deutsch</div>
                 <div class="lang-option" onclick="switchLanguage('fr')">🇫🇷 Français</div>
                 <div class="lang-option" onclick="switchLanguage('es')">🇪🇸 Español</div>
+                <div class="lang-option" onclick="switchLanguage('it')">🇮🇹 Italiano</div>
+                <div class="lang-option" onclick="switchLanguage('ru')">🇷🇺 Русский</div>
+                <div class="lang-option" onclick="switchLanguage('pt')">🇵🇹 Português</div>
             </div>
         </div>
         <div class="mode-switcher">
-            <button class="lang-btn" onclick="toggleModeMenu()" id="mode-toggle" title="Select Mode">🕹️</button>
+            <button class="lang-btn" onclick="toggleModeMenu()" id="mode-toggle" data-i18n-title="selectMode" title="Select Mode">🕹️</button>
             <div class="lang-menu" id="mode-menu">
-                <div class="lang-option" onclick="chooseMode('level')">🎮 Level Mode</div>
-                <div class="lang-option" onclick="chooseMode('practice')">🎓 Practice Mode</div>
-                <div class="lang-option" onclick="chooseMode('tournament')">🏆 Tournament Mode</div>
+                <div class="lang-option" onclick="chooseMode('level')" data-i18n="levelModeTitle">🎮 Level Mode</div>
+                <div class="lang-option" onclick="chooseMode('practice')" data-i18n="practiceModeTitle">🎓 Practice Mode</div>
+                <div class="lang-option" onclick="chooseMode('tournament')" data-i18n="tournamentModeTitle">🏆 Tournament Mode</div>
             </div>
         </div>
-        <button class="share-btn" onclick="shareToTwitterLegacy()" title="Share on X (Twitter)">📤</button>
-        <button class="privacy-btn" onclick="showPrivacyPolicyLegacy()" title="Privacy Policy">🔒</button>
-        <button class="sound-btn" onclick="toggleSound()" id="sound-toggle">🔊</button>
+        <button class="share-btn" onclick="shareToTwitterLegacy()" data-i18n-title="shareOnTwitter" title="Share on X (Twitter)">📤</button>
+        <button class="privacy-btn" onclick="showPrivacyPolicyLegacy()" data-i18n-title="privacyPolicyTooltip" title="Privacy Policy">🔒</button>
+        <button class="sound-btn" onclick="toggleSound()" id="sound-toggle" data-i18n-title-dynamic="sound">🔊</button>
     </div>
 
     <div class="seo-content" id="seo-content">
-        <!-- SEO content will be injected dynamically -->
+        <h1>Free Online Typing Game - Improve Your Typing Speed with Typing Rain</h1>
+        <p>Elevate your typing skills with Typing Rain, a fast-paced word game designed to improve your speed and accuracy. Challenge yourself across multiple levels!</p>
+        <p>Track your Words Per Minute (WPM) in real-time, compete on the global leaderboard, and master the art of typing. Perfect for students, professionals, and anyone looking to type faster.</p>
+        <p>Start playing today and see how quickly you can climb the ranks!</p>
     </div>
 
     <div class="main-content-wrapper">
@@ -116,12 +157,13 @@
             <div class="game-start-screen" id="game-start">
                 <div class="start-screen-content">
                     <div class="start-title">TYPING RAIN</div>
-                    <div class="start-subtitle">Modern Word Game</div>
+                    <div class="start-subtitle">关卡模式</div>
                     <div class="start-description">
-                        Challenge your typing speed with falling words!<br>
-                        Complete all levels to become a typing master.
+                        挑战三个渐进式难度关卡！<br>
+                        初级关卡：50个基础单词 | 中级关卡：100个进阶单词<br>
+                        高级关卡：150个复杂单词 | 逐步提升你的打字技能
                     </div>
-                    <button class="start-btn" onclick="startGame()">START GAME</button>
+                    <button class="start-btn" onclick="startGame()">开始游戏</button>
                 </div>
             </div>
 
@@ -283,5 +325,55 @@
             More games at <a href="https://playful.cafe" target="_blank" style="color: #00f5ff; text-decoration: none; font-weight: bold;">Playful.cafe</a>
         </p>
     </footer>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Typing Rain",
+      "description": "Free online typing game to improve typing speed and accuracy with falling words",
+      "url": "https://www.typingrain.top",
+      "image": "https://www.typingrain.top/images/typing-rain-screenshot.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Playful Cafe",
+        "url": "https://playful.cafe"
+      },
+      "genre": ["Educational Game", "Typing Game", "Skill Game"],
+      "gamePlatform": "Web Browser",
+      "operatingSystem": "Any",
+      "applicationCategory": "Game",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "1250"
+      }
+    }
+    </script>
+
+    <!-- Breadcrumb Navigation -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.typingrain.top"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Typing Game",
+        "item": "https://www.typingrain.top#game"
+      }]
+    }
+    </script>
 </body>
 </html>

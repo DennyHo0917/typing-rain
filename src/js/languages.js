@@ -12,6 +12,9 @@ const LOCALES = [
   'es',
   'de',
   'fr',
+  'it',
+  'ru',
+  'pt',
 ];
 
 async function loadLocale(code) {
@@ -43,4 +46,4 @@ initLanguages();
 if (typeof window !== 'undefined') {
   window.languages = languages;
   window.initLanguages = initLanguages;
-} 
+}

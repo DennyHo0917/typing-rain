@@ -44,7 +44,22 @@ if (typeof window !== 'undefined') {
       // 基本标题区域
       q('.game-title') && (q('.game-title').textContent = pack.gameTitle);
       q('.start-title') && (q('.start-title').textContent = pack.gameTitle);
-      q('.start-subtitle') && (q('.start-subtitle').textContent = pack.gameSubtitle);
+      
+      // 根据模式设置副标题
+      const subtitleEl = q('.start-subtitle');
+      if (subtitleEl) {
+        const mode = window.currentMode || 'level';
+        switch(mode) {
+          case 'practice':
+            subtitleEl.textContent = pack.practiceModeTitle || pack.gameSubtitle;
+            break;
+          case 'tournament':
+            subtitleEl.textContent = pack.tournamentModeTitle || pack.gameSubtitle;
+            break;
+          default: // level mode
+            subtitleEl.textContent = pack.levelModeTitle || pack.gameSubtitle;
+        }
+      }
 
       // 按钮
       if (q('.start-btn') && window.currentMode === 'tournament') {
@@ -65,23 +80,42 @@ if (typeof window !== 'undefined') {
       const instrTitle = document.querySelector('.instructions-content h3');
       instrTitle && (instrTitle.textContent = pack.howToPlay);
 
-      // 游戏开始界面描述
+      // 游戏开始界面描述 - 根据模式设置不同描述
       const startDescEl = document.querySelector('.start-description');
       if (startDescEl) {
-        if (window.currentMode === 'tournament') {
-          const defaultRules = `
-            <strong>Tournament Rules</strong><br>
-            • Each run lasts <strong>2&nbsp;minutes</strong>.<br>
-            • Total score = 0.6×typed points + 10×WPM + 5×accuracy − 20×misses.<br>
-            • Rankings are based on highest total score.<br>
-            • Same rules apply to every contestant.`;
-          startDescEl.innerHTML = pack.tournamentRules || defaultRules;
-        } else {
-          if (pack.startDescription) {
-            startDescEl.innerHTML = pack.startDescription;
-          } else if (pack.mainDesc1 || pack.mainDesc2) {
-            startDescEl.innerHTML = `${pack.mainDesc1 || ''}${pack.mainDesc1 && pack.mainDesc2 ? '<br>' : ''}${pack.mainDesc2 || ''}`;
-          }
+        const mode = window.currentMode || 'level';
+        
+        switch(mode) {
+          case 'practice':
+            const practiceDesc1 = pack.practiceModeDesc1 || pack.mainDesc1;
+            const practiceDesc2 = pack.practiceModeDesc2 || pack.mainDesc2;
+            startDescEl.innerHTML = `${practiceDesc1 || ''}${practiceDesc1 && practiceDesc2 ? '<br>' : ''}${practiceDesc2 || ''}`;
+            break;
+            
+          case 'tournament':
+            const defaultRules = `
+              <strong>Tournament Rules</strong><br>
+              • Each run lasts <strong>2&nbsp;minutes</strong>.<br>
+              • Total score = 0.6×typed points + 10×WPM + 5×accuracy − 20×misses.<br>
+              • Rankings are based on highest total score.<br>
+              • Same rules apply to every contestant.`;
+            const tournamentDesc1 = pack.tournamentModeDesc1;
+            const tournamentDesc2 = pack.tournamentModeDesc2;
+            if (tournamentDesc1 || tournamentDesc2) {
+              startDescEl.innerHTML = `${tournamentDesc1 || ''}${tournamentDesc1 && tournamentDesc2 ? '<br>' : ''}${tournamentDesc2 || ''}`;
+            } else {
+              startDescEl.innerHTML = pack.tournamentRules || defaultRules;
+            }
+            break;
+            
+          default: // level mode
+            const levelDesc1 = pack.levelModeDesc1 || pack.mainDesc1;
+            const levelDesc2 = pack.levelModeDesc2 || pack.mainDesc2;
+            if (pack.startDescription) {
+              startDescEl.innerHTML = pack.startDescription;
+            } else {
+              startDescEl.innerHTML = `${levelDesc1 || ''}${levelDesc1 && levelDesc2 ? '<br>' : ''}${levelDesc2 || ''}`;
+            }
         }
       }
 
@@ -105,7 +139,16 @@ if (typeof window !== 'undefined') {
           // 支持嵌套属性访问，如 "powerUpNames.comboProtect"
           const value = key.split('.').reduce((obj, prop) => obj && obj[prop], pack);
           if (value) {
-            element.textContent = value;
+            // 特殊处理模式选择器，保留图标emoji
+            if (key === 'levelModeTitle') {
+              element.textContent = '🎮 ' + value;
+            } else if (key === 'practiceModeTitle') {
+              element.textContent = '🎓 ' + value;
+            } else if (key === 'tournamentModeTitle') {
+              element.textContent = '🏆 ' + value;
+            } else {
+              element.textContent = value;
+            }
           }
         }
       });
@@ -115,6 +158,31 @@ if (typeof window !== 'undefined') {
         const key = element.getAttribute('data-i18n-placeholder');
         if (key && pack[key]) {
           element.placeholder = pack[key];
+        }
+      });
+
+      // === 处理data-i18n-title属性的元素 ===
+      document.querySelectorAll('[data-i18n-title]').forEach((element) => {
+        const key = element.getAttribute('data-i18n-title');
+        if (key) {
+          // 支持嵌套属性访问，如 "powerUpNames.comboProtect"
+          const value = key.split('.').reduce((obj, prop) => obj && obj[prop], pack);
+          if (value) {
+            element.title = value;
+          }
+        }
+      });
+
+      // === 处理data-i18n-title-dynamic属性的元素（特殊处理声音按钮） ===
+      document.querySelectorAll('[data-i18n-title-dynamic]').forEach((element) => {
+        const key = element.getAttribute('data-i18n-title-dynamic');
+        if (key === 'sound') {
+          // 根据当前声音状态设置title
+          const soundEnabled = window.soundEnabled !== false;
+          const titleKey = soundEnabled ? 'soundOn' : 'soundOff';
+          if (pack[titleKey]) {
+            element.title = pack[titleKey];
+          }
         }
       });
 

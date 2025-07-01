@@ -5,13 +5,41 @@ export let soundEnabled = true;
 
 export function initAudio() {
   try {
+    // 检查浏览器支持
+    if (!window.AudioContext && !window.webkitAudioContext) {
+      throw new Error('Web Audio API not supported');
+    }
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
     window.audioContext = audioContext; // 兼容旧代码
+    
+    // 检查音频上下文状态
+    if (audioContext.state === 'suspended') {
+      // 现代浏览器需要用户交互才能启动音频
+      document.addEventListener('click', () => {
+        audioContext.resume();
+      }, { once: true });
+    }
   } catch (e) {
-    console.warn('Web Audio API is not supported');
+    console.warn('Web Audio API is not supported:', e.message);
     soundEnabled = false;
     window.soundEnabled = false;
+    // 可以考虑使用 HTML5 Audio 作为降级方案
+    initFallbackAudio();
   }
+}
+
+// 添加降级音频方案
+function initFallbackAudio() {
+  // 使用简单的 HTML5 Audio 作为降级方案
+  window.playFallbackSound = function(frequency = 440) {
+    try {
+      const audio = new Audio();
+      // 可以预先准备一些音频文件作为降级
+      console.log('Using fallback audio system');
+    } catch (e) {
+      console.warn('No audio support available');
+    }
+  };
 }
 
 function playTone(generatorFn, duration = 0.2) {
@@ -101,7 +129,33 @@ export function toggleSound() {
     audioContext.resume();
   }
   const btn = document.getElementById('sound-toggle');
-  if (btn) btn.textContent = soundEnabled ? '🔊' : '🔇';
+  if (btn) {
+    btn.textContent = soundEnabled ? '🔊' : '🔇';
+    // 更新title属性以显示正确的国际化文本
+    updateSoundButtonTitle();
+  }
+}
+
+// 添加更新声音按钮title的函数
+function updateSoundButtonTitle() {
+  const btn = document.getElementById('sound-toggle');
+  if (!btn) return;
+  
+  try {
+    // 获取当前语言包
+    const currentLang = window.currentLanguage || 'en';
+    const languages = window.languages || {};
+    const pack = languages[currentLang] || languages['en'];
+    
+    if (pack) {
+      const titleKey = soundEnabled ? 'soundOn' : 'soundOff';
+      if (pack[titleKey]) {
+        btn.title = pack[titleKey];
+      }
+    }
+  } catch (e) {
+    console.warn('Failed to update sound button title:', e);
+  }
 }
 
 // 全局兼容挂钩
@@ -123,4 +177,4 @@ if (typeof window !== 'undefined') {
     playPowerUpSound,
     playPowerUpObtainedSound,
   };
-} 
+}

@@ -11,7 +11,10 @@ const SUPPORTED_LANGUAGES = [
   'ko',
   'es',
   'de',
-  'fr'
+  'fr',
+  'it',
+  'ru',
+  'pt'
 ];
 
 // 获取浏览器语言偏好
@@ -43,54 +46,61 @@ function detectBrowserLanguage() {
 
 // 从localStorage获取保存的语言，如果没有则检测浏览器语言
 function getInitialLanguage() {
-  const savedLang = localStorage.getItem('typingRainLanguage');
+  let savedLang;
+  try {
+    savedLang = localStorage.getItem('typingRainLanguage');
+  } catch (e) {
+    console.warn('localStorage not available:', e.message);
+    savedLang = null;
+  }
+  
   const browserDetected = detectBrowserLanguage();
   
   // 如果保存的语言有效且不是错误的默认设置，使用它
   if (savedLang && SUPPORTED_LANGUAGES.includes(savedLang)) {
-    // 特殊处理：如果保存的是'en'但浏览器检测到的不是英文，可能是之前错误保存的
-    // 清除并重新检测（这样用户可以获得正确的浏览器语言）
-    if (savedLang === 'en' && browserDetected !== 'en' && !browserDetected.startsWith('en')) {
-      localStorage.removeItem('typingRainLanguage');
-      return browserDetected;
-    }
     return savedLang;
   }
   
   return browserDetected;
 }
 
-// 保存语言设置到localStorage
-function saveLanguagePreference(lang) {
-  localStorage.setItem('typingRainLanguage', lang);
+// 安全的 localStorage 设置函数
+export function setLanguagePreference(lang) {
+  try {
+    localStorage.setItem('typingRainLanguage', lang);
+  } catch (e) {
+    console.warn('Cannot save language preference:', e.message);
+    // 可以使用 sessionStorage 或 cookie 作为降级
+    try {
+      sessionStorage.setItem('typingRainLanguage', lang);
+    } catch (e2) {
+      console.warn('No storage available for language preference');
+    }
+  }
 }
 
 // 先保存旧实现（若有）
 const legacySwitch = typeof window !== 'undefined' && typeof window.switchLanguage === 'function' ? window.switchLanguage : null;
 
+// 删除所有 saveLanguagePreference 调用，统一使用 setLanguagePreference
 export function switchLanguage(lang) {
   if (legacySwitch) {
     legacySwitch(lang);
   } else {
-    // fallback：直接修改 currentLanguage 并触发更新
     if (SUPPORTED_LANGUAGES.includes(lang)) {
       window.currentLanguage = lang;
-      saveLanguagePreference(lang); // 保存到localStorage
+      setLanguagePreference(lang); // 修改这里
       if (typeof window.updateLanguage === 'function') {
         window.updateLanguage();
       }
     }
   }
-  
-  // 关闭语言菜单
   closeAllMenus();
 }
 
-// 模式切换功能（保持语言设置）
 export function chooseMode(mode) {
-  // 保存当前语言设置
   const currentLang = window.currentLanguage || getInitialLanguage();
-  saveLanguagePreference(currentLang);
+  setLanguagePreference(currentLang); // 修改这里
   
   // 构建目标URL
   let targetUrl;
@@ -170,9 +180,8 @@ export function initLanguageSystem() {
     
     window.currentLanguage = window.currentLanguage || initialLang;
     
-    // 如果URL中有语言参数，保存到localStorage
     if (urlLang) {
-      saveLanguagePreference(urlLang);
+      setLanguagePreference(urlLang); // 修改这里
     }
     
     // 添加全局点击事件监听，点击外部时关闭菜单
@@ -203,4 +212,4 @@ if (typeof window !== 'undefined') {
   window.toggleModeMenu = toggleModeMenu;
   window.closeAllMenus = closeAllMenus;
   window.chooseMode = chooseMode;
-} 
+}

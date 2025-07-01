@@ -44,6 +44,11 @@ body {
     padding: 0 20px;
 }
 
+/* 隐藏SEO区域中的重复描述段落，保留标题 */
+.seo-content p {
+    display: none;
+}
+
 .seo-content h1 {
     font-family: 'Orbitron', monospace;
     font-size: 2.5em;
@@ -51,9 +56,20 @@ body {
     background: linear-gradient(45deg, #00f5ff, #0080ff, #00f5ff);
     background-size: 200% 200%;
     -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent; /* 降级方案 */
     animation: gradient-flow 3s ease-in-out infinite;
     margin-bottom: 10px;
+}
+
+/* 为不支持 background-clip: text 的浏览器提供降级 */
+@supports not (-webkit-background-clip: text) {
+  .seo-content h1 {
+    color: #00f5ff;
+    -webkit-text-fill-color: unset;
+  }
 }
 
 .seo-content p {
@@ -73,12 +89,21 @@ body {
     position: relative;
     width: 1200px;
     height: 1000px;
+    margin-top: 40px; /* 增加上方间距，改善视觉美感 */
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     background: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari 支持 */
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* 为不支持 backdrop-filter 的浏览器提供降级 */
+@supports not (backdrop-filter: blur(10px)) {
+  #game-container {
+    background: rgba(0, 0, 0, 0.3);
+  }
 }
 
 /* 动态背景粒子 */
@@ -123,6 +148,7 @@ body {
     gap: 15px;
     font-family: 'Orbitron', monospace;
     width: 200px;
+    margin-top: 40px; /* 与游戏画布保持一致的上边距 */
 }
 
 .stat-item {
@@ -877,6 +903,7 @@ body {
     gap: 20px;
     width: 280px;
     height: fit-content;
+    margin-top: 40px; /* 与游戏画布保持一致的上边距 */
 }
 
 /* 游戏说明 */
@@ -1056,6 +1083,7 @@ body {
         width: 100%;
         max-width: 1200px;
         margin-bottom: 20px;
+        margin-top: 40px; /* 大屏响应式布局保持一致 */
     }
     .left-panel {
         flex-direction: row;
@@ -1089,10 +1117,12 @@ body {
         width: 95vw;
         height: auto;
         aspect-ratio: 1 / 1;
+        margin-top: 25px; /* 移动端适当减少上边距 */
     }
 
     .stats {
         gap: 8px;
+        margin-top: 25px; /* 移动端适当减少上边距 */
     }
     
     .stat-item {
@@ -1111,6 +1141,10 @@ body {
     .game-instructions {
         max-width: 100%;
         padding: 12px;
+    }
+    
+    .left-panel {
+        margin-top: 25px; /* 移动端左侧面板上边距 */
     }
 
     .combo-display {
@@ -1200,4 +1234,62 @@ body {
 .mode-switcher {
     position: relative;
     display: inline-block;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  #game-container {
+    width: 95vw;
+    height: 70vh;
+    min-height: 500px;
+    margin-top: 20px; /* 移动端上边距 */
+  }
+  
+  .seo-content h1 {
+    font-size: 2em;
+  }
+  
+  .top-right-nav {
+    top: 10px;
+    right: 10px;
+    gap: 5px;
+  }
+  
+  .main-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .left-panel, .stats {
+    margin-top: 20px; /* 移动端布局上边距 */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  
+  .left-panel, .stats {
+    margin-top: 15px; /* 小屏设备上边距 */
+  }
+  
+  .seo-content h1 {
+    font-size: 1.8em;
+  }
+  
+  #game-container {
+    width: 100vw;
+    height: 60vh;
+    border-radius: 10px;
+    margin-top: 15px; /* 小屏设备上边距 */
+  }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  button, .clickable {
+    min-height: 44px; /* 触摸友好的最小尺寸 */
+    min-width: 44px;
+  }
 }
