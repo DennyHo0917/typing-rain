@@ -40,6 +40,25 @@ export class FallingWord {
 
   getRandomWord() {
     let word;
+    
+    // 锦标赛模式：固定比例混合难度
+    if (gameState.mode === 'tournament') {
+      const rand = Math.random();
+      
+      if (rand < 0.3) {
+        // 30% 简单词
+        word = wordDatabase.easy[Math.floor(Math.random() * wordDatabase.easy.length)];
+      } else if (rand < 0.8) {
+        // 50% 中等词 (0.3 + 0.5 = 0.8)
+        word = wordDatabase.medium[Math.floor(Math.random() * wordDatabase.medium.length)];
+      } else {
+        // 20% 困难词
+        word = wordDatabase.hard[Math.floor(Math.random() * wordDatabase.hard.length)];
+      }
+      return word;
+    }
+    
+    // 原有的级别模式逻辑保持不变
     if (gameState.level === 1) {
       if (Math.random() < 0.1 && gameState.usedMediumWords.size < wordDatabase.medium.length) {
         do {
@@ -170,4 +189,4 @@ export function spawnWord() {
 
 if (typeof window !== 'undefined') {
   window.spawnWord = spawnWord;
-} 
+}
