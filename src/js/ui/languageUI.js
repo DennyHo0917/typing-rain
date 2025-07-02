@@ -41,6 +41,12 @@ if (typeof window !== 'undefined') {
       if (!pack) return;
   
       const q = (sel) => document.querySelector(sel);
+      
+      // 使用统一的SEO模块
+      if (typeof window !== 'undefined' && window.seoModule && window.seoModule.updateSEOForLanguage) {
+        window.seoModule.updateSEOForLanguage(currentLang);
+      }
+      
       // 基本标题区域
       q('.game-title') && (q('.game-title').textContent = pack.gameTitle);
       q('.start-title') && (q('.start-title').textContent = pack.gameTitle);

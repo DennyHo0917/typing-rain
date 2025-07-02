@@ -134,5 +134,26 @@
   "duration": "Dauer",
   "nameInputSubtitle": "Geben Sie Ihren Namen für die Bestenliste ein",
   "enterYourName": "Geben Sie Ihren Namen ein...",
-  "emptyLeaderboard": "Noch keine Punkte. Seien Sie der Erste!"
+  "emptyLeaderboard": "Noch keine Punkte. Seien Sie der Erste!",
+  
+  "pageSEO": {
+    "index": {
+      "title": "Typing Rain - Deutschlands beliebtestes kostenloses Tipptraining-Spiel",
+      "description": "Typing Rain - Kostenloses Online-Tippspiel zur Verbesserung von Tippgeschwindigkeit und Genauigkeit. Üben Sie mit fallenden Wörtern, Live-WPM-Tracking, Bestenlisten-Wettbewerb. Perfektes Tipptraining für Studenten und Berufstätige. Jetzt spielen!",
+      "ogTitle": "Typing Rain - Modernes Wortspiel",
+      "ogDescription": "Verbessern Sie Ihre Tippgeschwindigkeit, indem Sie fallende Wörter in diesem fesselnden Online-Spiel fangen"
+    },
+    "practice": {
+      "title": "Typing Rain - Übungsmodus | Kostenloses Tipptraining",
+      "description": "Verbessern Sie Ihre Tippfähigkeiten mit dem Typing Rain Übungsmodus. Anpassbare Dauer, Schwierigkeit und Geschwindigkeit. Keine Level-Beschränkungen, Fokus auf Verbesserung. Perfekt für tägliches Tipptraining.",
+      "ogTitle": "Typing Rain - Übungsmodus",
+      "ogDescription": "Verbessern Sie Ihre Tippgeschwindigkeit im Übungsmodus mit unbegrenztem Spiel und anpassbaren Einstellungen."
+    },
+    "tournament": {
+      "title": "Typing Rain - Turniermodus | Wettbewerbsfähige Tipp-Herausforderung",
+      "description": "Fordern Sie sich im Typing Rain Turniermodus heraus, 2-Minuten-Zeitsitzungen. Kämpfen Sie um Bestenlisten-Rankings mit umfassendem Bewertungssystem. Testen Sie Ihre Tippfähigkeiten gegen globale Spieler.",
+      "ogTitle": "Typing Rain - Turniermodus",
+      "ogDescription": "Fordern Sie sich im Turniermodus mit 2-Minuten-Zeitsitzungen heraus und kämpfen Sie um Bestenlisten-Rankings."
+    }
+  }
 }

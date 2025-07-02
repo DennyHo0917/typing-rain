@@ -119,5 +119,26 @@
   "duration": "Duración",
   "nameInputSubtitle": "Introduce tu nombre para la clasificación",
   "enterYourName": "Introduce tu nombre...",
-  "emptyLeaderboard": "Aún no hay puntuaciones. ¡Sé el primero en jugar！"
-} 
+  "emptyLeaderboard": "Aún no hay puntuaciones. ¡Sé el primero en jugar!",
+  
+  "pageSEO": {
+    "index": {
+      "title": "Typing Rain - El Mejor Juego Gratuito de Mecanografía Online",
+      "description": "Typing Rain - Juego gratuito online de mecanografía para mejorar velocidad y precisión de escritura. Practica con palabras que caen, seguimiento WPM en tiempo real, competencia de clasificaciones. Herramienta perfecta de práctica de mecanografía para estudiantes y profesionales. ¡Juega ahora!",
+      "ogTitle": "Typing Rain - Juego de Palabras Moderno",
+      "ogDescription": "Mejora tu velocidad de escritura atrapando palabras que caen en este cautivador juego online"
+    },
+    "practice": {
+      "title": "Typing Rain - Modo Práctica | Entrenamiento Gratuito de Mecanografía",
+      "description": "Mejora tus habilidades de mecanografía con el modo práctica de Typing Rain. Duración, dificultad y velocidad personalizables. Sin restricciones de nivel, enfoque en mejora. Perfecto para práctica diaria de mecanografía.",
+      "ogTitle": "Typing Rain - Modo Práctica",
+      "ogDescription": "Mejora tu velocidad de escritura en modo práctica con juego ilimitado y configuraciones personalizables."
+    },
+    "tournament": {
+      "title": "Typing Rain - Modo Torneo | Desafío Competitivo de Mecanografía",
+      "description": "Desafíate en el modo torneo de Typing Rain, sesiones cronometradas de 2 minutos. Compite por rankings de clasificación con sistema de puntuación integral. Prueba tus habilidades de mecanografía contra jugadores globales.",
+      "ogTitle": "Typing Rain - Modo Torneo",
+      "ogDescription": "Desafíate en modo torneo con sesiones cronometradas de 2 minutos y compite por rankings de clasificación."
+    }
+  }
+}

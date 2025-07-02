@@ -135,5 +135,26 @@
   "duration": "Duração",
   "nameInputSubtitle": "Digite seu nome para a tabela de líderes",
   "enterYourName": "Digite seu nome...",
-  "emptyLeaderboard": "Ainda não há pontuações. Seja o primeiro a jogar!"
+  "emptyLeaderboard": "Ainda não há pontuações. Seja o primeiro a jogar!",
+  
+  "pageSEO": {
+    "index": {
+      "title": "Typing Rain - O Melhor Jogo Gratuito de Digitação Online",
+      "description": "Typing Rain - Jogo gratuito online de digitação para melhorar velocidade e precisão de digitação. Pratique com palavras que caem, rastreamento WPM em tempo real, competição de classificações. Ferramenta perfeita de prática de digitação para estudantes e profissionais. Jogue agora!",
+      "ogTitle": "Typing Rain - Jogo de Palavras Moderno",
+      "ogDescription": "Melhore sua velocidade de digitação capturando palavras que caem neste cativante jogo online"
+    },
+    "practice": {
+      "title": "Typing Rain - Modo Prática | Treinamento Gratuito de Digitação",
+      "description": "Melhore suas habilidades de digitação com o modo prática do Typing Rain. Duração, dificuldade e velocidade personalizáveis. Sem restrições de nível, foco na melhoria. Perfeito para prática diária de digitação.",
+      "ogTitle": "Typing Rain - Modo Prática",
+      "ogDescription": "Melhore sua velocidade de digitação no modo prática com jogo ilimitado e configurações personalizáveis."
+    },
+    "tournament": {
+      "title": "Typing Rain - Modo Torneio | Desafio Competitivo de Digitação",
+      "description": "Desafie-se no modo torneio do Typing Rain, sessões cronometradas de 2 minutos. Compete por rankings de classificação com sistema de pontuação abrangente. Teste suas habilidades de digitação contra jogadores globais.",
+      "ogTitle": "Typing Rain - Modo Torneio",
+      "ogDescription": "Desafie-se no modo torneio com sessões cronometradas de 2 minutos e compete por rankings de classificação."
+    }
+  }
 }

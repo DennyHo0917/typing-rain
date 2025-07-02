@@ -135,5 +135,26 @@
   "duration": "Durata",
   "nameInputSubtitle": "Inserisci il tuo nome per la classifica",
   "enterYourName": "Inserisci il tuo nome...",
-  "emptyLeaderboard": "Nessun punteggio ancora. Sii il primo a giocare!"
+  "emptyLeaderboard": "Nessun punteggio ancora. Sii il primo a giocare!",
+  
+  "pageSEO": {
+    "index": {
+      "title": "Typing Rain - Il Miglior Gioco Gratuito di Dattilografia Online",
+      "description": "Typing Rain - Gioco gratuito online di dattilografia per migliorare velocità e precisione di digitazione. Pratica con parole che cadono, tracciamento WPM in tempo reale, competizione classifiche. Strumento perfetto di pratica dattilografia per studenti e professionisti. Gioca ora!",
+      "ogTitle": "Typing Rain - Gioco di Parole Moderno",
+      "ogDescription": "Migliora la tua velocità di digitazione catturando parole che cadono in questo coinvolgente gioco online"
+    },
+    "practice": {
+      "title": "Typing Rain - Modalità Pratica | Allenamento Gratuito di Dattilografia",
+      "description": "Migliora le tue abilità di dattilografia con la modalità pratica di Typing Rain. Durata, difficoltà e velocità personalizzabili. Nessuna restrizione di livello, focus sul miglioramento. Perfetto per la pratica quotidiana di dattilografia.",
+      "ogTitle": "Typing Rain - Modalità Pratica",
+      "ogDescription": "Migliora la tua velocità di digitazione in modalità pratica con gioco illimitato e impostazioni personalizzabili."
+    },
+    "tournament": {
+      "title": "Typing Rain - Modalità Torneo | Sfida Competitiva di Dattilografia",
+      "description": "Sfidati nella modalità torneo di Typing Rain, sessioni cronometrate di 2 minuti. Compete per classifiche con sistema di punteggio completo. Testa le tue abilità di dattilografia contro giocatori globali.",
+      "ogTitle": "Typing Rain - Modalità Torneo",
+      "ogDescription": "Sfidati in modalità torneo con sessioni cronometrate di 2 minuti e compete per le classifiche."
+    }
+  }
 }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- 主页 - 最高优先级 -->
+  <url>
+    <loc>https://www.typingrain.top/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2024-01-01</lastmod>
+    <!-- 多语言链接 -->
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.typingrain.top/" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://www.typingrain.top/" />
+    <xhtml:link rel="alternate" hreflang="zh-tw" href="https://www.typingrain.top/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.typingrain.top/" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.typingrain.top/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.typingrain.top/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.typingrain.top/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.typingrain.top/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.typingrain.top/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.typingrain.top/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.typingrain.top/" />
+  </url>
+
+  <!-- 练习模式 -->
+  <url>
+    <loc>https://www.typingrain.top/practice.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-01-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.typingrain.top/practice.html" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://www.typingrain.top/practice.html" />
+    <xhtml:link rel="alternate" hreflang="zh-tw" href="https://www.typingrain.top/practice.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.typingrain.top/practice.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.typingrain.top/practice.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.typingrain.top/practice.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.typingrain.top/practice.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.typingrain.top/practice.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.typingrain.top/practice.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.typingrain.top/practice.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.typingrain.top/practice.html" />
+  </url>
+
+  <!-- 锦标赛模式 -->
+  <url>
+    <loc>https://www.typingrain.top/tournament.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2024-01-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.typingrain.top/tournament.html" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://www.typingrain.top/tournament.html" />
+    <xhtml:link rel="alternate" hreflang="zh-tw" href="https://www.typingrain.top/tournament.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.typingrain.top/tournament.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.typingrain.top/tournament.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.typingrain.top/tournament.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.typingrain.top/tournament.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.typingrain.top/tournament.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.typingrain.top/tournament.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.typingrain.top/tournament.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.typingrain.top/tournament.html" />
+  </url>
+
+</urlset> 

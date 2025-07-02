@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# 网站地图链接
+Sitemap: https://www.typingrain.top/sitemap.xml
+
+# 禁止爬取可能的临时文件
+Disallow: /*.bat$
+Disallow: /scripts/
+Disallow: /.git/
+Disallow: /.cursor/
+Disallow: /*backup*
+
+# 允许爬取重要资源
+Allow: /src/css/
+Allow: /src/js/
+Allow: /images/
+
+# 明确允许主要游戏页面
+Allow: /index.html
+Allow: /practice.html
+Allow: /tournament.html 

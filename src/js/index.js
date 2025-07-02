@@ -16,22 +16,40 @@ import './share.js';
 import './words.js';
 import './input.js';
 import './privacy.js';
+import './seo.js'; // 导入SEO模块确保全局可用
+import './sitemap.js'; // 导入sitemap生成器
+import './components/navigation.js'; // 导入导航组件
+import './performance/particlePool.js'; // 导入粒子对象池
+import './performance/eventManager.js'; // 导入事件管理器
+import './utils/errorHandler.js'; // 导入错误处理系统
 import { initLanguageSystem } from './ui/languageUI.js';
 import { initializeWords, gameLoop } from './gameLoop.js';
 import { initBackgroundParticles, resizeCanvas } from './rendering.js';
 import { initAudio } from './audio.js';
+import { generateFAQStructuredData, generateStructuredDataForLanguage, updateHreflangTags } from './seo.js';
+import { setupGameEvents } from './performance/eventManager.js';
+import { initErrorHandling } from './utils/errorHandler.js';
 
 // When the DOM is ready, call the existing global initGame so the current
 // monolithic script continues to work. As we migrate functions, this call will
 // eventually be replaced by an internal bootstrap.
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Framework initializations (language, audio, rendering)
+  // 首先初始化错误处理和兼容性检查
+  initErrorHandling();
+  
+  // Framework initializations (language, audio, rendering, SEO, events)
   initLanguageSystem();
   initAudio();
   resizeCanvas();
   initBackgroundParticles();
-  window.addEventListener('resize', resizeCanvas);
+  setupGameEvents(); // 设置优化的事件管理
+  
+  // 初始化SEO结构化数据和hreflang标签
+  generateFAQStructuredData();
+  const currentLang = window.currentLanguage || 'en';
+  generateStructuredDataForLanguage(currentLang);
+  updateHreflangTags(currentLang);
 
   // 移除这两行，让游戏在用户点击"开始游戏"时才初始化
   // initializeWords();

@@ -4,6 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/icon-48x48.png">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icon-57x57.png">
+    
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#00f5ff">
+    <meta name="msapplication-TileImage" content="/images/icon-144x144.png">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    
     <!-- 字体预加载 -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" as="style">
     <link rel="preload" href="src/js/index.js" as="script">
@@ -13,11 +38,14 @@
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    
     <title>Typing Rain - Modern Word Game | Online Typing Practice</title>
     <meta name="description" content="Typing Rain - Free online typing game to improve your typing speed and accuracy. Practice with falling words, track your WPM in real-time, compete on leaderboards. Perfect typing tutor for students and professionals. Play now!">
     <meta name="keywords" content="typing game,typing practice,word game,online game,typing speed,WPM,typing skills,typing tutor,keyboarding,typing test,free typing game,typing accuracy,typing trainer,learn typing,improve typing speed,keyboard practice,touch typing">
     <meta name="author" content="Playful Cafe">
     <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Typing Rain - Modern Word Game">
     <meta property="og:description" content="Improve your typing speed by catching falling words in this engaging online game">
     <meta property="og:type" content="website">
@@ -26,16 +54,32 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Typing Rain">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Typing Rain - Modern Word Game">
     <meta name="twitter:description" content="Improve your typing speed by catching falling words in this engaging online game">
     <meta name="twitter:image" content="https://www.typingrain.top/images/twitter-card.jpg">
+    <meta name="twitter:site" content="@typingrain">
+    <meta name="twitter:creator" content="@playfulcafe">
+    
+    <!-- Additional SEO Meta Tags -->
     <meta name="theme-color" content="#00f5ff">
     <meta name="application-name" content="Typing Rain">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Typing Rain">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Preconnect for performance (already in dns-prefetch above) -->
+    
+    <!-- SEO Links -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link rel="canonical" href="https://www.typingrain.top">
+    
+    <!-- Hreflang for international SEO -->
     <link rel="alternate" hreflang="en" href="https://www.typingrain.top" />
     <link rel="alternate" hreflang="zh-cn" href="https://www.typingrain.top" />
     <link rel="alternate" hreflang="zh-tw" href="https://www.typingrain.top" />
@@ -48,18 +92,22 @@
     <link rel="alternate" hreflang="ru" href="https://www.typingrain.top" />
     <link rel="alternate" hreflang="pt" href="https://www.typingrain.top" />
     <link rel="alternate" hreflang="x-default" href="https://www.typingrain.top" />
-    <!-- Google tag (gtag.js) -->
+    
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SMTNW9G4V5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-SMTNW9G4V5');
     </script>
+    
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9244949928133071"
      crossorigin="anonymous"></script>
-     <link rel="stylesheet" href="src/css/main.css">
+     
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="src/css/main.css">
 
 </head>
 <body>
@@ -313,8 +361,6 @@
         </ul>
         <p>Ready to test your skills? <strong>Start playing Typing Rain now</strong> and enjoy the most rewarding free online typing game!</p>
     </div>
-
-
 
     <!-- Modularized entry script (scaffolding) -->
     <script type="module" src="src/js/index.js"></script>

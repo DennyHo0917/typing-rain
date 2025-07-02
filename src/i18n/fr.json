@@ -134,5 +134,26 @@
   "duration": "Durée",
   "nameInputSubtitle": "Entrez votre nom pour le classement",
   "enterYourName": "Entrez votre nom...",
-  "emptyLeaderboard": "Aucun score encore. Soyez le premier à jouer！"
+  "emptyLeaderboard": "Pas encore de scores. Soyez le premier à jouer !",
+  
+  "pageSEO": {
+    "index": {
+      "title": "Typing Rain - Le Meilleur Jeu de Dactylographie Gratuit en Ligne",
+      "description": "Typing Rain - Jeu de dactylographie gratuit en ligne pour améliorer la vitesse et la précision de frappe. Pratiquez avec des mots qui tombent, suivi WPM en temps réel, compétition de classements. Outil parfait de pratique de dactylographie pour étudiants et professionnels. Jouez maintenant !",
+      "ogTitle": "Typing Rain - Jeu de Mots Moderne",
+      "ogDescription": "Améliorez votre vitesse de frappe en attrapant des mots qui tombent dans ce jeu en ligne captivant"
+    },
+    "practice": {
+      "title": "Typing Rain - Mode Pratique | Entraînement Gratuit de Dactylographie",
+      "description": "Améliorez vos compétences de dactylographie avec le mode pratique de Typing Rain. Durée, difficulté et vitesse personnalisables. Aucune restriction de niveau, focus sur l'amélioration. Parfait pour la pratique quotidienne de dactylographie.",
+      "ogTitle": "Typing Rain - Mode Pratique",
+      "ogDescription": "Améliorez votre vitesse de frappe en mode pratique avec jeu illimité et paramètres personnalisables."
+    },
+    "tournament": {
+      "title": "Typing Rain - Mode Tournoi | Défi Compétitif de Dactylographie",
+      "description": "Défiez-vous dans le mode tournoi de Typing Rain, sessions chronométrées de 2 minutes. Compétitionnez pour les classements avec système de notation complet. Testez vos compétences de dactylographie contre des joueurs mondiaux.",
+      "ogTitle": "Typing Rain - Mode Tournoi",
+      "ogDescription": "Défiez-vous en mode tournoi avec des sessions chronométrées de 2 minutes et compétitionnez pour les classements."
+    }
+  }
 }

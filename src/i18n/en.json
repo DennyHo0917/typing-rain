@@ -135,5 +135,26 @@
   "duration": "Duration",
   "nameInputSubtitle": "Enter your name for the leaderboard",
   "enterYourName": "Enter your name...",
-  "emptyLeaderboard": "No scores yet. Be the first to play!"
+  "emptyLeaderboard": "No scores yet. Be the first to play!",
+  
+  "pageSEO": {
+    "index": {
+      "title": "Typing Rain - Modern Word Game | Free Online Typing Practice",
+      "description": "Typing Rain - Free online typing game to improve your typing speed and accuracy. Practice with falling words, track your WPM in real-time, compete on leaderboards. Perfect typing tutor for students and professionals. Play now!",
+      "ogTitle": "Typing Rain - Modern Word Game",
+      "ogDescription": "Improve your typing speed by catching falling words in this engaging online game"
+    },
+    "practice": {
+      "title": "Typing Rain - Practice Mode | Free Typing Practice",
+      "description": "Practice your typing skills with Typing Rain's Practice Mode. Customize duration, difficulty and speed. No level restrictions, focus on skill improvement. Perfect for daily typing practice.",
+      "ogTitle": "Typing Rain - Practice Mode",
+      "ogDescription": "Improve your typing speed in Practice Mode with infinite play and customizable settings."
+    },
+    "tournament": {
+      "title": "Typing Rain - Tournament Mode | Competitive Typing Challenge",
+      "description": "Challenge yourself in Typing Rain Tournament Mode with 2-minute timed sessions. Compete for leaderboard rankings with comprehensive scoring system. Test your typing skills against global players.",
+      "ogTitle": "Typing Rain - Tournament Mode",
+      "ogDescription": "Challenge yourself in Tournament Mode with 2-minute timed sessions and compete for leaderboard rankings."
+    }
+  }
 }

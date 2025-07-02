@@ -84,23 +84,43 @@ const legacySwitch = typeof window !== 'undefined' && typeof window.switchLangua
 
 // 删除所有 saveLanguagePreference 调用，统一使用 setLanguagePreference
 export function switchLanguage(lang) {
+  if (!SUPPORTED_LANGUAGES.includes(lang)) {
+    console.warn(`Unsupported language: ${lang}`);
+    return;
+  }
+  
   if (legacySwitch) {
     legacySwitch(lang);
-  } else {
-    if (SUPPORTED_LANGUAGES.includes(lang)) {
-      window.currentLanguage = lang;
-      setLanguagePreference(lang); // 修改这里
-      if (typeof window.updateLanguage === 'function') {
-        window.updateLanguage();
-      }
-    }
   }
+  
+  // 更新语言设置
+  window.currentLanguage = lang;
+  setLanguagePreference(lang);
+  
+  // 更新URL参数以支持SEO和书签
+  const url = new URL(window.location);
+  if (lang === 'en') {
+    // 英文作为默认语言，移除lang参数
+    url.searchParams.delete('lang');
+  } else {
+    // 其他语言添加lang参数
+    url.searchParams.set('lang', lang);
+  }
+  
+  // 使用replaceState避免在浏览器历史中创建新条目
+  window.history.replaceState({}, '', url.toString());
+  
+  // 更新页面内容
+  if (typeof window.updateLanguage === 'function') {
+    window.updateLanguage();
+  }
+  
   closeAllMenus();
 }
 
 export function chooseMode(mode) {
   const currentLang = window.currentLanguage || getInitialLanguage();
-  setLanguagePreference(currentLang); // 修改这里
+  setLanguagePreference(currentLang);
   
   // 构建目标URL
   let targetUrl;
@@ -118,9 +138,11 @@ export function chooseMode(mode) {
       targetUrl = 'index.html';
   }
   
-  // 在URL中添加语言参数，确保新页面可以立即使用正确的语言
+  // 构建完整URL并添加语言参数（英文除外）
   const url = new URL(targetUrl, window.location.href);
-  url.searchParams.set('lang', currentLang);
+  if (currentLang !== 'en') {
+    url.searchParams.set('lang', currentLang);
+  }
   
   // 跳转到目标页面
   window.location.href = url.toString();
@@ -171,17 +193,61 @@ function getLanguageFromURL() {
   return null;
 }
 
+/**
+ * 智能语言重定向 - 用于SEO友好的自动语言检测
+ */
+function handleAutoLanguageRedirect() {
+  const urlLang = getLanguageFromURL();
+  
+  // 如果URL中已有语言参数，或者是搜索引擎爬虫，不进行重定向
+  if (urlLang || isSearchEngineCrawler()) {
+    return false;
+  }
+  
+  const detectedLang = detectBrowserLanguage();
+  
+  // 如果检测到的语言不是英文（默认），则重定向到对应语言版本
+  if (detectedLang !== 'en') {
+    const url = new URL(window.location);
+    url.searchParams.set('lang', detectedLang);
+    
+    // 使用replace避免在浏览器历史中产生额外记录
+    window.location.replace(url.toString());
+    return true;
+  }
+  
+  return false;
+}
+
+/**
+ * 检测是否为搜索引擎爬虫
+ */
+function isSearchEngineCrawler() {
+  const userAgent = navigator.userAgent.toLowerCase();
+  const crawlers = [
+    'googlebot', 'bingbot', 'slurp', 'duckduckbot', 'baiduspider',
+    'yandexbot', 'sogou', 'facebook', 'twitter', 'linkedinbot'
+  ];
+  
+  return crawlers.some(crawler => userAgent.includes(crawler));
+}
+
 // 初始化语言系统
 export function initLanguageSystem() {
   // 设置初始语言 - 优先级：URL参数 > localStorage > 浏览器语言
   if (typeof window !== 'undefined') {
+    // 首先尝试智能重定向（仅针对真实用户）
+    if (handleAutoLanguageRedirect()) {
+      return; // 如果重定向了，停止后续处理
+    }
+    
     const urlLang = getLanguageFromURL();
     const initialLang = urlLang || getInitialLanguage();
     
     window.currentLanguage = window.currentLanguage || initialLang;
     
     if (urlLang) {
-      setLanguagePreference(urlLang); // 修改这里
+      setLanguagePreference(urlLang);
     }
     
     // 添加全局点击事件监听，点击外部时关闭菜单
