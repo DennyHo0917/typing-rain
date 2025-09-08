@@ -60,4 +60,61 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.typingrain.top/tournament.html" />
   </url>
 
-</urlset> 
+  <!-- 隐私政策 -->
+  <url>
+    <loc>https://www.typingrain.top/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2025-01-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.typingrain.top/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://www.typingrain.top/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="zh-tw" href="https://www.typingrain.top/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.typingrain.top/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.typingrain.top/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.typingrain.top/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.typingrain.top/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.typingrain.top/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.typingrain.top/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.typingrain.top/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.typingrain.top/privacy.html" />
+  </url>
+
+  <!-- 关于我们 -->
+  <url>
+    <loc>https://www.typingrain.top/about.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2025-01-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.typingrain.top/about.html" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://www.typingrain.top/about.html" />
+    <xhtml:link rel="alternate" hreflang="zh-tw" href="https://www.typingrain.top/about.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.typingrain.top/about.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.typingrain.top/about.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.typingrain.top/about.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.typingrain.top/about.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.typingrain.top/about.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.typingrain.top/about.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.typingrain.top/about.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.typingrain.top/about.html" />
+  </url>
+
+  <!-- 联系我们 -->
+  <url>
+    <loc>https://www.typingrain.top/contact.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <lastmod>2025-01-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.typingrain.top/contact.html" />
+    <xhtml:link rel="alternate" hreflang="zh-cn" href="https://www.typingrain.top/contact.html" />
+    <xhtml:link rel="alternate" hreflang="zh-tw" href="https://www.typingrain.top/contact.html" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.typingrain.top/contact.html" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.typingrain.top/contact.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.typingrain.top/contact.html" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.typingrain.top/contact.html" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.typingrain.top/contact.html" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.typingrain.top/contact.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.typingrain.top/contact.html" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.typingrain.top/contact.html" />
+  </url>
+
+</urlset>

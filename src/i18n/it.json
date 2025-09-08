@@ -157,4 +157,25 @@
       "ogDescription": "Sfidati in modalità torneo con sessioni cronometrate di 2 minuti e compete per le classifiche."
     }
   }
+  ,
+  "aboutTitle": "Informazioni su Typing Rain",
+  "aboutMissionTitle": "Missione",
+  "aboutIntro1": "Typing Rain è un gioco di digitazione moderno e gratuito che rende l'allenamento alla tastiera divertente ed efficace.",
+  "aboutIntro2": "Creato e mantenuto da uno sviluppatore indipendente; focus su design pulito, prestazioni reattive e feedback utile per migliorare PPM e precisione.",
+  "aboutDevTitle": "Sul Sviluppatore",
+  "aboutDev": "Ciao! Sono uno sviluppatore indie che ama creare piccole esperienze web curate. Mi interessano usabilità, accessibilità e multilingua.",
+  "aboutTechStackTitle": "Tecnologia & Funzioni",
+  "aboutTech1": "JavaScript vanilla veloce con architettura modulare",
+  "aboutTech2": "Rendering Canvas ottimizzato ed effetti particellari",
+  "aboutTech3": "Internazionalizzazione con SEO dinamico",
+  "aboutTech4": "Classifica locale e opzioni di condivisione",
+  "aboutThanksTitle": "Grazie",
+  "aboutThanks": "Grazie per giocare e inviare feedback. Il tuo supporto aiuta a migliorare il gioco.",
+  "contactPageTitle": "Contatti",
+  "contactWaysTitle": "Mettiti in Contatto",
+  "contactEmailDesc": "Per supporto, feedback o collaborazione, invia un'email a:",
+  "contactResponseTitle": "Tempo di Risposta",
+  "contactResponse": "Essendo uno sviluppatore singolo, rispondo di solito entro 2–3 giorni lavorativi.",
+  "contactPrivacyTitle": "Privacy",
+  "contactPrivacy": "Le email sono usate solo per rispondere al tuo messaggio. Nessuna newsletter o marketing."
 }

@@ -157,4 +157,25 @@
       "ogDescription": "Challenge yourself in Tournament Mode with 2-minute timed sessions and compete for leaderboard rankings."
     }
   }
+  ,
+  "aboutTitle": "About Typing Rain",
+  "aboutMissionTitle": "Mission",
+  "aboutIntro1": "Typing Rain is a free, modern typing game designed to make keyboard practice fun and effective.",
+  "aboutIntro2": "Built and maintained by a solo developer, it focuses on clean design, responsive performance, and helpful feedback to improve WPM and accuracy.",
+  "aboutDevTitle": "About the Developer",
+  "aboutDev": "Hi! I'm an indie developer who enjoys building small, polished web experiences. I care about usability, accessibility, and language friendliness.",
+  "aboutTechStackTitle": "Tech Stack & Features",
+  "aboutTech1": "Fast vanilla JavaScript with modular architecture",
+  "aboutTech2": "Optimized canvas rendering and particle effects",
+  "aboutTech3": "Internationalization with dynamic SEO",
+  "aboutTech4": "Local leaderboard storage and share options",
+  "aboutThanksTitle": "Thanks",
+  "aboutThanks": "Thanks for playing and sharing feedback. Your support helps make the game better.",
+  "contactPageTitle": "Contact",
+  "contactWaysTitle": "Get in Touch",
+  "contactEmailDesc": "For support, feedback or collaboration, please email:",
+  "contactResponseTitle": "Response Time",
+  "contactResponse": "As a solo developer, I try to reply within 2–3 business days.",
+  "contactPrivacyTitle": "Privacy",
+  "contactPrivacy": "Emails are used only to respond to your message. No newsletter or marketing emails will be sent."
 }

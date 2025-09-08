@@ -156,4 +156,25 @@
       "ogDescription": "2分間の限定セッションでトーナメントモードに挑戦し、ランキング争奪戦に参加しよう。"
     }
   }
+  ,
+  "aboutTitle": "Typing Rain について",
+  "aboutMissionTitle": "ミッション",
+  "aboutIntro1": "Typing Rain は、キーボード練習を楽しく効果的にする無料のモダンなタイピングゲームです。",
+  "aboutIntro2": "個人開発者によって制作・運用され、クリーンなデザイン、軽快なパフォーマンス、WPM と正確性向上のための有益なフィードバックに重点を置いています。",
+  "aboutDevTitle": "開発者について",
+  "aboutDev": "こんにちは！ 小さく洗練された Web 体験を作ることが好きなインディー開発者です。使いやすさ、アクセシビリティ、多言語対応を大切にしています。",
+  "aboutTechStackTitle": "技術スタックと機能",
+  "aboutTech1": "モジュール構成の高速バニラ JavaScript",
+  "aboutTech2": "最適化された Canvas レンダリングとパーティクル効果",
+  "aboutTech3": "多言語対応と動的 SEO",
+  "aboutTech4": "ローカルのランキング保存と共有機能",
+  "aboutThanksTitle": "感謝",
+  "aboutThanks": "プレイとフィードバックに感謝します。皆さまのサポートがゲーム改善の力になります。",
+  "contactPageTitle": "お問い合わせ",
+  "contactWaysTitle": "連絡方法",
+  "contactEmailDesc": "サポート、フィードバック、コラボのご連絡は以下のメールへ：",
+  "contactResponseTitle": "返信時間",
+  "contactResponse": "個人開発のため、通常 2–3 営業日以内に返信いたします。",
+  "contactPrivacyTitle": "プライバシー",
+  "contactPrivacy": "メールは返信目的のみに使用し、ニュースレターやマーケティング配信は行いません。"
 }

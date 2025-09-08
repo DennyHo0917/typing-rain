@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Typing Rain</title>
+    <meta name="description" content="About Typing Rain and its solo developer.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.typingrain.top/about.html">
+    <meta name="google-adsense-account" content="ca-pub-9244949928133071">
+    <link rel="stylesheet" href="src/css/main.css">
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://www.typingrain.top/about.html" />
+    <link rel="alternate" hreflang="zh-cn" href="https://www.typingrain.top/about.html" />
+    <link rel="alternate" hreflang="zh-tw" href="https://www.typingrain.top/about.html" />
+    <link rel="alternate" hreflang="ja" href="https://www.typingrain.top/about.html" />
+    <link rel="alternate" hreflang="ko" href="https://www.typingrain.top/about.html" />
+    <link rel="alternate" hreflang="de" href="https://www.typingrain.top/about.html" />
+    <link rel="alternate" hreflang="fr" href="https://www.typingrain.top/about.html" />
+    <link rel="alternate" hreflang="es" href="https://www.typingrain.top/about.html" />
+    <link rel="alternate" hreflang="it" href="https://www.typingrain.top/about.html" />
+    <link rel="alternate" hreflang="ru" href="https://www.typingrain.top/about.html" />
+    <link rel="alternate" hreflang="pt" href="https://www.typingrain.top/about.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.typingrain.top/about.html" />
+</head>
+<body>
+    <div class="top-right-nav">
+        <div class="language-switcher">
+            <button class="lang-btn" onclick="toggleLanguageMenu()" id="lang-toggle" title="Change Language">🌐</button>
+            <div class="lang-menu" id="lang-menu">
+                <div class="lang-option" onclick="switchLanguage('en')">🇺🇸 English</div>
+                <div class="lang-option" onclick="switchLanguage('zh-tw')">🇹🇼 繁體中文</div>
+                <div class="lang-option" onclick="switchLanguage('zh-cn')">🇨🇳 简体中文</div>
+                <div class="lang-option" onclick="switchLanguage('ja')">🇯🇵 日本語</div>
+                <div class="lang-option" onclick="switchLanguage('ko')">🇰🇷 한국어</div>
+                <div class="lang-option" onclick="switchLanguage('de')">🇩🇪 Deutsch</div>
+                <div class="lang-option" onclick="switchLanguage('fr')">🇫🇷 Français</div>
+                <div class="lang-option" onclick="switchLanguage('es')">🇪🇸 Español</div>
+                <div class="lang-option" onclick="switchLanguage('it')">🇮🇹 Italiano</div>
+                <div class="lang-option" onclick="switchLanguage('ru')">🇷🇺 Русский</div>
+                <div class="lang-option" onclick="switchLanguage('pt')">🇵🇹 Português</div>
+            </div>
+        </div>
+        <button class="lang-btn" onclick="window.location.href='index.html'" id="back-home" title="Back to Home">🏠</button>
+    </div>
+
+    <div class="main-content-wrapper" style="max-width: 900px; margin: 80px auto 24px;">
+        <div id="about-page">
+        <div class="privacy-content" style="text-align:left">
+            <div class="privacy-title" data-i18n="aboutTitle">About Typing Rain</div>
+            <div class="privacy-text">
+                <h3 data-i18n="aboutMissionTitle">Mission</h3>
+                <p data-i18n="aboutIntro1">Typing Rain is a free, modern typing game designed to make keyboard practice fun and effective.</p>
+                <p data-i18n="aboutIntro2">Built and maintained by a solo developer, it focuses on clean design, responsive performance, and helpful feedback to improve WPM and accuracy.</p>
+
+                <h3 data-i18n="aboutDevTitle">About the Developer</h3>
+                <p data-i18n="aboutDev">Hi! I'm an indie developer who enjoys building small, polished web experiences. I care about usability, accessibility, and language friendliness.</p>
+
+                <h3 data-i18n="aboutTechStackTitle">Tech Stack & Features</h3>
+                <ul style="text-align:left; max-width:800px;">
+                    <li data-i18n="aboutTech1">Fast vanilla JavaScript with modular architecture</li>
+                    <li data-i18n="aboutTech2">Optimized canvas rendering and particle effects</li>
+                    <li data-i18n="aboutTech3">Internationalization with dynamic SEO</li>
+                    <li data-i18n="aboutTech4">Local leaderboard storage and share options</li>
+                </ul>
+
+                <h3 data-i18n="aboutThanksTitle">Thanks</h3>
+                <p data-i18n="aboutThanks">Thanks for playing and sharing feedback. Your support helps make the game better.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        <p style="color: rgba(255, 255, 255, 0.7); margin: 0;">
+            <a href="/privacy.html" style="color:#00f5ff">Privacy</a> · <a href="/about.html" style="color:#00f5ff">About</a> · <a href="/contact.html" style="color:#00f5ff">Contact</a><br>
+            © 2025 Playful.cafe All rights reserved.
+        </p>
+    </footer>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "About | Typing Rain",
+      "url": "https://www.typingrain.top/about.html"
+    }
+    </script>
+    <script type="module">
+      import './src/js/language.js';
+      import { initLanguageSystem } from './src/js/ui/languageUI.js';
+      try { initLanguageSystem(); } catch (e) {}
+    </script>
+</body>
+</html>

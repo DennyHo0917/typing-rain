@@ -156,4 +156,25 @@
       "ogDescription": "Défiez-vous en mode tournoi avec des sessions chronométrées de 2 minutes et compétitionnez pour les classements."
     }
   }
+  ,
+  "aboutTitle": "À propos de Typing Rain",
+  "aboutMissionTitle": "Mission",
+  "aboutIntro1": "Typing Rain est un jeu de frappe moderne et gratuit qui rend l'entraînement au clavier amusant et efficace.",
+  "aboutIntro2": "Créé et maintenu par un développeur indépendant; centré sur un design épuré, des performances réactives et un retour utile pour améliorer MPM et précision.",
+  "aboutDevTitle": "À propos du Développeur",
+  "aboutDev": "Bonjour ! Je suis un développeur indie qui aime créer de petites expériences web soignées. J'accorde de l'importance à l'ergonomie, l'accessibilité et le multilingue.",
+  "aboutTechStackTitle": "Technologie & Fonctions",
+  "aboutTech1": "JavaScript vanilla rapide avec architecture modulaire",
+  "aboutTech2": "Rendu Canvas optimisé et effets de particules",
+  "aboutTech3": "Internationalisation avec SEO dynamique",
+  "aboutTech4": "Classement local et options de partage",
+  "aboutThanksTitle": "Remerciements",
+  "aboutThanks": "Merci de jouer et de partager vos retours. Votre soutien aide à améliorer le jeu.",
+  "contactPageTitle": "Contact",
+  "contactWaysTitle": "Nous Contacter",
+  "contactEmailDesc": "Pour le support, les retours ou une collaboration, veuillez envoyer un e‑mail à :",
+  "contactResponseTitle": "Délai de Réponse",
+  "contactResponse": "En tant que développeur solo, je réponds généralement sous 2–3 jours ouvrés.",
+  "contactPrivacyTitle": "Confidentialité",
+  "contactPrivacy": "Les e‑mails sont uniquement utilisés pour répondre à votre message. Aucun envoi marketing."
 }

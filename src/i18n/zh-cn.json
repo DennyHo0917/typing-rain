@@ -156,4 +156,25 @@
       "ogDescription": "在锦标赛模式中挑战自己，2分钟限时比赛，争夺排行榜排名。"
     }
   }
+  ,
+  "aboutTitle": "关于单词雨",
+  "aboutMissionTitle": "产品愿景",
+  "aboutIntro1": "单词雨是一款免费、现代的在线打字游戏，让键盘练习更有趣、更高效。",
+  "aboutIntro2": "由个人开发者独立打造与维护，专注简洁设计、流畅性能与有效反馈，帮助提升WPM与准确率。",
+  "aboutDevTitle": "关于开发者",
+  "aboutDev": "你好！我是一名独立开发者，热爱打造小而精的 Web 体验，重视易用性、可访问性与多语言友好。",
+  "aboutTechStackTitle": "技术栈与功能",
+  "aboutTech1": "原生 JavaScript 模块化架构，加载快速",
+  "aboutTech2": "优化的 Canvas 渲染与粒子特效",
+  "aboutTech3": "多语言与动态 SEO 支持",
+  "aboutTech4": "本地排行榜存储与分享",
+  "aboutThanksTitle": "致谢",
+  "aboutThanks": "感谢你的游玩与反馈，这将帮助游戏不断变好。",
+  "contactPageTitle": "联系我",
+  "contactWaysTitle": "联系方式",
+  "contactEmailDesc": "如需支持、反馈或合作，请发送邮件至：",
+  "contactResponseTitle": "响应时间",
+  "contactResponse": "由于为个人开发者，通常会在 2–3 个工作日内回复。",
+  "contactPrivacyTitle": "隐私说明",
+  "contactPrivacy": "电子邮件仅用于回复你的消息，不会发送推广或营销邮件。"
 }

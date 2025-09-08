@@ -138,3 +138,47 @@ if (typeof window !== 'undefined') {
     injectLeftPanel
   };
 } 
+
+// 简易 Cookie 同意提示（默认显示一次）
+if (typeof window !== 'undefined') {
+  (function initCookieConsent() {
+    try {
+      if (localStorage.getItem('tr_cookie_consent') === '1') return;
+    } catch (e) {}
+    const bar = document.createElement('div');
+    bar.id = 'cookie-consent-bar';
+    bar.style.position = 'fixed';
+    bar.style.left = '0';
+    bar.style.right = '0';
+    bar.style.bottom = '0';
+    bar.style.zIndex = '9999';
+    bar.style.background = 'rgba(0,0,0,0.8)';
+    bar.style.color = '#fff';
+    bar.style.padding = '10px 14px';
+    bar.style.fontFamily = "'Rajdhani', sans-serif";
+    bar.style.display = 'flex';
+    bar.style.alignItems = 'center';
+    bar.style.justifyContent = 'space-between';
+    bar.style.gap = '10px';
+    const text = document.createElement('div');
+    text.style.fontSize = '14px';
+    text.innerHTML = 'We use cookies for analytics and ads (via Google). <a href="/privacy.html" style="color:#00f5ff">Learn more</a>.';
+    const btn = document.createElement('button');
+    btn.textContent = 'OK';
+    btn.style.border = 'none';
+    btn.style.padding = '6px 12px';
+    btn.style.borderRadius = '6px';
+    btn.style.background = '#00f5ff';
+    btn.style.color = '#001219';
+    btn.style.cursor = 'pointer';
+    btn.onclick = () => {
+      try { localStorage.setItem('tr_cookie_consent', '1'); } catch (e) {}
+      bar.remove();
+    };
+    bar.appendChild(text);
+    bar.appendChild(btn);
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.appendChild(bar);
+    });
+  })();
+}

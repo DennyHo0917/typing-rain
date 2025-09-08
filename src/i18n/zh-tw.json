@@ -156,4 +156,25 @@
       "ogDescription": "在錦標賽模式中挑戦自己，2分鐘限時比賽，爭奪排行榜排名。"
     }
   }
+  ,
+  "aboutTitle": "關於單詞雨",
+  "aboutMissionTitle": "產品願景",
+  "aboutIntro1": "單詞雨是一款免費、現代的線上打字遊戲，讓鍵盤練習更有趣、更有效。",
+  "aboutIntro2": "由個人開發者獨立打造與維護，專注簡潔設計、流暢效能與有效回饋，幫助提升 WPM 與準確度。",
+  "aboutDevTitle": "關於開發者",
+  "aboutDev": "嗨！我是獨立開發者，喜歡打造小而精的 Web 體驗，重視易用性、可及性與多語友好。",
+  "aboutTechStackTitle": "技術與功能",
+  "aboutTech1": "快速的原生 JavaScript 模組化架構",
+  "aboutTech2": "最佳化的 Canvas 繪製與粒子特效",
+  "aboutTech3": "多語系與動態 SEO 支援",
+  "aboutTech4": "本地排行榜儲存與分享",
+  "aboutThanksTitle": "感謝",
+  "aboutThanks": "感謝你的遊玩與回饋，這會讓遊戲變得更好。",
+  "contactPageTitle": "聯絡方式",
+  "contactWaysTitle": "如何聯絡我",
+  "contactEmailDesc": "若需支援、回饋或合作，請寄信至：",
+  "contactResponseTitle": "回覆時間",
+  "contactResponse": "因為是個人開發，通常會在 2–3 個工作日內回覆。",
+  "contactPrivacyTitle": "隱私",
+  "contactPrivacy": "電子郵件僅用於回覆你的訊息，不會寄送電子報或行銷。"
 }
