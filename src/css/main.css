@@ -16,6 +16,54 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    position: relative;
+}
+
+/* 侧边栏广告样式 */
+.sidebar-ad {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    width: 160px;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-ad-left {
+    left: 20px;
+}
+
+.sidebar-ad-right {
+    right: 20px;
+}
+
+/* 广告容器内的iframe样式 */
+.sidebar-ad iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* 响应式设计 - 在小屏幕上隐藏侧边栏广告 */
+@media (max-width: 1200px) {
+    .sidebar-ad {
+        display: none;
+    }
+}
+
+/* 确保主内容区域在小屏幕上有足够的边距 */
+@media (min-width: 1201px) {
+    .main-content-wrapper {
+        margin-left: 180px;
+        margin-right: 180px;
+    }
 }
 
 .top-right-nav {
