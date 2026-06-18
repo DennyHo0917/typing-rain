@@ -127,10 +127,14 @@ body {
 }
 
 .seo-content p {
+    display: block;
     font-size: 1.2em;
     opacity: 0.9;
     line-height: 1.6;
     margin-bottom: 10px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @keyframes gradient-flow {
@@ -141,8 +145,9 @@ body {
 /* Game container */
 #game-container {
     position: relative;
-    width: 1200px;
-    height: 1000px;
+    width: min(100%, 980px);
+    height: min(720px, 75vh);
+    min-height: 620px;
     margin-top: 40px; /* 增加上方间距，改善视觉美感 */
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
@@ -348,6 +353,24 @@ body {
     margin-bottom: 18px;
 }
 
+.hero-proof-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0 0 16px;
+}
+
+.hero-proof-row span {
+    border: 1px solid rgba(0, 245, 255, 0.32);
+    border-radius: 999px;
+    color: #dffcff;
+    background: rgba(0, 245, 255, 0.08);
+    padding: 6px 10px;
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
 .spelling-builder {
     text-align: left;
     margin-bottom: 20px;
@@ -490,7 +513,7 @@ body {
 #missed-word-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 8px;
     max-width: 520px;
     margin: 0 auto 12px;
@@ -1112,6 +1135,28 @@ body {
     color: #00f5ff;
 }
 
+.practice-proof .power-ups-title,
+.practice-proof .power-ups-grid,
+.practice-proof .active-effects {
+    display: none;
+}
+
+.practice-proof-copy h3 {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #00f5ff;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.practice-proof-copy p {
+    font-size: 1em;
+    line-height: 1.35;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
 /* Bottom SEO content */
 .below-game {
     max-width: 1200px;
@@ -1151,6 +1196,85 @@ body {
 
 .below-game li {
     margin-bottom: 8px;
+}
+
+.seo-landing {
+    width: min(100%, 980px);
+    margin: 80px auto 24px;
+    padding: 0 20px;
+}
+
+.seo-hero {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.seo-hero h1 {
+    font-family: 'Orbitron', monospace;
+    font-size: 2.4em;
+    color: #00f5ff;
+    margin-bottom: 12px;
+}
+
+.seo-hero p {
+    max-width: 760px;
+    margin: 0 auto 10px;
+    font-size: 1.15em;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.seo-panel {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+}
+
+.seo-panel h2 {
+    font-family: 'Orbitron', monospace;
+    color: #4ecdc4;
+    font-size: 1.35em;
+    margin-bottom: 12px;
+}
+
+.seo-panel p,
+.seo-panel li {
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.55;
+    margin-bottom: 8px;
+}
+
+.seo-panel ul {
+    padding-left: 20px;
+}
+
+.seo-cta {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #00f5ff, #4ecdc4);
+    color: #06232c;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.seo-link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 10px;
+}
+
+.seo-link-grid a {
+    color: #00f5ff;
+    text-decoration: none;
+    border: 1px solid rgba(0, 245, 255, 0.25);
+    border-radius: 8px;
+    padding: 10px;
+    background: rgba(0, 245, 255, 0.06);
 }
 
 /* 道具系统样式 */
@@ -1244,6 +1368,15 @@ body {
     .main-content-wrapper {
         flex-direction: column;
         align-items: center;
+    }
+    #game-container {
+        order: 1;
+    }
+    .left-panel {
+        order: 2;
+    }
+    .stats {
+        order: 3;
     }
     .left-panel, .stats {
         position: static;

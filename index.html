@@ -20,38 +20,38 @@
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
     
-    <title>Custom Spelling Words Typing Game | Typing Rain</title>
-    <meta name="description" content="Paste a weekly spelling list into a falling-word typing game. Students practice, replay missed words, and share a no-login practice link.">
-    <meta name="keywords" content="custom spelling words game,spelling words typing game,spelling practice with own words,weekly spelling list game,homeschool spelling practice,classroom spelling game,spelling test practice,no login spelling practice">
-    <meta name="author" content="Playful Cafe">
+    <title>Custom Spelling Words Game | SpellRain</title>
+    <meta name="description" content="Paste a weekly spelling list into SpellRain and play a custom spelling words game. Replay missed words and share a no-login practice link.">
+    <meta name="keywords" content="custom spelling words game,spelling list game,spelling words typing game,spelling practice with own words,weekly spelling list game,sight word typing game,homeschool spelling practice,classroom spelling game,spelling test practice,no login spelling practice">
+    <meta name="author" content="SpellRain">
     <meta name="robots" content="index, follow">
     <meta name="google-adsense-account" content="ca-pub-9244949928133071">
     
     <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Custom Spelling Words Typing Game">
-    <meta property="og:description" content="Paste a spelling list, play it as falling words, then replay the missed words.">
+    <meta property="og:title" content="Custom Spelling Words Game | SpellRain">
+    <meta property="og:description" content="Paste this week's spelling list, play it as falling words, then replay missed words.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://your-domain.example/">
     <meta property="og:image" content="https://your-domain.example/images/typing-rain-og.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Typing Rain custom spelling words game preview">
-    <meta property="og:site_name" content="Typing Rain">
+    <meta property="og:image:alt" content="SpellRain custom spelling words game preview">
+    <meta property="og:site_name" content="SpellRain">
     <meta property="og:locale" content="en_US">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Custom Spelling Words Typing Game">
-    <meta name="twitter:description" content="Paste a spelling list, play it as falling words, then replay the missed words.">
+    <meta name="twitter:title" content="Custom Spelling Words Game | SpellRain">
+    <meta name="twitter:description" content="Paste a weekly spelling list, play it as falling words, then replay missed words.">
     <meta name="twitter:image" content="https://your-domain.example/images/typing-rain-og.png">
     
     <!-- Additional SEO Meta Tags -->
     <meta name="theme-color" content="#00f5ff">
-    <meta name="application-name" content="Typing Rain">
+    <meta name="application-name" content="SpellRain">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Typing Rain">
+    <meta name="apple-mobile-web-app-title" content="SpellRain">
     <meta name="format-detection" content="telephone=no">
     
     <!-- Preconnect for performance (already in dns-prefetch above) -->
@@ -111,10 +111,10 @@
     </div>
 
     <div class="seo-content" id="seo-content">
-        <h1>Custom Spelling Words Typing Game</h1>
-        <p>Paste a weekly spelling list and turn it into a fast falling-word game.</p>
-        <p>Typing Rain saves missed words, creates a replay round, and lets teachers or parents share the same practice list with a link.</p>
-        <p>No account, no setup, no generic word bank.</p>
+        <h1>Custom Spelling Words Game</h1>
+        <p>Paste this week's spelling list and turn it into a falling-word typing game.</p>
+        <p>SpellRain saves missed words, creates a replay round, and lets teachers or parents share the same practice link.</p>
+        <p>No student accounts, no lesson builder, no generic word bank.</p>
     </div>
 
     <div class="main-content-wrapper">
@@ -122,9 +122,9 @@
             <!-- 游戏说明 -->
             <div class="game-instructions">
                 <div class="instructions-content">
-                    <h3>Spelling Practice</h3>
-                    <p>Paste the words your class or child needs this week.</p>
-                    <p>Type each falling word before it reaches the bottom.</p>
+                    <h3>For This Week's List</h3>
+                    <p>Paste the spelling words your class or child already has.</p>
+                    <p>Students type each falling word before it reaches the bottom.</p>
                     <p>Press <kbd>Enter</kbd> or <kbd>Space</kbd> to submit.</p>
                     <p>Missed words are saved for one-click replay.</p>
                     <p>Copy a practice link to share the same list.</p>
@@ -141,7 +141,13 @@
             </div>
 
             <!-- 道具栏 -->
-            <div class="power-ups-container">
+            <div class="power-ups-container practice-proof">
+                <div class="practice-proof-copy">
+                    <h3>Why It Works</h3>
+                    <p>Exact weekly words, not a random word bank.</p>
+                    <p>Fast start for homework, tutoring, ESL, and homeschool practice.</p>
+                    <p>Replay practice focuses on the words the student missed.</p>
+                </div>
                                     <div class="power-ups-title" data-i18n="powerUpsKeysHint">Power-ups (1:⏰ 2:🎯 3:💎 4:🛡️ 5:🌟 6:🔄)</div>
                 <div class="power-ups-grid" id="power-ups-grid">
                     <!-- 道具将在这里动态显示 -->
@@ -158,7 +164,7 @@
             </div>
 
             <div class="top-bar">
-                <div class="game-title">TYPING RAIN</div>
+                <div class="game-title">SPELLRAIN</div>
                 <div class="combo-display" id="combo-display">
                     COMBO × <span id="combo-count">0</span>
                 </div>
@@ -173,10 +179,15 @@
             <!-- 游戏开始界面 -->
             <div class="game-start-screen" id="game-start">
                 <div class="start-screen-content">
-                    <div class="start-title">TYPING RAIN</div>
+                    <div class="start-title">SPELLRAIN</div>
                     <div class="spelling-start">
-                        <div class="spelling-subtitle">Custom Spelling Words Game</div>
-                        <p class="spelling-intro">Paste spelling words, start the rain, and replay the missed words at the end.</p>
+                        <div class="spelling-subtitle">Paste Your Weekly Spelling List</div>
+                        <p class="spelling-intro">Turn homework words into a custom spelling game in under a minute. Students play, then replay only the words they missed.</p>
+                        <div class="hero-proof-row" aria-label="SpellRain benefits">
+                            <span>Use your own words</span>
+                            <span>Replay missed words</span>
+                            <span>Share link, no login</span>
+                        </div>
                         <div class="spelling-builder">
                             <label for="custom-word-list">Your spelling words</label>
                             <textarea id="custom-word-list" rows="7" spellcheck="false" placeholder="because&#10;friend&#10;beautiful&#10;answer"></textarea>
@@ -189,7 +200,7 @@
                                 <button type="button" onclick="copyPracticeLink()">Copy Link</button>
                             </div>
                         </div>
-                        <button class="start-btn spelling-start-btn" onclick="startGame()">START PRACTICE</button>
+                        <button class="start-btn spelling-start-btn" onclick="startGame()">PLAY MY SPELLING LIST</button>
                     </div>
                 </div>
             </div>
@@ -223,7 +234,7 @@
                     <div class="privacy-title">PRIVACY POLICY</div>
                     <div class="privacy-text">
                         <h3>Data Collection</h3>
-                        <p>Typing Rain is committed to protecting your privacy. This policy explains how we handle your data:</p>
+                        <p>SpellRain is committed to protecting your privacy. This policy explains how we handle your data:</p>
                         
                         <h4>Local Storage</h4>
                         <p>• Your spelling list and optional read-aloud preference are stored locally in your browser using localStorage</p>
@@ -286,10 +297,10 @@
     <div class="below-game">
         <div class="spelling-seo-copy">
             <h2>Turn Any Spelling List Into a Typing Game</h2>
-            <p>Typing Rain is a <strong>custom spelling words game</strong> for parents, teachers, homeschool families, and ESL tutors who already have a weekly word list and need a quick way to make practice feel less repetitive.</p>
+            <p>SpellRain is a <strong>custom spelling words game</strong> for parents, teachers, homeschool families, and ESL tutors who already have a weekly word list and need a quick way to make practice feel less repetitive.</p>
 
             <h3>Why Custom Spelling Words Matter</h3>
-            <p>Most spelling games use a fixed word bank. That is fine for generic typing practice, but it does not help when a student needs to practice this week's exact words. Typing Rain lets you paste your own list, play immediately, and keep the practice focused on the words that will appear on the next quiz.</p>
+            <p>Most spelling games use a fixed word bank. That is fine for generic typing practice, but it does not help when a student needs to practice this week's exact words. SpellRain lets you paste your own list, play immediately, and keep the practice focused on the words that will appear on the next quiz.</p>
             <ul style="text-align: left; max-width: 800px;">
                 <li><strong>Use your own spelling list:</strong> Paste words from a teacher handout, homework sheet, or homeschool curriculum.</li>
                 <li><strong>Replay missed words:</strong> Words that fall to the bottom are saved for another round.</li>
@@ -312,8 +323,9 @@
     <!-- Footer -->
     <footer style="text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
         <p style="color: rgba(255, 255, 255, 0.7); margin: 0;">
+            <a href="/custom-spelling-words-game.html" style="color:#00f5ff">Custom Spelling Game</a> &middot; <a href="/spelling-list-game.html" style="color:#00f5ff">Spelling List Game</a> &middot; <a href="/weekly-spelling-practice.html" style="color:#00f5ff">Weekly Practice</a> &middot; <a href="/sight-word-typing-game.html" style="color:#00f5ff">Sight Words</a> &middot; <a href="/homeschool-spelling-practice.html" style="color:#00f5ff">Homeschool</a> &middot; <a href="/vocabulary-typing-game.html" style="color:#00f5ff">Vocabulary</a><br>
             <a href="/privacy.html" style="color:#00f5ff">Privacy</a> &middot; <a href="/about.html" style="color:#00f5ff">About</a> &middot; <a href="/contact.html" style="color:#00f5ff">Contact</a><br>
-            &copy; 2026 Playful.cafe All rights reserved.
+            &copy; 2026 SpellRain All rights reserved.
         </p>
     </footer>
 
@@ -322,13 +334,13 @@
     {
       "@context": "https://schema.org",
       "@type": "VideoGame",
-      "name": "Typing Rain Custom Spelling Words Game",
+      "name": "SpellRain Custom Spelling Words Game",
       "description": "Paste a spelling list and turn it into a falling-word typing game with missed word replay and shareable practice links.",
       "url": "https://your-domain.example/",
       "author": {
         "@type": "Organization",
-        "name": "Playful Cafe",
-        "url": "https://playful.cafe"
+        "name": "SpellRain",
+        "url": "https://your-domain.example/"
       },
       "genre": ["Educational Game", "Spelling Game", "Typing Game"],
       "gamePlatform": "Web Browser",
@@ -352,7 +364,7 @@
           "name": "Can I use my own spelling words?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Paste a weekly spelling list and Typing Rain will use those exact words in the falling-word game."
+            "text": "Yes. Paste a weekly spelling list and SpellRain will use those exact words in the falling-word game."
           }
         },
         {
@@ -368,7 +380,7 @@
           "name": "Do students need an account?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Typing Rain works in the browser with no student account, class setup, or login."
+            "text": "No. SpellRain works in the browser with no student account, class setup, or login."
           }
         }
       ]

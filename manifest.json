@@ -1,7 +1,7 @@
 {
-  "name": "Typing Rain - Custom Spelling Words Game",
-  "short_name": "Typing Rain",
-  "description": "Paste a weekly spelling list into a falling-word typing game with missed-word replay and shareable no-login practice links.",
+  "name": "SpellRain - Custom Spelling Words Game",
+  "short_name": "SpellRain",
+  "description": "Paste a weekly spelling list into a custom spelling words game with missed-word replay and shareable no-login practice links.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1e3c72",

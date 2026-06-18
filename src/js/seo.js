@@ -1,9 +1,9 @@
 const BASE_URL = 'https://your-domain.example';
 
 const HOME_SEO = {
-  title: 'Custom Spelling Words Typing Game | Typing Rain',
-  description: 'Paste a weekly spelling list into a falling-word typing game. Students practice, replay missed words, and share a no-login practice link.',
-  keywords: 'custom spelling words game,spelling words typing game,spelling practice with own words,weekly spelling list game,homeschool spelling practice,classroom spelling game,spelling test practice,no login spelling practice',
+  title: 'Custom Spelling Words Game | SpellRain',
+  description: 'Paste a weekly spelling list into SpellRain and play a custom spelling words game. Replay missed words and share a no-login practice link.',
+  keywords: 'custom spelling words game,spelling list game,spelling words typing game,spelling practice with own words,weekly spelling list game,sight word typing game,homeschool spelling practice,classroom spelling game,spelling test practice,no login spelling practice',
   url: `${BASE_URL}/`,
   image: `${BASE_URL}/images/typing-rain-og.png`,
 };
@@ -32,15 +32,15 @@ export function updateSEOTags(seoData = HOME_SEO) {
   document.title = seoData.title;
   upsertMeta('name', 'description', seoData.description);
   upsertMeta('name', 'keywords', seoData.keywords);
-  upsertMeta('property', 'og:title', 'Custom Spelling Words Typing Game');
-  upsertMeta('property', 'og:description', 'Paste a spelling list, play it as falling words, then replay the missed words.');
+  upsertMeta('property', 'og:title', 'Custom Spelling Words Game | SpellRain');
+  upsertMeta('property', 'og:description', 'Paste this week\'s spelling list, play it as falling words, then replay missed words.');
   upsertMeta('property', 'og:url', seoData.url);
   upsertMeta('property', 'og:image', seoData.image);
   upsertMeta('property', 'og:image:width', '1200');
   upsertMeta('property', 'og:image:height', '630');
-  upsertMeta('property', 'og:image:alt', 'Typing Rain custom spelling words game preview');
-  upsertMeta('name', 'twitter:title', 'Custom Spelling Words Typing Game');
-  upsertMeta('name', 'twitter:description', 'Paste a spelling list, play it as falling words, then replay the missed words.');
+  upsertMeta('property', 'og:image:alt', 'SpellRain custom spelling words game preview');
+  upsertMeta('name', 'twitter:title', 'Custom Spelling Words Game | SpellRain');
+  upsertMeta('name', 'twitter:description', 'Paste a weekly spelling list, play it as falling words, then replay missed words.');
   upsertMeta('name', 'twitter:image', seoData.image);
   upsertCanonical(seoData.url);
 }
@@ -55,7 +55,7 @@ export function generateFAQStructuredData() {
         name: 'Can I use my own spelling words?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. Paste a weekly spelling list and Typing Rain will use those exact words in the falling-word game.',
+          text: 'Yes. Paste a weekly spelling list and SpellRain will use those exact words in the falling-word game.',
         },
       },
       {
@@ -71,7 +71,7 @@ export function generateFAQStructuredData() {
         name: 'Do students need an account?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'No. Typing Rain works in the browser with no student account, class setup, or login.',
+          text: 'No. SpellRain works in the browser with no student account, class setup, or login.',
         },
       },
     ],
