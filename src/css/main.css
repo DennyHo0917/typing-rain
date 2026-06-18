@@ -76,6 +76,12 @@ body {
     align-items: center;
 }
 
+.language-switcher,
+.mode-switcher,
+.top-right-nav .share-btn {
+    display: none;
+}
+
 .main-content-wrapper {
     display: flex;
     justify-content: center;
@@ -293,7 +299,10 @@ body {
     padding: 40px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    max-width: 500px;
+    width: min(92vw, 640px);
+    max-width: 640px;
+    max-height: 92vh;
+    overflow-y: auto;
 }
 
 .start-title {
@@ -323,6 +332,84 @@ body {
     margin-bottom: 30px;
     color: rgba(255, 255, 255, 0.9);
     text-align: left;
+}
+
+.spelling-subtitle {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.spelling-intro {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05em;
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+
+.spelling-builder {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.spelling-builder label {
+    display: block;
+    color: #00f5ff;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+#custom-word-list {
+    width: 100%;
+    min-height: 150px;
+    resize: vertical;
+    border: 1px solid rgba(0, 245, 255, 0.35);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    padding: 12px;
+    font: 600 1em 'Rajdhani', sans-serif;
+    outline: none;
+}
+
+#custom-word-list:focus {
+    border-color: #00f5ff;
+    box-shadow: 0 0 18px rgba(0, 245, 255, 0.25);
+}
+
+.spelling-options,
+.spelling-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.read-toggle {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 600 !important;
+}
+
+#spelling-status {
+    color: #feca57;
+    font-weight: 700;
+}
+
+.spelling-actions button {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    padding: 9px 14px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.spelling-actions button:hover {
+    border-color: #00f5ff;
 }
 
 .start-btn {
@@ -387,6 +474,38 @@ body {
     margin: 15px 0;
     font-size: 1.1em;
     font-family: 'Orbitron', monospace;
+}
+
+.spelling-summary {
+    margin: 12px 0 18px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+#spelling-result {
+    color: #feca57;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#missed-word-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 520px;
+    margin: 0 auto 12px;
+}
+
+.word-chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background: rgba(0, 245, 255, 0.12);
+    border: 1px solid rgba(0, 245, 255, 0.3);
+    color: #fff;
+    font-weight: 700;
 }
 
 .game-over-buttons {

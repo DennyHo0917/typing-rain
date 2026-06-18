@@ -49,35 +49,35 @@
   "emptySlot": "Empty",
   "powerfulPowerUps": "Powerful Power-Ups:",
   "powerfulPowerUpsDesc": "Unleash game-changing abilities like Slow Time, Precision Mode, and Shields to maximize your score.",
-  "mainTitle": "Typing Rain - Modern Word Game",
-  "mainDesc1": "Challenge three progressive difficulty levels!",
-  "mainDesc2": "Beginner: 50 basic words | Intermediate: 100 advanced words | Expert: 150 complex words | Gradually improve your typing skills",
+  "mainTitle": "Custom Spelling Words Typing Game",
+  "mainDesc1": "Paste a weekly spelling list and turn it into a falling-word typing game.",
+  "mainDesc2": "Typing Rain saves missed words, creates a replay round, and lets teachers or parents share the same practice list with a link.",
   "levelModeDesc1": "Challenge three progressive difficulty levels!",
   "levelModeDesc2": "Beginner: 50 basic words | Intermediate: 100 advanced words | Expert: 150 complex words | Gradually improve your typing skills",
   "practiceModeDesc1": "Free practice mode to improve your typing skills!",
   "practiceModeDesc2": "Customize duration, difficulty and speed | No level restrictions, focus on skill improvement | Perfect for daily practice",
   "tournamentModeDesc1": "2-minute timed challenge, compete for rankings!",
   "tournamentModeDesc2": "Fixed 2-minute duration | Comprehensive scoring system | Compete with global players and showcase your skills",
-  "seoTitle1": "Play Free Typing Rain Game Now!",
-  "seoPara1": "Typing Rain is one of the most popular and engaging typing games ever created. The goal of Typing Rain is to type falling words before they reach the bottom of the screen, helping you improve your typing speed, accuracy, and reflexes. As a skill-building game, Typing Rain is also an excellent brain training exercise. If you play Typing Rain every day, you'll quickly notice improvements in your typing speed, accuracy, and overall cognitive focus. Start playing now. Before long, Typing Rain will become your favorite free online typing game.",
-  "seoTitle2": "About Typing Rain Game",
-  "seoPara2": "The captivating typing game \"Typing Rain\" is based on word recognition and keyboard skills. As an online typing game, Typing Rain doesn't require any special knowledge or complex setup; all you need is focus and dedication to improve your typing abilities.",
-  "seoTitle3": "How to Play Typing Rain",
-  "seoPara3": "The objective of Typing Rain is to type the falling words before they reach the bottom of the screen. At the start of each level, words will begin falling from the top at varying speeds. Your task is to type each word accurately and quickly to score points and advance through the levels. Remember, if you miss too many words, the game will end. The key rules are:",
+  "seoTitle1": "Turn Any Spelling List Into a Typing Game",
+  "seoPara1": "Typing Rain is a custom spelling words game for parents, teachers, homeschool families, and ESL tutors who already have a weekly word list and need a quick way to make practice feel less repetitive.",
+  "seoTitle2": "Why Custom Spelling Words Matter",
+  "seoPara2": "Most spelling games use a fixed word bank. Typing Rain lets you paste your own list, play immediately, and keep practice focused on the exact words that will appear on the next quiz.",
+  "seoTitle3": "How to Use Typing Rain for Spelling Practice",
+  "seoPara3": "Paste words from a teacher handout, homework sheet, or homeschool curriculum. Start the falling-word game, type each word, then replay the words that were missed.",
   "seoRules": [
-    "Type each falling word exactly as it appears on screen",
-    "Press Enter or Space to submit your typed word",
-    "Build combos by typing consecutive words without mistakes",
-    "Complete all words in each difficulty level to advance"
+    "Use your own spelling list",
+    "Press Enter or Space to submit each word",
+    "Replay missed words after the round",
+    "Copy a practice link to share the same list"
   ],
-  "seoTitle4": "Typing Rain Tips and Strategies",
-  "seoPara4": "Once you master the basics, Typing Rain becomes an incredibly rewarding typing game. However, learning to play Typing Rain effectively can be challenging for beginners. Here are some typing tips to improve your Typing Rain gameplay:",
+  "seoTitle4": "Good For Weekly Spelling Practice",
+  "seoPara4": "This tool is intentionally small. It is for the repeated weekly job: take a short spelling list, make a child practice it, find the missed words, then practice those again.",
   "seoTips": [
-    "Focus on accuracy over speed initially. Look for words that appear frequently and practice typing them without looking at the keyboard. In many cases, muscle memory will help you type common words automatically.",
-    "Use proper finger positioning on the home row keys (ASDF for left hand, JKL; for right hand). Each finger should be responsible for specific keys. This technique will dramatically improve your typing speed and reduce errors.",
-    "Practice the rhythm of typing. Try to maintain a steady pace rather than rushing through easy words and struggling with difficult ones. Consistent rhythm leads to better accuracy and higher scores."
+    "Paste only the current week's words.",
+    "Replay missed words until the list is clean.",
+    "Share the same practice link with students or parents."
   ],
-  "seoConclusion": "Now that you know more about \"Typing Rain,\" start playing and enjoy this free online typing game!",
+  "seoConclusion": "No student accounts, no lesson builder, no platform lock-in.",
   "privacyPolicy": "Privacy Policy",
   "dataCollection": "Data Collection",
   "privacyIntro": "Typing Rain is committed to protecting your privacy. This policy explains how we handle your data:",
@@ -139,10 +139,10 @@
   
   "pageSEO": {
     "index": {
-      "title": "Typing Rain - Modern Word Game | Free Online Typing Practice",
-      "description": "Typing Rain - Free online typing game to improve your typing speed and accuracy. Practice with falling words, track your WPM in real-time, compete on leaderboards. Perfect typing tutor for students and professionals. Play now!",
-      "ogTitle": "Typing Rain - Modern Word Game",
-      "ogDescription": "Improve your typing speed by catching falling words in this engaging online game"
+      "title": "Custom Spelling Words Typing Game | Typing Rain",
+      "description": "Paste any weekly spelling list and turn it into a falling-word typing game. Save missed words, replay them, and copy a shareable practice link.",
+      "ogTitle": "Custom Spelling Words Typing Game",
+      "ogDescription": "Paste a spelling list, play it as falling words, then replay the missed words."
     },
     "practice": {
       "title": "Typing Rain - Practice Mode | Free Typing Practice",

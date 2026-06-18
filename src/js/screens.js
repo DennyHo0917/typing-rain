@@ -34,8 +34,8 @@ if (typeof window !== 'undefined') {
 import { dom } from './domRefs.js';
 import { gameState, resetGameState } from './gameState.js';
 import { initializeWords } from './gameLoop.js';
-import { isHighScore, addToLeaderboard } from './leaderboard.js';
 import { updateStats } from './rendering.js';
+import { prepareSession, renderSummary } from './spellingMode.js';
 
 function getCtx() {
   if (!dom.canvas) return null;
@@ -101,6 +101,7 @@ export function showCongratulations() {
 
 // ---------- 游戏控制 ----------
 export function startGame() {
+  prepareSession();
   gameState.startTime = Date.now();
   gameState.gameStarted = true;
   document.getElementById('game-start')?.style && (document.getElementById('game-start').style.display = 'none');
@@ -152,6 +153,7 @@ export function endGame() {
   document.getElementById('final-wpm').textContent = document.getElementById('wpm').textContent;
   document.getElementById('final-accuracy').textContent = document.getElementById('accuracy').textContent;
   document.getElementById('final-missed').textContent = gameState.missedWords;
+  renderSummary();
 
   // Practice mode custom stats
   if (gameState.mode === 'practice') {
@@ -204,18 +206,7 @@ export function endGame() {
   }
 
   // 计算综合得分以判断是否进入排行榜
-  const wpmText = document.getElementById('wpm').textContent;
-  const accText = document.getElementById('accuracy').textContent;
-  const numWpmCalc = parseFloat(wpmText);
-  const numAccCalc = parseFloat(accText);
-  const missedCalc = gameState.missedWords;
-  const totalScoreCalc = Math.round(gameState.score * 0.6 + numWpmCalc * 10 + numAccCalc * 5 - missedCalc * 20);
-
-  if (isHighScore(totalScoreCalc)) {
-    showNameInput();
-  } else {
-    document.getElementById('game-over').style.display = 'flex';
-  }
+  document.getElementById('game-over').style.display = 'flex';
 }
 
 export function restartGame() {
@@ -224,7 +215,7 @@ export function restartGame() {
     dom.input.value = '';
   }
   // 隐藏所有覆盖层
-  ['game-over', 'name-input', 'leaderboard', 'privacy-policy'].forEach((id) => {
+  ['game-over', 'privacy-policy'].forEach((id) => {
     const el = document.getElementById(id);
     if (el) el.style.display = 'none';
   });
@@ -235,28 +226,18 @@ export function restartGame() {
 
 // ---------- 名字输入 ----------
 export function showNameInput() {
-  document.getElementById('name-input-score').textContent = gameState.score;
-  document.getElementById('name-input').style.display = 'flex';
-  document.getElementById('player-name-input').focus();
+  document.getElementById('game-over')?.style && (document.getElementById('game-over').style.display = 'flex');
 }
 
 export function submitScore() {
-  const name = document.getElementById('player-name-input').value.trim();
-  const wpm = document.getElementById('wpm').textContent;
-  const acc = document.getElementById('accuracy').textContent;
-  addToLeaderboard(name, gameState.score, gameState.level, wpm, acc, gameState.missedWords);
-  document.getElementById('name-input').style.display = 'none';
-  document.getElementById('game-over').style.display = 'flex';
-  document.getElementById('player-name-input').value = '';
+  document.getElementById('game-over')?.style && (document.getElementById('game-over').style.display = 'flex');
 }
 
 export function skipNameInput() {
-  document.getElementById('name-input').style.display = 'none';
-  document.getElementById('game-over').style.display = 'flex';
+  document.getElementById('game-over')?.style && (document.getElementById('game-over').style.display = 'flex');
 }
 
 // 其余屏幕函数从其他模块导入/复用
-import { showLeaderboard, closeLeaderboard } from './leaderboard.js';
 import { showPrivacyPolicy, closePrivacyPolicy } from './privacy.js';
 
 export const screens = {
@@ -268,8 +249,6 @@ export const screens = {
   showNameInput,
   submitScore,
   skipNameInput,
-  showLeaderboard,
-  closeLeaderboard,
   showPrivacyPolicy,
   closePrivacyPolicy,
 };

@@ -1,14 +1,7 @@
 // 隐私政策与本地数据管理模块
-import { languages } from './languages.js';
 import { gameState } from './gameState.js';
 
-function getLangPack() {
-  const current = window.currentLanguage || 'en';
-  return languages[current] || {};
-}
-
 export function showPrivacyPolicy() {
-  const lang = getLangPack();
   const policyScreen = document.getElementById('privacy-policy');
   const gameOver = document.getElementById('game-over');
   const startScreen = document.getElementById('game-start');
@@ -40,14 +33,11 @@ export function closePrivacyPolicy() {
 }
 
 export function clearLocalData() {
-  const lang = getLangPack();
-  const confirmMsg =
-    lang.clearDataConfirm ||
-    'Are you sure you want to clear all your local data? This will permanently delete your leaderboard scores and cannot be undone.';
-  const successMsg =
-    lang.dataCleared || 'Your local data has been cleared successfully.';
+  const confirmMsg = 'Clear the spelling list and read-aloud preference saved in this browser?';
+  const successMsg = 'Your local spelling practice data has been cleared.';
   if (confirm(confirmMsg)) {
-    localStorage.removeItem('typingRainLeaderboard');
+    localStorage.removeItem('typingRainSpellingWords');
+    localStorage.removeItem('typingRainReadWords');
     alert(successMsg);
     closePrivacyPolicy();
   }
@@ -63,4 +53,4 @@ if (typeof window !== 'undefined') {
   window.closePrivacyPolicyLegacy = closePrivacyPolicy;
   window.clearLocalDataLegacy = clearLocalData;
   window.privacyBridge = { showPrivacyPolicy, closePrivacyPolicy, clearLocalData };
-} 
+}

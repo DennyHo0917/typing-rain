@@ -7,6 +7,7 @@ import { playKeySound, playWordCompleteSound } from './audio.js';
 import { generatePowerUp, updatePowerUps, usePowerUp } from './powerUps.js';
 import { createExplosion } from './rendering.js';
 import { updateStats } from './rendering.js';
+import { isRoundComplete, markCorrect } from './spellingMode.js';
 
 export function updateComboDisplay() {
   const comboDisplay = document.getElementById('combo-display');
@@ -45,6 +46,7 @@ export function checkWordMatch(typedWord) {
       }
       createExplosion(word.x, word.y, '#00ff88');
       playWordCompleteSound();
+      markCorrect(word.word);
       fallingWords.splice(i, 1);
       dom.input.value = '';
       break;
@@ -57,6 +59,10 @@ export function checkWordMatch(typedWord) {
   }
   updateComboDisplay();
   updateStats();
+  if (isRoundComplete(fallingWords.length)) {
+    gameState.spellingRoundComplete = true;
+    window.endGame?.();
+  }
 }
 
 export function handleInput(event) {
@@ -101,4 +107,4 @@ if (typeof window !== 'undefined') {
       }
     });
   });
-} 
+}

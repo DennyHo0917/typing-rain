@@ -7,6 +7,7 @@ import { playMissSound } from './audio.js';
 import { updateStats } from './rendering.js';
 import { dom } from './domRefs.js';
 import { usePowerUp } from './powerUps.js';
+import { isRoundComplete, markMissed } from './spellingMode.js';
 
 // 背景与粒子数组与旧全局共享
 if (typeof window !== 'undefined') {
@@ -99,6 +100,7 @@ export function gameLoop() {
         if (gameState.activePowerUps.shield <= 0) delete gameState.activePowerUps.shield;
         createExplosion(word.x, canvas.height - 20, '#4ecdc4');
       } else {
+        markMissed(word.word);
         if (gameState.mode === 'practice') {
           // 在练习模式中，不扣命，不结束游戏
           continue;
@@ -116,6 +118,12 @@ export function gameLoop() {
   }
 
   // 更新前景粒子
+  if (isRoundComplete(fallingWords.length)) {
+    gameState.spellingRoundComplete = true;
+    if (typeof window.endGame === 'function') window.endGame();
+    return;
+  }
+
   window.particles = (window.particles || []).filter((p) => {
     p.update();
     const ctx2 = ensureCtx();
@@ -130,4 +138,4 @@ export function gameLoop() {
 if (typeof window !== 'undefined') {
   window.initializeWords = initializeWords;
   window.gameLoop = gameLoop;
-} 
+}

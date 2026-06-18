@@ -36,6 +36,7 @@ export function initLanguageSystem() {
 if (typeof window !== 'undefined') {
   if (typeof window.updateLanguage !== 'function') {
     window.updateLanguage = () => {
+      if (window.disableLegacyLanguageUI) return;
       const currentLang = window.currentLanguage || 'en';
       const pack = languages[currentLang] || languages['en'];
       if (!pack) return;

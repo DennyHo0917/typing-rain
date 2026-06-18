@@ -4,6 +4,7 @@ import { gameState } from './gameState.js';
 import { wordDatabase } from './wordDatabase.js';
 import { createExplosion } from './rendering.js';
 import { playWordCompleteSound } from './audio.js';
+import { getCustomWord, speakWord } from './spellingMode.js';
 
 // 与旧代码共享同一个数组
 export const fallingWords = typeof window !== 'undefined' && window.fallingWords ? window.fallingWords : [];
@@ -36,10 +37,13 @@ export class FallingWord {
     this.fontSize = 24;
     this.matched = false;
     this.progress = 0;
+    speakWord(this.word);
   }
 
   getRandomWord() {
     let word;
+    const customWord = getCustomWord();
+    if (customWord) return customWord;
     
     // 锦标赛模式：固定比例混合难度
     if (gameState.mode === 'tournament') {

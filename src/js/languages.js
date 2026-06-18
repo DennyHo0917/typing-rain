@@ -34,7 +34,7 @@ export async function initLanguages() {
   if (typeof window !== 'undefined') {
     window.languages = languages;
   }
-  if (typeof window.updateLanguage === 'function') {
+  if (typeof window.updateLanguage === 'function' && !window.disableLegacyLanguageUI) {
     window.updateLanguage();
   }
 }

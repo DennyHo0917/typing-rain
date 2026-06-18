@@ -33,6 +33,13 @@ function createInitialState() {
     // --- Tournament mode ---
     tournamentDuration: 120, // 秒，默认 2 分钟
     tournamentEndTime: null,
+    spellingMode: false,
+    customWords: [],
+    customWordCursor: 0,
+    missedWordList: [],
+    readAloud: false,
+    spellingRoundComplete: false,
+    spellingWordsProcessed: 0,
   };
 }
 
@@ -44,6 +51,7 @@ export const GameMode = {
   LEVEL: 'level',
   PRACTICE: 'practice',
   TOURNAMENT: 'tournament',
+  SPELLING: 'spelling',
 };
 
 export function resetGameState() {
@@ -68,4 +76,4 @@ export const resetGame = bind('resetGame'); // 若未来实现
 if (typeof window !== 'undefined') {
   window.gameState = gameState;
   window.resetGame = resetGameState;
-} 
+}
