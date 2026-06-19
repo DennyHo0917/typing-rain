@@ -696,12 +696,13 @@ function head(page) {
     <link rel="canonical" href="${baseUrl}${page.path}">
 ${alternateLinks(page.path)}
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SMTNW9G4V5"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF1V40KVS"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-SMTNW9G4V5');
+      gtag('config', 'G-VYF1V40KVS');
     </script>
 
     <link rel="stylesheet" href="/src/css/main.css">

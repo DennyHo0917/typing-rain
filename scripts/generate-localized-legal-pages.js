@@ -374,6 +374,14 @@ ${alternateLinks(slug)}
     <meta property="og:image:alt" content="My Spelling Game preview">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="${ogImage}">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF1V40KVS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VYF1V40KVS');
+    </script>
     <link rel="stylesheet" href="/src/css/main.css">
 </head>
 <body>
