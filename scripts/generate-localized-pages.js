@@ -32,7 +32,7 @@ const pages = {
     path: '/es/',
     pageLocale: 'es',
     ogLocale: 'es_ES',
-    title: 'Juego de spelling en inglés con tus propias palabras | My Spelling Game',
+    title: 'Juego de spelling en inglés | My Spelling Game',
     description: 'Pega la lista de vocabulario de esta semana y juega un juego gratis de spelling en inglés. Repite las palabras falladas y comparte un enlace sin crear cuenta.',
     keywords: 'juego de spelling en inglés,juego de deletreo en inglés,juego de ortografía inglesa,practicar spelling en inglés,juego con tus propias palabras,lista de vocabulario en inglés,juego de palabras en inglés para niños,práctica de spelling sin cuenta',
     ogTitle: 'Juego de spelling en inglés con tus propias palabras',

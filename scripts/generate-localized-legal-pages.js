@@ -379,6 +379,8 @@ ${alternateLinks(slug)}
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="My Spelling Game preview">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${escapeAttr(data.title)}">
+    <meta name="twitter:description" content="${escapeAttr(data.description)}">
     <meta name="twitter:image" content="${ogImage}">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF1V40KVS"></script>
