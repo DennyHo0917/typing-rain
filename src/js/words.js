@@ -21,20 +21,104 @@ function getCtx() {
   return canvas ? canvas.getContext('2d') : null;
 }
 
+function randomBetween(min, max) {
+  if (max <= min) return min;
+  return min + Math.random() * (max - min);
+}
+
+function measureWordWidth(canvas, word, fontSize) {
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return word.length * fontSize * 0.62;
+
+  ctx.save();
+  ctx.font = `700 ${fontSize}px Inter, system-ui, sans-serif`;
+  const width = ctx.measureText(word).width;
+  ctx.restore();
+  return width;
+}
+
+function statsRectOnCanvas(canvas) {
+  const stats = document.querySelector('.stats');
+  if (!stats) return null;
+
+  const statsStyle = window.getComputedStyle(stats);
+  if (statsStyle.display === 'none' || statsStyle.visibility === 'hidden') return null;
+
+  const canvasRect = canvas.getBoundingClientRect();
+  const statsRect = stats.getBoundingClientRect();
+  if (!canvasRect.width || !canvasRect.height || !statsRect.width || !statsRect.height) return null;
+
+  const scaleX = canvas.width / canvasRect.width;
+  const scaleY = canvas.height / canvasRect.height;
+  const left = Math.max(0, (statsRect.left - canvasRect.left) * scaleX);
+  const right = Math.min(canvas.width, (statsRect.right - canvasRect.left) * scaleX);
+  const top = Math.max(0, (statsRect.top - canvasRect.top) * scaleY);
+  const bottom = Math.min(canvas.height, (statsRect.bottom - canvasRect.top) * scaleY);
+
+  if (right <= 0 || left >= canvas.width || bottom <= 0 || top >= canvas.height) return null;
+  return { left, right, top, bottom };
+}
+
+function chooseSafeSpawnPosition(canvas, word, fontSize) {
+  const margin = 24;
+  const statsPadding = 18;
+  const wordWidth = measureWordWidth(canvas, word, fontSize);
+  const halfWord = wordWidth / 2;
+  const minX = Math.min(canvas.width / 2, margin + halfWord);
+  const maxX = Math.max(canvas.width / 2, canvas.width - margin - halfWord);
+  const fallback = { x: randomBetween(minX, maxX), y: -50 };
+  const statsRect = statsRectOnCanvas(canvas);
+
+  if (!statsRect) return fallback;
+
+  const leftRange = {
+    min: minX,
+    max: Math.min(maxX, statsRect.left - statsPadding - halfWord),
+  };
+  const rightRange = {
+    min: Math.max(minX, statsRect.right + statsPadding + halfWord),
+    max: maxX,
+  };
+  const ranges = [leftRange, rightRange]
+    .filter((range) => range.max > range.min)
+    .map((range) => ({ ...range, width: range.max - range.min }));
+
+  if (ranges.length) {
+    const totalWidth = ranges.reduce((sum, range) => sum + range.width, 0);
+    let pick = Math.random() * totalWidth;
+    for (const range of ranges) {
+      if (pick <= range.width) return { x: randomBetween(range.min, range.max), y: -50 };
+      pick -= range.width;
+    }
+  }
+
+  return {
+    x: fallback.x,
+    y: Math.min(canvas.height - margin, statsRect.bottom + statsPadding + fontSize),
+  };
+}
+
 export class FallingWord {
   constructor() {
     this.word = this.getRandomWord();
     if (!this.word) return; // 无可用单词
 
     const canvas = getCanvas();
-    this.x = Math.random() * (canvas.width - 200) + 100;
-    this.y = -50;
+    if (!canvas) {
+      this.word = null;
+      return;
+    }
+
+    this.fontSize = 24;
+    const spawnPosition = chooseSafeSpawnPosition(canvas, this.word, this.fontSize);
+    this.x = spawnPosition.x;
+    this.y = spawnPosition.y;
+    this.spawnY = spawnPosition.y;
     this.speed = (Math.random() * 0.5 + 0.3 + (gameState.level - 1) * 0.1);
     if (gameState.mode === 'practice' && gameState.practiceSpeed) {
       this.speed *= gameState.practiceSpeed;
     }
     this.color = this.getWordColor();
-    this.fontSize = 24;
     this.matched = false;
     this.progress = 0;
     speakWord(this.word);

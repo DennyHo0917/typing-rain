@@ -19,7 +19,7 @@ export function initializeWords() {
   for (let i = 0; i < 3; i++) {
     const w = new FallingWord();
     if (w.word) {
-      w.y = -100 - i * 150;
+      w.y = w.spawnY > 0 ? w.spawnY + i * 64 : -100 - i * 150;
       fallingWords.push(w);
     }
   }
