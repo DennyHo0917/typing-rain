@@ -332,11 +332,17 @@ ${links}
 function footer(loc) {
   return `    <footer>
         <p>
-            ${sharedSeoLinks.map((item) => `<a href="${item.href}">${loc.links[item.key]}</a>`).join(' &middot; ')}<br>
+            ${sharedSeoLinks.map((item) => `<a href="${localizedSeoHref(loc, item)}">${loc.links[item.key]}</a>`).join(' &middot; ')}<br>
             <a href="${pagePath(loc, 'privacy')}">${loc.links.privacy}</a> &middot; <a href="${pagePath(loc, 'about')}">${loc.links.about}</a> &middot; <a href="${pagePath(loc, 'contact')}">${loc.links.contact}</a><br>
             &copy; 2026 My Spelling Game All rights reserved.
         </p>
     </footer>`;
+}
+
+function localizedSeoHref(loc, item) {
+  if (item.key !== 'list' && item.key !== 'weekly') return item.href;
+  const slug = item.href.replace(/^\//, '');
+  return `${loc.dir}/${slug}`.replace('//', '/');
 }
 
 function panelBody(body) {

@@ -24,6 +24,8 @@ const sharedLinks = [
   '/vocabulary-typing-game.html',
 ];
 
+const localizedSeoSlugs = ['spelling-list-game', 'weekly-spelling-practice'];
+
 const pages = {
   es: {
     htmlLang: 'es',
@@ -717,6 +719,13 @@ function listItems(items) {
   return items.map((item) => `                <li>${item}</li>`).join('\n');
 }
 
+function localizedSharedHref(page, href) {
+  const slug = href.replace(/^\//, '').replace(/\.html$/, '');
+  if (!localizedSeoSlugs.includes(slug)) return href;
+  const base = page.path === '/' ? '' : page.path.replace(/\/$/, '');
+  return `${base}/${slug}.html`;
+}
+
 function body(page, code) {
   const game = page.game;
   const privacy = page.privacy;
@@ -897,7 +906,7 @@ ${listItems(info.bullets)}
 
     <footer>
         <p>
-            ${sharedLinks.map((href, index) => `<a href="${href}">${page.footerLinks[index]}</a>`).join(' &middot; ')}<br>
+            ${sharedLinks.map((href, index) => `<a href="${localizedSharedHref(page, href)}">${page.footerLinks[index]}</a>`).join(' &middot; ')}<br>
             <a href="${legalBase}/privacy.html">${page.legalLinks[0]}</a> &middot; <a href="${legalBase}/about.html">${page.legalLinks[1]}</a> &middot; <a href="${legalBase}/contact.html">${page.legalLinks[2]}</a><br>
             &copy; 2026 My Spelling Game All rights reserved.
         </p>
@@ -982,13 +991,18 @@ function sitemap() {
     changefreq: 'monthly',
     alternateSlug: slug,
   })));
+  const localizedSeoEntries = alternates.flatMap((alt) => localizedSeoSlugs.map((slug) => ({
+    loc: alt.path === '/' ? `/${slug}.html` : `${alt.path}${slug}.html`,
+    priority: slug === 'spelling-list-game' ? '0.85' : '0.8',
+    changefreq: 'monthly',
+    alternateSlug: slug,
+  })));
 
   const urlEntries = [
     { loc: '/', priority: '1.0', changefreq: 'weekly', alternateSlug: '' },
     ...alternates.filter((alt) => alt.path !== '/').map((alt) => ({ loc: alt.path, priority: '0.95', changefreq: 'weekly', alternateSlug: '' })),
     { loc: '/custom-spelling-words-game.html', priority: '0.9', changefreq: 'monthly' },
-    { loc: '/spelling-list-game.html', priority: '0.85', changefreq: 'monthly' },
-    { loc: '/weekly-spelling-practice.html', priority: '0.8', changefreq: 'monthly' },
+    ...localizedSeoEntries,
     { loc: '/sight-word-typing-game.html', priority: '0.75', changefreq: 'monthly' },
     { loc: '/homeschool-spelling-practice.html', priority: '0.75', changefreq: 'monthly' },
     { loc: '/vocabulary-typing-game.html', priority: '0.75', changefreq: 'monthly' },
