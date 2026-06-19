@@ -698,6 +698,8 @@ function head(page) {
     <link rel="canonical" href="${baseUrl}${page.path}">
 ${alternateLinks(page.path)}
 
+    <script src="/src/js/localeRedirect.js"></script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF1V40KVS"></script>
     <script>

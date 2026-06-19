@@ -382,6 +382,7 @@ ${alternateLinks(slug)}
     <meta name="twitter:title" content="${escapeAttr(data.title)}">
     <meta name="twitter:description" content="${escapeAttr(data.description)}">
     <meta name="twitter:image" content="${ogImage}">
+    <script src="/src/js/localeRedirect.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF1V40KVS"></script>
     <script>

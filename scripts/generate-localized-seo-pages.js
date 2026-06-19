@@ -395,6 +395,7 @@ ${alternateLinks(slug)}
     <meta name="twitter:title" content="${escapeAttr(page.title)}">
     <meta name="twitter:description" content="${escapeAttr(page.ogDescription)}">
     <meta name="twitter:image" content="${ogImage}">
+    <script src="/src/js/localeRedirect.js"></script>
 ${googleTag()}
     <link rel="stylesheet" href="/src/css/main.css">
 </head>
