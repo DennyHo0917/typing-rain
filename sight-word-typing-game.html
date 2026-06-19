@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sight Word Typing Game | My Spelling Game</title>
-    <meta name="description" content="Paste sight words and turn them into a simple typing game. Students practice the exact words, replay missed words, and share a no-login link.">
+    <title>Sight Word Typing Game With Your List | My Spelling Game</title>
+    <meta name="description" content="Paste a teacher-provided sight word list and play a simple typing game. Great for classroom or home practice, missed-word replay, and no student login.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://myspellinggame.com/sight-word-typing-game.html">
+    <link rel="alternate" hreflang="en" href="https://myspellinggame.com/sight-word-typing-game.html">
+    <link rel="alternate" hreflang="es" href="https://myspellinggame.com/es/sight-word-typing-game.html">
+    <link rel="alternate" hreflang="pt-BR" href="https://myspellinggame.com/pt-br/sight-word-typing-game.html">
+    <link rel="alternate" hreflang="fr" href="https://myspellinggame.com/fr/sight-word-typing-game.html">
+    <link rel="alternate" hreflang="id" href="https://myspellinggame.com/id/sight-word-typing-game.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://myspellinggame.com/zh/sight-word-typing-game.html">
+    <link rel="alternate" hreflang="x-default" href="https://myspellinggame.com/sight-word-typing-game.html">
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/icon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <meta property="og:title" content="Sight Word Typing Game | My Spelling Game">
-    <meta property="og:description" content="Paste sight words and play a falling-word typing game with missed-word replay.">
+    <meta property="og:title" content="Sight Word Typing Game With Your List | My Spelling Game">
+    <meta property="og:description" content="Paste a custom sight word list and play a no-login typing game with missed-word replay.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://myspellinggame.com/sight-word-typing-game.html">
     <meta property="og:image" content="https://myspellinggame.com/images/my-spelling-game-og.png">
@@ -20,9 +27,10 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="My Spelling Game sight word typing game preview">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sight Word Typing Game | My Spelling Game">
-    <meta name="twitter:description" content="Paste sight words and play a falling-word typing game with missed-word replay.">
+    <meta name="twitter:title" content="Sight Word Typing Game With Your List | My Spelling Game">
+    <meta name="twitter:description" content="Paste a custom sight word list and play a no-login typing game with missed-word replay.">
     <meta name="twitter:image" content="https://myspellinggame.com/images/my-spelling-game-og.png">
+    <script src="/src/js/localeRedirect.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF1V40KVS"></script>
     <script>
@@ -34,10 +42,24 @@
     <link rel="stylesheet" href="src/css/main.css">
 </head>
 <body>
+    <div class="top-right-nav">
+        <details class="language-switcher">
+            <summary class="lang-btn" aria-label="Language">Language</summary>
+            <div class="lang-menu">
+                <a class="lang-option" href="/sight-word-typing-game.html" hreflang="en" aria-current="page">English</a>
+                <a class="lang-option" href="/es/sight-word-typing-game.html" hreflang="es">Español</a>
+                <a class="lang-option" href="/pt-br/sight-word-typing-game.html" hreflang="pt-BR">Português</a>
+                <a class="lang-option" href="/fr/sight-word-typing-game.html" hreflang="fr">Français</a>
+                <a class="lang-option" href="/id/sight-word-typing-game.html" hreflang="id">Bahasa Indonesia</a>
+                <a class="lang-option" href="/zh/sight-word-typing-game.html" hreflang="zh-CN">中文</a>
+            </div>
+        </details>
+        <button class="lang-btn" onclick="window.location.href='/'" id="back-home" title="Home">Home</button>
+    </div>
     <main class="seo-landing">
         <section class="seo-hero">
-            <h1>Sight Word Typing Game</h1>
-            <p>Use My Spelling Game as a sight word typing game by pasting the exact sight words your student needs to recognize and type.</p>
+            <h1>Sight Word Typing Game With Your Own List</h1>
+            <p>Use My Spelling Game as a sight word typing game by pasting the exact sight words your student needs to recognize and type for class, home, or early-grade practice.</p>
             <a class="seo-cta" href="/">Paste Sight Words</a>
         </section>
 
@@ -46,7 +68,7 @@
         </aside>
 
         <section class="seo-panel">
-            <h2>Good For Short Word Lists</h2>
+            <h2>Good For Short Custom Word Lists</h2>
             <p>Sight word practice works best when the list is small and repeated. My Spelling Game keeps the round short, saves missed words, and lets the student try the hard words again.</p>
         </section>
 
@@ -55,8 +77,16 @@
             <ul>
                 <li>Paste a Dolch-style, Fry-style, or teacher-provided sight word list.</li>
                 <li>Use the optional read-aloud setting when browser voices are available.</li>
-                <li>Share the same practice link with no account setup.</li>
+                <li>Use it for classroom centers, homework, or homeschool reading practice.</li>
+                <li>Share the same practice link with no student account setup.</li>
             </ul>
+        </section>
+
+        <section class="seo-panel">
+            <h2>Quick FAQ</h2>
+            <p><strong>Can I use my own sight word list?</strong> Yes. Paste the sight words your student is practicing right now.</p>
+            <p><strong>Is it good for classroom centers?</strong> Yes. Share the same no-login link for a short independent typing round.</p>
+            <p><strong>Can students retry missed sight words?</strong> Yes. Missed words can be replayed after the round.</p>
         </section>
 
         <section class="seo-panel">
@@ -77,14 +107,59 @@
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "Sight Word Typing Game",
-      "description": "Paste sight words and turn them into a simple typing game.",
+      "name": "Sight Word Typing Game With Your Own List",
+      "description": "Paste sight words and turn them into a simple no-login typing game with missed-word replay.",
       "url": "https://myspellinggame.com/sight-word-typing-game.html",
       "isPartOf": {
         "@type": "WebSite",
         "name": "My Spelling Game",
         "url": "https://myspellinggame.com/"
       }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Can I use my own sight word list?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Paste the sight words your student is practicing right now."
+        }
+      },{
+        "@type": "Question",
+        "name": "Is it good for classroom centers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Share the same no-login link for a short independent typing round."
+        }
+      },{
+        "@type": "Question",
+        "name": "Can students retry missed sight words?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Missed words can be replayed after the round."
+        }
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://myspellinggame.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Sight Word Typing Game",
+        "item": "https://myspellinggame.com/sight-word-typing-game.html"
+      }]
     }
     </script>
 </body>

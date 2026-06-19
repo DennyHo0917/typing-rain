@@ -16,7 +16,11 @@
     'about',
     'contact',
     'privacy',
+    'custom-spelling-words-game',
+    'homeschool-spelling-practice',
+    'sight-word-typing-game',
     'spelling-list-game',
+    'vocabulary-typing-game',
     'weekly-spelling-practice',
   ]);
 
