@@ -7,12 +7,12 @@ const ogImage = `${baseUrl}/images/my-spelling-game-og.png`;
 const today = '2026-06-19';
 
 const languages = [
-  { code: 'en', htmlLang: 'en', hreflang: 'en', label: 'English', dir: '', nav: 'Language', home: 'Home', privacy: 'Privacy', about: 'About' },
-  { code: 'es', htmlLang: 'es', hreflang: 'es', label: 'Español', dir: 'es', nav: 'Idioma', home: 'Inicio', privacy: 'Privacidad', about: 'Acerca de' },
-  { code: 'pt-BR', htmlLang: 'pt-BR', hreflang: 'pt-BR', label: 'Português', dir: 'pt-br', nav: 'Idioma', home: 'Início', privacy: 'Privacidade', about: 'Sobre' },
-  { code: 'fr', htmlLang: 'fr', hreflang: 'fr', label: 'Français', dir: 'fr', nav: 'Langue', home: 'Accueil', privacy: 'Confidentialité', about: 'À propos' },
-  { code: 'id', htmlLang: 'id', hreflang: 'id', label: 'Bahasa Indonesia', dir: 'id', nav: 'Bahasa', home: 'Beranda', privacy: 'Privasi', about: 'Tentang' },
-  { code: 'zh', htmlLang: 'zh-CN', hreflang: 'zh-CN', label: '中文', dir: 'zh', nav: '语言', home: '首页', privacy: '隐私', about: '关于' },
+  { code: 'en', htmlLang: 'en', hreflang: 'en', label: 'English', dir: '', nav: 'Language', home: 'Home', privacy: 'Privacy', about: 'About', contact: 'Contact' },
+  { code: 'es', htmlLang: 'es', hreflang: 'es', label: 'Español', dir: 'es', nav: 'Idioma', home: 'Inicio', privacy: 'Privacidad', about: 'Acerca de', contact: 'Contacto' },
+  { code: 'pt-BR', htmlLang: 'pt-BR', hreflang: 'pt-BR', label: 'Português', dir: 'pt-br', nav: 'Idioma', home: 'Início', privacy: 'Privacidade', about: 'Sobre', contact: 'Contato' },
+  { code: 'fr', htmlLang: 'fr', hreflang: 'fr', label: 'Français', dir: 'fr', nav: 'Langue', home: 'Accueil', privacy: 'Confidentialité', about: 'À propos', contact: 'Contact' },
+  { code: 'id', htmlLang: 'id', hreflang: 'id', label: 'Bahasa Indonesia', dir: 'id', nav: 'Bahasa', home: 'Beranda', privacy: 'Privasi', about: 'Tentang', contact: 'Kontak' },
+  { code: 'zh', htmlLang: 'zh-CN', hreflang: 'zh-CN', label: '中文', dir: 'zh', nav: '语言', home: '首页', privacy: '隐私', about: '关于', contact: '联系' },
 ];
 
 const seoSlugs = [
@@ -21,6 +21,14 @@ const seoSlugs = [
   'weekly-spelling-practice',
   'homeschool-spelling-practice',
   'sight-word-typing-game',
+  'vocabulary-typing-game',
+];
+const footerSlugs = [
+  'custom-spelling-words-game',
+  'spelling-list-game',
+  'weekly-spelling-practice',
+  'sight-word-typing-game',
+  'homeschool-spelling-practice',
   'vocabulary-typing-game',
 ];
 const newLongtailSlugs = [
@@ -110,6 +118,57 @@ const labels = {
       'sight-word-typing-game': 'Sight Words 打字练习',
       'vocabulary-typing-game': '英语词汇打字游戏',
     },
+  },
+};
+
+const footerLinks = {
+  en: {
+    'custom-spelling-words-game': 'Custom Spelling Game',
+    'spelling-list-game': 'Spelling List Game',
+    'weekly-spelling-practice': 'Weekly Practice',
+    'homeschool-spelling-practice': 'Homeschool',
+    'sight-word-typing-game': 'Sight Words',
+    'vocabulary-typing-game': 'Vocabulary',
+  },
+  es: {
+    'custom-spelling-words-game': 'Juego personalizado',
+    'spelling-list-game': 'Lista de spelling',
+    'weekly-spelling-practice': 'Práctica semanal',
+    'homeschool-spelling-practice': 'Homeschool',
+    'sight-word-typing-game': 'Sight words',
+    'vocabulary-typing-game': 'Vocabulario',
+  },
+  'pt-BR': {
+    'custom-spelling-words-game': 'Jogo personalizado',
+    'spelling-list-game': 'Lista de soletrar',
+    'weekly-spelling-practice': 'Prática semanal',
+    'homeschool-spelling-practice': 'Homeschool',
+    'sight-word-typing-game': 'Sight words',
+    'vocabulary-typing-game': 'Vocabulário',
+  },
+  fr: {
+    'custom-spelling-words-game': 'Jeu personnalisé',
+    'spelling-list-game': 'Liste de mots',
+    'weekly-spelling-practice': 'Pratique hebdomadaire',
+    'homeschool-spelling-practice': 'Homeschool',
+    'sight-word-typing-game': 'Sight words',
+    'vocabulary-typing-game': 'Vocabulaire',
+  },
+  id: {
+    'custom-spelling-words-game': 'Game kata sendiri',
+    'spelling-list-game': 'Daftar spelling',
+    'weekly-spelling-practice': 'Latihan mingguan',
+    'homeschool-spelling-practice': 'Homeschool',
+    'sight-word-typing-game': 'Sight words',
+    'vocabulary-typing-game': 'Kosakata',
+  },
+  zh: {
+    'custom-spelling-words-game': '自定义单词游戏',
+    'spelling-list-game': '单词表练习',
+    'weekly-spelling-practice': '每周拼写练习',
+    'homeschool-spelling-practice': 'Homeschool',
+    'sight-word-typing-game': 'Sight words',
+    'vocabulary-typing-game': '词汇练习',
   },
 };
 
@@ -663,6 +722,17 @@ ${seoSlugs.filter((slug) => slug !== currentSlug).map((slug) => `               
         </section>`;
 }
 
+function footerHtml(langCode) {
+  const lang = languages.find((item) => item.code === langCode);
+  return `    <footer>
+        <p>
+${footerSlugs.map((slug) => `            <a href="${pagePath(lang, slug)}">${footerLinks[langCode][slug]}</a>`).join(' &middot;\n')}<br>
+            <a href="${dirPath(lang)}privacy.html">${lang.privacy}</a> &middot; <a href="${dirPath(lang)}about.html">${lang.about}</a> &middot; <a href="${dirPath(lang)}contact.html">${lang.contact}</a><br>
+            &copy; 2026 My Spelling Game All rights reserved.
+        </p>
+    </footer>`;
+}
+
 function jsonLd(data) {
   return JSON.stringify(data, null, 2).replace(/</g, '\\u003c');
 }
@@ -766,9 +836,7 @@ ${faqHtml(langCode, page.faq)}
 
 ${relatedHtml(langCode, slug)}
     </main>
-    <footer style="text-align:center; padding:20px;">
-        <a href="${dirPath(lang)}" style="color:#00f5ff">${lang.home}</a> &middot; <a href="${dirPath(lang)}privacy.html" style="color:#00f5ff">${lang.privacy}</a> &middot; <a href="${dirPath(lang)}about.html" style="color:#00f5ff">${lang.about}</a>
-    </footer>
+${footerHtml(langCode)}
 ${schemaScripts(lang, slug, page)}
 </body>
 </html>
@@ -789,6 +857,7 @@ function updateEnglishLongtail(slug) {
   if (!html.includes('class="top-right-nav"')) {
     html = html.replace('<body>\n', `<body>\n${languageMenu('en', slug)}\n`);
   }
+  html = html.replace(/    <footer[\s\S]*?<\/footer>/, footerHtml('en'));
   fs.writeFileSync(file, html, 'utf8');
 }
 
