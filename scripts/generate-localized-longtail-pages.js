@@ -834,6 +834,7 @@ function updateExistingLocalizedSeoPage(langCode, slug) {
 function localizeLongtailLinks() {
   for (const lang of languages.filter((item) => item.code !== 'en')) {
     for (const file of fs.readdirSync(path.join(root, lang.dir)).filter((name) => name.endsWith('.html'))) {
+      if (newLongtailSlugs.includes(path.basename(file, '.html'))) continue;
       const fullPath = path.join(root, lang.dir, file);
       let html = fs.readFileSync(fullPath, 'utf8');
       for (const slug of newLongtailSlugs) {
