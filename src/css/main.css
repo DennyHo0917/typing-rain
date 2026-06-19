@@ -895,6 +895,38 @@ footer a {
   text-decoration: none;
 }
 
+.seo-footer {
+  text-align: center;
+}
+
+.seo-footer-practice {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px;
+  max-width: 920px;
+  margin: 0 auto 18px;
+}
+
+.seo-footer-practice a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-soft);
+  color: var(--primary) !important;
+  font-weight: 800;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.seo-footer p {
+  margin: 0;
+  color: var(--muted) !important;
+}
+
 .lang-menu {
   position: absolute;
   top: 100%;

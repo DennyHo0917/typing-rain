@@ -5,6 +5,7 @@ const root = path.resolve(__dirname, '..');
 const baseUrl = 'https://myspellinggame.com';
 const ogImage = `${baseUrl}/images/my-spelling-game-og.png`;
 const today = '2026-06-19';
+const cssVersion = '20260619-footer-nav';
 
 const languages = [
   { code: 'en', htmlLang: 'en', hreflang: 'en', label: 'English', dir: '', nav: 'Language', home: 'Home', privacy: 'Privacy', about: 'About' },
@@ -663,6 +664,16 @@ ${seoSlugs.filter((slug) => slug !== currentSlug).map((slug) => `               
         </section>`;
 }
 
+function footerHtml(langCode, currentSlug) {
+  const lang = languages.find((item) => item.code === langCode);
+  return `    <footer class="seo-footer">
+        <nav class="seo-footer-practice" aria-label="${escapeAttr(labels[langCode].related)}">
+${seoSlugs.filter((slug) => slug !== currentSlug).map((slug) => `            <a href="${pagePath(lang, slug)}">${labels[langCode].links[slug]}</a>`).join('\n')}
+        </nav>
+        <p><a href="${dirPath(lang)}">${lang.home}</a> &middot; <a href="${dirPath(lang)}privacy.html">${lang.privacy}</a> &middot; <a href="${dirPath(lang)}about.html">${lang.about}</a></p>
+    </footer>`;
+}
+
 function jsonLd(data) {
   return JSON.stringify(data, null, 2).replace(/</g, '\\u003c');
 }
@@ -745,7 +756,7 @@ ${alternateLinks(slug)}
       gtag('js', new Date());
       gtag('config', 'G-VYF1V40KVS');
     </script>
-    <link rel="stylesheet" href="/src/css/main.css">
+    <link rel="stylesheet" href="/src/css/main.css?v=${cssVersion}">
 </head>
 <body>
 ${languageMenu(langCode, slug)}
@@ -766,9 +777,7 @@ ${faqHtml(langCode, page.faq)}
 
 ${relatedHtml(langCode, slug)}
     </main>
-    <footer style="text-align:center; padding:20px;">
-        <a href="${dirPath(lang)}" style="color:#00f5ff">${lang.home}</a> &middot; <a href="${dirPath(lang)}privacy.html" style="color:#00f5ff">${lang.privacy}</a> &middot; <a href="${dirPath(lang)}about.html" style="color:#00f5ff">${lang.about}</a>
-    </footer>
+${footerHtml(langCode, slug)}
 ${schemaScripts(lang, slug, page)}
 </body>
 </html>
@@ -789,6 +798,8 @@ function updateEnglishLongtail(slug) {
   if (!html.includes('class="top-right-nav"')) {
     html = html.replace('<body>\n', `<body>\n${languageMenu('en', slug)}\n`);
   }
+  html = html.replace(/href="\/src\/css\/main\.css(?:\?[^"]*)?"/, `href="/src/css/main.css?v=${cssVersion}"`);
+  html = html.replace(/    <footer[\s\S]*?<\/footer>/, footerHtml('en', slug));
   fs.writeFileSync(file, html, 'utf8');
 }
 
