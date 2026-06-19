@@ -87,7 +87,7 @@ const pages = {
       ],
       adsTitle: 'Publicidad',
       ads: [
-        'El sitio puede usar Google AdSense cuando activemos anuncios.',
+        'El sitio usa Google AdSense para mostrar anuncios.',
         'La personalización de anuncios depende de las políticas de Google.',
       ],
       rightsTitle: 'Tus opciones',
@@ -204,7 +204,7 @@ const pages = {
       ],
       adsTitle: 'Anúncios',
       ads: [
-        'O site pode usar Google AdSense quando os anúncios forem ativados.',
+        'O site usa Google AdSense para exibir anúncios.',
         'A personalização segue as políticas do Google.',
       ],
       rightsTitle: 'Suas opções',
@@ -321,7 +321,7 @@ const pages = {
       ],
       adsTitle: 'Publicité',
       ads: [
-        'Le site peut utiliser Google AdSense lorsque les annonces seront activées.',
+        'Le site utilise Google AdSense pour afficher des annonces.',
         'La personnalisation dépend des règles de Google.',
       ],
       rightsTitle: 'Vos choix',
@@ -438,7 +438,7 @@ const pages = {
       ],
       adsTitle: 'Iklan',
       ads: [
-        'Situs dapat memakai Google AdSense saat iklan diaktifkan.',
+        'Situs menggunakan Google AdSense untuk menampilkan iklan.',
         'Personalisasi iklan mengikuti kebijakan Google.',
       ],
       rightsTitle: 'Pilihanmu',
@@ -555,7 +555,7 @@ const pages = {
       ],
       adsTitle: '广告',
       ads: [
-        '未来开启广告时，网站可能使用 Google AdSense。',
+        '网站使用 Google AdSense 展示广告。',
         '广告个性化遵循 Google 的相关政策。',
       ],
       rightsTitle: '你的选择',
@@ -699,6 +699,8 @@ function head(page) {
 ${alternateLinks(page.path)}
 
     <script src="/src/js/localeRedirect.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9244949928133071"
+      crossorigin="anonymous"></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF1V40KVS"></script>

@@ -396,6 +396,8 @@ ${alternateLinks(slug)}
     <meta name="twitter:description" content="${escapeAttr(page.ogDescription)}">
     <meta name="twitter:image" content="${ogImage}">
     <script src="/src/js/localeRedirect.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9244949928133071"
+      crossorigin="anonymous"></script>
 ${googleTag()}
     <link rel="stylesheet" href="/src/css/main.css">
 </head>

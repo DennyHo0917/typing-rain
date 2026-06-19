@@ -61,7 +61,7 @@ const locale = {
         ['Overview', 'My Spelling Game respects your privacy. The tool is designed to work without student accounts, class setup, or personal profiles.'],
         ['Local Storage', 'Your spelling list and optional hear-words preference are stored locally in your browser using localStorage. This data is used to keep the practice list available on your device and does not leave your browser through our own server.'],
         ['Analytics', 'We use Google Analytics to understand how visitors use the site and improve the practice experience. We do not collect personally identifiable student information through My Spelling Game.'],
-        ['Advertising', 'The site may use Google AdSense in the future. Ad personalization and related cookies follow Google’s policies. Authorized seller declaration is published at <a href="/ads.txt">/ads.txt</a>.'],
+        ['Advertising', 'The site uses Google AdSense. Ad personalization and related cookies follow Google policies. Authorized seller declaration is published at <a href="/ads.txt">/ads.txt</a>.'],
         ['Your Choices', 'You can clear saved spelling lists in your browser settings, block cookies, use ad blockers, or disable analytics through browser tools and privacy extensions.'],
         ['Contact', 'If you have questions about this policy, please contact us through the <a href="/contact.html">contact page</a>.'],
       ],
@@ -107,7 +107,7 @@ const locale = {
         ['Resumen', 'My Spelling Game respeta tu privacidad. La herramienta está diseñada para funcionar sin cuentas de estudiante, clases virtuales ni perfiles personales.'],
         ['Almacenamiento local', 'Tu lista de palabras y preferencias se guardan localmente en tu navegador mediante localStorage. Esto mantiene la práctica disponible en tu dispositivo y no envía la lista a nuestro propio servidor.'],
         ['Analítica', 'Usamos Google Analytics para entender cómo se usa el sitio y mejorar la experiencia. No recogemos información personal identificable de estudiantes mediante My Spelling Game.'],
-        ['Publicidad', 'El sitio puede usar Google AdSense en el futuro. La personalización de anuncios y cookies relacionadas sigue las políticas de Google. La declaración de vendedor autorizado está en <a href="/ads.txt">/ads.txt</a>.'],
+        ['Publicidad', 'El sitio usa Google AdSense. La personalización de anuncios y cookies relacionadas sigue las políticas de Google. La declaración de vendedor autorizado está en <a href="/ads.txt">/ads.txt</a>.'],
         ['Tus opciones', 'Puedes borrar listas guardadas desde el navegador, bloquear cookies, usar bloqueadores de anuncios o desactivar analítica con herramientas de privacidad.'],
         ['Contacto', 'Si tienes preguntas sobre esta política, escríbenos desde la <a href="/es/contact.html">página de contacto</a>.'],
       ],
@@ -153,7 +153,7 @@ const locale = {
         ['Visão geral', 'My Spelling Game respeita sua privacidade. A ferramenta foi criada para funcionar sem contas de aluno, turma online ou perfis pessoais.'],
         ['Armazenamento local', 'Sua lista de palavras e preferências ficam salvas localmente no navegador usando localStorage. Isso mantém a lista disponível no seu dispositivo e não envia a lista ao nosso servidor.'],
         ['Analytics', 'Usamos Google Analytics para entender o uso do site e melhorar a experiência. Não coletamos informações pessoais identificáveis de alunos pelo My Spelling Game.'],
-        ['Anúncios', 'O site pode usar Google AdSense no futuro. Personalização de anúncios e cookies seguem as políticas do Google. A declaração de vendedor autorizado fica em <a href="/ads.txt">/ads.txt</a>.'],
+        ['Anúncios', 'O site usa Google AdSense. Personalização de anúncios e cookies seguem as políticas do Google. A declaração de vendedor autorizado fica em <a href="/ads.txt">/ads.txt</a>.'],
         ['Suas opções', 'Você pode apagar listas salvas nas configurações do navegador, bloquear cookies, usar bloqueadores de anúncio ou desativar analytics com ferramentas de privacidade.'],
         ['Contato', 'Se tiver dúvidas sobre esta política, fale conosco pela <a href="/pt-br/contact.html">página de contato</a>.'],
       ],
@@ -199,7 +199,7 @@ const locale = {
         ['Vue d’ensemble', 'My Spelling Game respecte votre vie privée. L’outil est conçu pour fonctionner sans comptes élèves, espace classe ni profils personnels.'],
         ['Stockage local', 'Votre liste de mots et vos préférences sont enregistrées localement dans le navigateur avec localStorage. Cela garde la liste disponible sur votre appareil et ne l’envoie pas à notre serveur.'],
         ['Analytics', 'Nous utilisons Google Analytics pour comprendre l’usage du site et améliorer la pratique. Nous ne collectons pas d’informations personnelles identifiables d’élèves via My Spelling Game.'],
-        ['Publicité', 'Le site pourra utiliser Google AdSense à l’avenir. La personnalisation des annonces et les cookies associés suivent les règles de Google. La déclaration de vendeur autorisé se trouve sur <a href="/ads.txt">/ads.txt</a>.'],
+        ['Publicité', 'Le site utilise Google AdSense. La personnalisation des annonces et les cookies associés suivent les règles de Google. La déclaration de vendeur autorisé se trouve sur <a href="/ads.txt">/ads.txt</a>.'],
         ['Vos choix', 'Vous pouvez effacer les listes enregistrées dans le navigateur, bloquer les cookies, utiliser un bloqueur de publicité ou désactiver l’analyse avec des outils de confidentialité.'],
         ['Contact', 'Pour toute question sur cette politique, utilisez la <a href="/fr/contact.html">page de contact</a>.'],
       ],
@@ -245,7 +245,7 @@ const locale = {
         ['Ringkasan', 'My Spelling Game menghormati privasi. Alat ini dibuat agar bisa berjalan tanpa akun siswa, kelas online, atau profil pribadi.'],
         ['Penyimpanan lokal', 'Daftar kata dan pilihan latihan disimpan di browser menggunakan localStorage. Data ini menjaga daftar tetap tersedia di perangkatmu dan tidak dikirim ke server kami.'],
         ['Analytics', 'Kami menggunakan Google Analytics untuk memahami penggunaan situs dan memperbaiki pengalaman latihan. Kami tidak mengumpulkan informasi siswa yang dapat dikenali melalui My Spelling Game.'],
-        ['Iklan', 'Situs ini dapat memakai Google AdSense di masa depan. Personalisasi iklan dan cookie terkait mengikuti kebijakan Google. Pernyataan penjual resmi tersedia di <a href="/ads.txt">/ads.txt</a>.'],
+        ['Iklan', 'Situs ini menggunakan Google AdSense. Personalisasi iklan dan cookie terkait mengikuti kebijakan Google. Pernyataan penjual resmi tersedia di <a href="/ads.txt">/ads.txt</a>.'],
         ['Pilihanmu', 'Kamu dapat menghapus daftar tersimpan lewat pengaturan browser, memblokir cookies, memakai ad blocker, atau menonaktifkan analytics dengan alat privasi.'],
         ['Kontak', 'Jika ada pertanyaan tentang kebijakan ini, hubungi kami lewat <a href="/id/contact.html">halaman kontak</a>.'],
       ],
@@ -291,7 +291,7 @@ const locale = {
         ['概览', 'My Spelling Game 尊重你的隐私。这个工具设计上不需要学生账号、班级系统或个人资料。'],
         ['本地存储', '你的英语单词表和朗读偏好会通过 localStorage 保存在当前浏览器中。这只是为了让练习列表保留在你的设备上，不会通过我们自己的服务器上传。'],
         ['访问分析', '我们使用 Google Analytics 了解访问者如何使用网站，并改进练习体验。My Spelling Game 不收集可识别学生身份的个人信息。'],
-        ['广告', '网站未来可能使用 Google AdSense。广告个性化和相关 Cookie 遵循 Google 的政策。授权销售方声明发布在 <a href="/ads.txt">/ads.txt</a>。'],
+        ['广告', '网站使用 Google AdSense。广告个性化和相关 Cookie 遵循 Google 的政策。授权销售方声明发布在 <a href="/ads.txt">/ads.txt</a>。'],
         ['你的选择', '你可以在浏览器设置中清除保存的单词表，屏蔽 Cookie，使用广告拦截器，或通过隐私插件禁用访问分析。'],
         ['联系', '如果你对本政策有疑问，请通过 <a href="/zh/contact.html">联系页面</a> 告诉我们。'],
       ],
@@ -383,6 +383,8 @@ ${alternateLinks(slug)}
     <meta name="twitter:description" content="${escapeAttr(data.description)}">
     <meta name="twitter:image" content="${ogImage}">
     <script src="/src/js/localeRedirect.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9244949928133071"
+      crossorigin="anonymous"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYF1V40KVS"></script>
     <script>
