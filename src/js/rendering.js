@@ -2,9 +2,7 @@
 // 注意：所有渲染函数均在此模块实现，避免重复声明。
 
 import { gameState } from './gameState.js';
-import { usePowerUp } from './powerUps.js';
 import { dom } from './domRefs.js';
-import { getLocalizedPowerUpName } from './powerUps.js';
 
 // -------- Particle systems ---------
 
@@ -71,7 +69,7 @@ export class BackgroundParticle {
     const particlesCtx = particlesCanvas.getContext('2d');
     particlesCtx.save();
     particlesCtx.globalAlpha = this.opacity;
-    particlesCtx.fillStyle = '#00f5ff';
+    particlesCtx.fillStyle = '#2f6f73';
     particlesCtx.beginPath();
     particlesCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     particlesCtx.fill();
@@ -103,66 +101,18 @@ export function resizeCanvas() {
 
 // 更新道具显示 - 固定位置映射
 export function updatePowerUpDisplay() {
-  const grid = document.getElementById('power-ups-grid');
-  if (!grid) return;
-  grid.innerHTML = '';
-
-  const slotLabels = ['⏰', '🎯', '💎', '🛡️', '🌟', '🔄'];
-  const slotKeys = ['slowTime', 'precisionMode', 'doubleScore', 'shield', 'comboProtect', 'refreshWords'];
-
-  for (let i = 0; i < 6; i++) {
-    const slot = document.createElement('div');
-    slot.className = 'power-up-slot';
-
-    if (gameState.powerUpSlots && gameState.powerUpSlots[i]) {
-      const powerUp = gameState.powerUpSlots[i];
-      const localizedName = getLocalizedPowerUpName(powerUp.type);
-      slot.innerHTML = `<div class="power-up-icon">${powerUp.icon}</div><div class="power-up-key">${i + 1}</div>`;
-      slot.title = localizedName;
-      slot.onclick = () => usePowerUp(i);
-          } else {
-        slot.classList.add('empty');
-        const localizedName = getLocalizedPowerUpName(slotKeys[i]);
-        const emptyText = (typeof window !== 'undefined' && window.languages && window.currentLanguage && window.languages[window.currentLanguage].emptySlot) || 'Empty';
-        slot.innerHTML = `<div class="power-up-icon" style="opacity: 0.3;">${slotLabels[i]}</div><div class="power-up-key">${i + 1}</div>`;
-        slot.title = `${localizedName} (${emptyText})`;
-      }
-
-    grid.appendChild(slot);
-  }
-
-  // Active effects display
   const activeEffects = document.getElementById('active-effects');
-  if (activeEffects) {
-    activeEffects.innerHTML = '';
-    Object.keys(gameState.activePowerUps || {}).forEach((key) => {
-      const effect = document.createElement('div');
-      effect.className = 'active-effect';
-      const value = gameState.activePowerUps[key];
-      const localizedName = getLocalizedPowerUpName(key);
-      switch (key) {
-        case 'slowTime':
-          effect.textContent = `⏰ ${localizedName}`;
-          break;
-        case 'precisionMode':
-          effect.textContent = `🎯 ${localizedName} x${value}`;
-          break;
-        case 'doubleScore':
-          effect.textContent = `💎 ${localizedName} x${value}`;
-          break;
-        case 'shield':
-          effect.textContent = `🛡️ ${localizedName} x${value}`;
-          break;
-        case 'comboProtect':
-          effect.textContent = `🌟 ${localizedName} x${value}`;
-          break;
-      }
-      activeEffects.appendChild(effect);
-    });
+  if (!activeEffects) return;
+  activeEffects.innerHTML = '';
+
+  if (gameState.easyMode) {
+    const effect = document.createElement('div');
+    effect.className = 'active-effect';
+    effect.textContent = 'Easy mode: slower words';
+    activeEffects.appendChild(effect);
   }
 }
 
-// 更新游戏统计
 export function updateStats() {
   const scoreEl = document.getElementById('score');
   if (!scoreEl) return; // 若尚未渲染 DOM 则跳过

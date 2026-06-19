@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
+    <link rel="preload" href="/src/js/index.js?v=spelling-mvp5" as="script">
+    <link rel="preload" href="/src/css/main.css" as="style">
+
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+
+    <title>Game Spelling Bahasa Inggris | My Spelling Game</title>
+    <meta name="description" content="Tempel daftar kata bahasa Inggris dan mainkan game spelling gratis untuk latihan mengeja. Ulangi kata yang salah dan bagikan link tanpa akun.">
+    <meta name="keywords" content="game spelling bahasa Inggris,permainan spelling bahasa Inggris,permainan mengeja bahasa Inggris,latihan mengeja bahasa Inggris,belajar spelling bahasa Inggris,game kosakata bahasa Inggris,daftar kata bahasa Inggris,buat daftar kata sendiri,game dengan kata sendiri,latihan spelling anak,spelling bee online gratis">
+    <meta name="author" content="My Spelling Game">
+    <meta name="robots" content="index, follow">
+    <meta name="google-adsense-account" content="ca-pub-9244949928133071">
+
+    <meta property="og:title" content="Game spelling bahasa Inggris dengan daftar kata sendiri">
+    <meta property="og:description" content="Tempel daftar kata, langsung main, lalu ulangi kata yang belum tepat. Tanpa akun.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://myspellinggame.com/id/">
+    <meta property="og:image" content="https://myspellinggame.com/images/my-spelling-game-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Game spelling bahasa Inggris dengan daftar kata sendiri preview">
+    <meta property="og:site_name" content="My Spelling Game">
+    <meta property="og:locale" content="id_ID">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Game spelling bahasa Inggris dengan daftar kata sendiri">
+    <meta name="twitter:description" content="Tempel daftar kata, langsung main, lalu ulangi kata yang belum tepat. Tanpa akun.">
+    <meta name="twitter:image" content="https://myspellinggame.com/images/my-spelling-game-og.png">
+
+    <meta name="theme-color" content="#2f6f73">
+    <meta name="application-name" content="My Spelling Game">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="My Spelling Game">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <link rel="canonical" href="https://myspellinggame.com/id/">
+    <link rel="alternate" hreflang="en" href="https://myspellinggame.com/">
+    <link rel="alternate" hreflang="es" href="https://myspellinggame.com/es/">
+    <link rel="alternate" hreflang="pt-BR" href="https://myspellinggame.com/pt-br/">
+    <link rel="alternate" hreflang="fr" href="https://myspellinggame.com/fr/">
+    <link rel="alternate" hreflang="id" href="https://myspellinggame.com/id/">
+    <link rel="alternate" hreflang="zh-CN" href="https://myspellinggame.com/zh/">
+    <link rel="alternate" hreflang="x-default" href="https://myspellinggame.com/">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SMTNW9G4V5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SMTNW9G4V5');
+    </script>
+
+    <link rel="stylesheet" href="/src/css/main.css">
+</head>
+<body>
+    <div class="top-right-nav">
+        <details class="language-switcher">
+            <summary class="lang-btn" aria-label="Bahasa">Bahasa</summary>
+            <div class="lang-menu" id="language-menu">
+                <a class="lang-option" href="/" hreflang="en">English</a>
+                <a class="lang-option" href="/es/" hreflang="es">Español</a>
+                <a class="lang-option" href="/pt-br/" hreflang="pt-BR">Português</a>
+                <a class="lang-option" href="/fr/" hreflang="fr">Français</a>
+                <a class="lang-option" href="/id/" hreflang="id" aria-current="page">Bahasa Indonesia</a>
+                <a class="lang-option" href="/zh/" hreflang="zh-CN">中文</a>
+            </div>
+        </details>
+        <button class="privacy-btn" onclick="showPrivacyPolicyLegacy()" data-i18n-title="privacyPolicyTooltip" title="Privasi">Privasi</button>
+        <button class="sound-btn" onclick="toggleSound()" id="sound-toggle" data-i18n-title-dynamic="sound">Suara</button>
+    </div>
+
+    <div class="seo-content" id="seo-content">
+        <h1>Game spelling bahasa Inggris gratis dengan daftar kata sendiri</h1>
+        <p>Tempel daftar kata minggu ini dan langsung mulai bermain.</p>
+        <p>My Spelling Game menyimpan kata yang terlewat, membuat ronde ulang, dan membagikan latihan yang sama lewat link.</p>
+        <p>Tanpa akun, tanpa membuat kelas, tanpa bank kata acak.</p>
+    </div>
+
+    <div class="main-content-wrapper">
+        <div id="game-container">
+            <div class="background-particles">
+                <canvas id="particles-canvas"></canvas>
+            </div>
+
+            <div class="top-bar">
+                <div class="game-title">Ronde latihan</div>
+                <div class="combo-display" id="combo-display">
+                    Streak <span id="combo-count">0</span>
+                </div>
+            </div>
+
+            <canvas id="game-canvas"></canvas>
+
+            <div class="input-container">
+                <input type="text" id="word-input" placeholder="Ketik kata bahasa Inggris..." autocomplete="off" spellcheck="false" disabled>
+            </div>
+
+            <div class="game-start-screen" id="game-start">
+                <div class="start-screen-content">
+                    <div class="start-title">Mulai dengan daftar spelling-mu</div>
+                    <div class="spelling-start">
+                        <div class="spelling-subtitle">Game spelling bahasa Inggris gratis dengan daftar kata sendiri</div>
+                        <p class="spelling-intro">Tempel daftar kata mingguan dan langsung main. Kata yang salah masuk ronde ulang, dan link latihan bisa dipakai tanpa akun.</p>
+                        <div class="hero-proof-row" aria-label="My Spelling Game benefits">
+                            <span>Gratis dimainkan</span>
+                            <span>Pakai kata sendiri</span>
+                            <span>Ulangi kata yang salah</span>
+                            <span>Bagikan link, tanpa login</span>
+                        </div>
+                        <div class="spelling-builder">
+                            <label for="custom-word-list">Daftar kata bahasa Inggris</label>
+                            <textarea id="custom-word-list" rows="7" spellcheck="false" placeholder="because&#10;friend&#10;beautiful&#10;answer"></textarea>
+                            <div class="spelling-options">
+                                <label class="read-toggle"><input type="checkbox" id="hear-words-toggle"> Dengarkan kata sebelum mengetik</label>
+                                <label class="read-toggle"><input type="checkbox" id="easy-mode-toggle"> Mode mudah</label>
+                                <span id="spelling-status">8 kata siap</span>
+                            </div>
+                            <div class="spelling-actions">
+                                <button type="button" onclick="loadSampleWords()">Contoh daftar</button>
+                                <button type="button" onclick="copyPracticeLink()">Salin link latihan</button>
+                            </div>
+                        </div>
+                        <button class="start-btn spelling-start-btn" onclick="startGame()">Mulai latihan</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-over-screen" id="game-over">
+                <div class="game-over-content">
+                    <div class="game-over-title" id="game-over-title">Latihan selesai</div>
+                    <div class="final-stats">
+                        <p><span data-i18n="finalScore">Skor akhir</span>: <span id="final-score">0</span></p>
+                        <p><span data-i18n="levelReached">Ronde</span>: <span id="final-level">1</span></p>
+                        <p><span data-i18n="maxWPM">Kecepatan terbaik</span>: <span id="final-wpm">0</span></p>
+                        <p><span data-i18n="accuracy">Akurasi</span>: <span id="final-accuracy">100%</span></p>
+                        <p id="duration-row" style="display:none;"><span data-i18n="duration">Duration</span>: <span id="final-duration">0:00</span></p>
+                        <p><span data-i18n="wordsMatched">Kata terlewat</span>: <span id="final-missed">0</span></p>
+                    </div>
+                    <div class="spelling-summary" id="spelling-summary" hidden>
+                        <div id="spelling-result"></div>
+                        <div id="missed-word-list"></div>
+                        <button class="restart-btn" id="replay-missed-btn" onclick="replayMissedWords()">Ulangi kata yang salah</button>
+                    </div>
+                    <div class="game-over-buttons">
+                        <button class="restart-btn" onclick="restartGame(true)">Main lagi dengan kata ini</button>
+                        <button class="share-score-btn" onclick="restartGame()">Ubah daftar kata</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="privacy-screen" id="privacy-policy">
+                <div class="privacy-content">
+                    <div class="privacy-title">Privasi</div>
+                    <div class="privacy-text">
+                        <h3>Data yang disimpan</h3>
+                        <p>My Spelling Game dibuat untuk latihan cepat di browser. Begini cara kami menangani data:</p>
+
+                        <h4>Penyimpanan lokal</h4>
+                    <p>Daftar kata dan pilihan latihan disimpan di browser ini.</p>
+                    <p>Daftar kata tidak dikirim ke server kami.</p>
+                    <p>Kamu bisa menghapus data ini lewat browser atau panel ini.</p>
+
+                        <h4>Analytics</h4>
+                    <p>Kami memakai Google Analytics untuk memahami cara orang memakai game.</p>
+                    <p>Data ini membantu kami memperbaiki pengalaman latihan.</p>
+                    <p>Game tidak membutuhkan data pribadi untuk berjalan.</p>
+
+                        <h4>Iklan</h4>
+                    <p>Situs dapat memakai Google AdSense saat iklan diaktifkan.</p>
+                    <p>Personalisasi iklan mengikuti kebijakan Google.</p>
+
+                        <h4>Pilihanmu</h4>
+                    <p>Kamu bisa menghapus daftar kata yang tersimpan kapan saja.</p>
+                    <p>Kamu bisa memblokir analytics atau iklan lewat pengaturan browser.</p>
+
+                        <h4>Kontak</h4>
+                        <p>Jika ada pertanyaan tentang privasi, hubungi kami lewat halaman kontak.</p>
+
+                        <p class="privacy-update">Terakhir diperbarui: <span id="privacy-date"></span></p>
+                    </div>
+                    <div class="privacy-buttons">
+                        <button class="close-privacy-btn" onclick="closePrivacyPolicyLegacy()">Tutup</button>
+                        <button class="clear-data-btn" onclick="clearLocalDataLegacy()">Hapus data saya</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats" aria-label="Practice stats">
+                <div class="stat-item">
+                    <div class="stat-label">SKOR</div>
+                    <div class="stat-value" id="score">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">RONDE</div>
+                    <div class="stat-value" id="level">1</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">CEPAT</div>
+                    <div class="stat-value" id="wpm">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">AKURASI</div>
+                    <div class="stat-value" id="accuracy">100%</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">SALAH</div>
+                    <div class="stat-value" id="missed-words">0/5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <aside class="ad-slot ad-slot-after-game" aria-label="Advertisement">
+        <span>Advertisement</span>
+    </aside>
+
+    <div class="below-game">
+        <div class="practice-info-grid">
+            <div class="game-instructions">
+                <div class="instructions-content">
+                    <h3>Untuk daftar kata minggu ini</h3>
+                    <p>Tempel kata bahasa Inggris yang sudah diberikan guru atau kelas.</p>
+                    <p>Siswa mengetik setiap kata sebelum jatuh ke bawah.</p>
+                    <p>Tekan <kbd>Enter</kbd> atau <kbd>Space</kbd> untuk mengirim.</p>
+                    <p>Kata yang terlewat disimpan untuk latihan ulang sekali klik.</p>
+                    <p>Salin link untuk membagikan daftar yang sama.</p>
+                    <h4>Mode mudah</h4>
+                    <p>Aktifkan mode mudah sebelum bermain agar kata jatuh lebih pelan.</p>
+                </div>
+            </div>
+
+            <div class="power-ups-container practice-proof">
+                <div class="practice-proof-copy">
+                    <h3>Kenapa ini membantu</h3>
+                    <p>Latihan memakai kata minggu ini, bukan bank kata acak.</p>
+                    <p>Cocok untuk PR, les, ESL, dan belajar di rumah.</p>
+                    <p>Ronde ulang fokus pada kata yang benar-benar salah.</p>
+                    <p>Mode mudah memperlambat permainan tanpa mengubah aturan spelling.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="spelling-seo-copy">
+            <h2>Game spelling bahasa Inggris dengan daftar kata sendiri</h2>
+            <p>My Spelling Game adalah <strong>game spelling bahasa Inggris gratis</strong> untuk orang tua, guru, tutor, dan siswa yang sudah punya daftar kata dan ingin latihan mengeja dengan cepat.</p>
+
+            <h3>Kenapa perlu memakai daftar sendiri</h3>
+            <p>Banyak game bahasa Inggris memakai daftar kata bawaan. Itu kurang pas kalau tugas atau kuis memakai kata tertentu. Di sini kamu tinggal menempel daftar asli, bermain, lalu mengulang kata yang belum tepat.</p>
+            <ul>
+                <li><strong>Pakai daftar nyata:</strong> Tempel kata dari PR, lembar guru, atau materi homeschool.</li>
+                <li><strong>Latihan ulang:</strong> Kata yang jatuh ke bawah masuk ronde berikutnya.</li>
+                <li><strong>Bagikan link:</strong> Kirim latihan yang sama tanpa akun atau kelas online.</li>
+                <li><strong>Dengarkan kata:</strong> Pakai suara browser untuk latihan seperti dikte.</li>
+            </ul>
+
+            <h3>Cocok untuk latihan mingguan</h3>
+            <p>Alat ini sengaja sederhana: ambil daftar pendek, latihan, lihat kata yang terlewat, lalu ulangi. Gratis, tanpa akun siswa, dan tidak bergantung pada platform sekolah.</p>
+        </div>
+    </div>
+
+    <script>
+      window.disableLegacyLanguageUI = true;
+      window.pageLocale = 'id';
+      window.currentLanguage = 'id';
+    </script>
+    <script type="module" src="/src/js/index.js?v=spelling-mvp5"></script>
+
+    <footer>
+        <p>
+            <a href="/custom-spelling-words-game.html">Game kata sendiri</a> &middot; <a href="/spelling-list-game.html">Daftar spelling</a> &middot; <a href="/weekly-spelling-practice.html">Latihan mingguan</a> &middot; <a href="/sight-word-typing-game.html">Sight words</a> &middot; <a href="/homeschool-spelling-practice.html">Homeschool</a> &middot; <a href="/vocabulary-typing-game.html">Kosakata</a><br>
+            <a href="/id/privacy.html">Privasi</a> &middot; <a href="/id/about.html">Tentang</a> &middot; <a href="/id/contact.html">Kontak</a><br>
+            &copy; 2026 My Spelling Game All rights reserved.
+        </p>
+    </footer>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "My Spelling Game",
+  "description": "Tempel daftar kata dan mainkan game spelling bahasa Inggris gratis untuk latihan mengeja, dengan ronde ulang dan link yang bisa dibagikan.",
+  "url": "https://myspellinggame.com/id/",
+  "author": {
+    "@type": "Organization",
+    "name": "My Spelling Game",
+    "url": "https://myspellinggame.com"
+  },
+  "genre": [
+    "Educational Game",
+    "Spelling Game",
+    "Typing Game"
+  ],
+  "gamePlatform": "Web Browser",
+  "operatingSystem": "Any",
+  "applicationCategory": "Game",
+  "inLanguage": "id",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "id",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bisa memakai daftar kata sendiri?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bisa. Tempel daftar kata mingguan dan game akan memakai kata itu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bisa mengulang kata yang salah saja?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bisa. Kata yang terlewat akan tersedia untuk ronde ulang."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Perlu membuat akun?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. Game berjalan di browser tanpa login atau akun siswa."
+      }
+    }
+  ]
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "My Spelling Game",
+      "item": "https://myspellinggame.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Game spelling bahasa Inggris",
+      "item": "https://myspellinggame.com/id/"
+    }
+  ]
+}
+    </script>
+</body>
+</html>

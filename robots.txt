@@ -8,4 +8,4 @@ Disallow: /dist/
 Disallow: /practice.html
 Disallow: /tournament.html
 
-Sitemap: https://your-domain.example/sitemap.xml
+Sitemap: https://myspellinggame.com/sitemap.xml

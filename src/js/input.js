@@ -4,7 +4,6 @@ import { dom } from './domRefs.js';
 import { gameState } from './gameState.js';
 import { fallingWords, spawnWord } from './words.js';
 import { playKeySound, playWordCompleteSound } from './audio.js';
-import { generatePowerUp, updatePowerUps, usePowerUp } from './powerUps.js';
 import { createExplosion } from './rendering.js';
 import { updateStats } from './rendering.js';
 import { isRoundComplete, markCorrect } from './spellingMode.js';
@@ -29,21 +28,11 @@ export function checkWordMatch(typedWord) {
     if (result === 'complete') {
       wordMatched = true;
       let points = word.word.length * 10 * gameState.level;
-      if (gameState.activePowerUps.doubleScore) points *= 2;
       gameState.score += points + gameState.combo * 5;
       gameState.wordsTyped++;
       gameState.combo++;
       gameState.correctChars += word.word.length;
       gameState.totalChars += word.word.length;
-      gameState.wordsSinceLastPowerUp++;
-      updatePowerUps();
-      if (
-        gameState.wordsSinceLastPowerUp >= 20 ||
-        [5, 10, 15].includes(gameState.combo)
-      ) {
-        generatePowerUp();
-        gameState.wordsSinceLastPowerUp = 0;
-      }
       createExplosion(word.x, word.y, '#00ff88');
       playWordCompleteSound();
       markCorrect(word.word);
@@ -53,7 +42,7 @@ export function checkWordMatch(typedWord) {
     }
   }
   if (!wordMatched && typedWord.length > 0) {
-    if (!gameState.activePowerUps.comboProtect) gameState.combo = 0;
+    gameState.combo = 0;
     gameState.totalChars += typedWord.length;
     dom.input.value = '';
   }
@@ -96,15 +85,5 @@ if (typeof window !== 'undefined') {
         }
       });
     }
-    // global keydown for powerUps 1-6
-    document.addEventListener('keydown', (e) => {
-      if (e.key >= '1' && e.key <= '6') {
-        const slot = parseInt(e.key) - 1;
-        if (gameState.powerUpSlots[slot]) {
-          e.preventDefault();
-          usePowerUp(slot);
-        }
-      }
-    });
   });
 }

@@ -130,7 +130,7 @@ export function toggleSound() {
   }
   const btn = document.getElementById('sound-toggle');
   if (btn) {
-    btn.textContent = soundEnabled ? '🔊' : '🔇';
+    btn.textContent = soundEnabled ? 'Sound' : 'Muted';
     // 更新title属性以显示正确的国际化文本
     updateSoundButtonTitle();
   }

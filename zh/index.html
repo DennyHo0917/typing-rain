@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
+    <link rel="preload" href="/src/js/index.js?v=spelling-mvp5" as="script">
+    <link rel="preload" href="/src/css/main.css" as="style">
+
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+
+    <title>用自己的单词表练英语拼写 | 免费 Spelling Game</title>
+    <meta name="description" content="粘贴本周英语单词表，马上开始免费的拼写打字小游戏，也适合英语听写和默写练习。自动记录漏掉的单词，可一键重练，也能分享练习链接，无需注册。">
+    <meta name="keywords" content="英语拼写练习,spelling game,英语单词拼写游戏,自定义单词表游戏,自定义英语单词表,英语听写练习,英语默写练习,英语单词练习小游戏,小学生英语拼写,背单词打字游戏,自定义单词表背单词,无需注册英语练习">
+    <meta name="author" content="My Spelling Game">
+    <meta name="robots" content="index, follow">
+    <meta name="google-adsense-account" content="ca-pub-9244949928133071">
+
+    <meta property="og:title" content="用自己的单词表练英语拼写">
+    <meta property="og:description" content="粘贴本周单词表，马上开练；漏掉的单词自动进入下一轮，无需注册。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://myspellinggame.com/zh/">
+    <meta property="og:image" content="https://myspellinggame.com/images/my-spelling-game-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="用自己的单词表练英语拼写 preview">
+    <meta property="og:site_name" content="My Spelling Game">
+    <meta property="og:locale" content="zh_CN">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="用自己的单词表练英语拼写">
+    <meta name="twitter:description" content="粘贴本周单词表，马上开练；漏掉的单词自动进入下一轮，无需注册。">
+    <meta name="twitter:image" content="https://myspellinggame.com/images/my-spelling-game-og.png">
+
+    <meta name="theme-color" content="#2f6f73">
+    <meta name="application-name" content="My Spelling Game">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="My Spelling Game">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <link rel="canonical" href="https://myspellinggame.com/zh/">
+    <link rel="alternate" hreflang="en" href="https://myspellinggame.com/">
+    <link rel="alternate" hreflang="es" href="https://myspellinggame.com/es/">
+    <link rel="alternate" hreflang="pt-BR" href="https://myspellinggame.com/pt-br/">
+    <link rel="alternate" hreflang="fr" href="https://myspellinggame.com/fr/">
+    <link rel="alternate" hreflang="id" href="https://myspellinggame.com/id/">
+    <link rel="alternate" hreflang="zh-CN" href="https://myspellinggame.com/zh/">
+    <link rel="alternate" hreflang="x-default" href="https://myspellinggame.com/">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SMTNW9G4V5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SMTNW9G4V5');
+    </script>
+
+    <link rel="stylesheet" href="/src/css/main.css">
+</head>
+<body>
+    <div class="top-right-nav">
+        <details class="language-switcher">
+            <summary class="lang-btn" aria-label="语言">语言</summary>
+            <div class="lang-menu" id="language-menu">
+                <a class="lang-option" href="/" hreflang="en">English</a>
+                <a class="lang-option" href="/es/" hreflang="es">Español</a>
+                <a class="lang-option" href="/pt-br/" hreflang="pt-BR">Português</a>
+                <a class="lang-option" href="/fr/" hreflang="fr">Français</a>
+                <a class="lang-option" href="/id/" hreflang="id">Bahasa Indonesia</a>
+                <a class="lang-option" href="/zh/" hreflang="zh-CN" aria-current="page">中文</a>
+            </div>
+        </details>
+        <button class="privacy-btn" onclick="showPrivacyPolicyLegacy()" data-i18n-title="privacyPolicyTooltip" title="隐私">隐私</button>
+        <button class="sound-btn" onclick="toggleSound()" id="sound-toggle" data-i18n-title-dynamic="sound">声音</button>
+    </div>
+
+    <div class="seo-content" id="seo-content">
+        <h1>用自己的单词表练英语拼写</h1>
+        <p>把这周要背的英语单词粘贴进来，立刻变成一个拼写小游戏。</p>
+        <p>My Spelling Game 会记录漏掉的单词，生成重练回合，也可以把同一份练习链接发给孩子或学生。</p>
+        <p>不用注册，不用建班级，也不塞一堆无关单词。</p>
+    </div>
+
+    <div class="main-content-wrapper">
+        <div id="game-container">
+            <div class="background-particles">
+                <canvas id="particles-canvas"></canvas>
+            </div>
+
+            <div class="top-bar">
+                <div class="game-title">练习回合</div>
+                <div class="combo-display" id="combo-display">
+                    Streak <span id="combo-count">0</span>
+                </div>
+            </div>
+
+            <canvas id="game-canvas"></canvas>
+
+            <div class="input-container">
+                <input type="text" id="word-input" placeholder="输入掉落的英语单词..." autocomplete="off" spellcheck="false" disabled>
+            </div>
+
+            <div class="game-start-screen" id="game-start">
+                <div class="start-screen-content">
+                    <div class="start-title">先粘贴你的英语单词表</div>
+                    <div class="spelling-start">
+                        <div class="spelling-subtitle">用自己的单词表练英语拼写</div>
+                        <p class="spelling-intro">粘贴本周单词表，马上开始。漏掉的单词会进入重练回合，分享链接也不需要账号。</p>
+                        <div class="hero-proof-row" aria-label="My Spelling Game benefits">
+                            <span>免费可玩</span>
+                            <span>使用自己的单词</span>
+                            <span>重练漏掉的词</span>
+                            <span>分享链接，无需登录</span>
+                        </div>
+                        <div class="spelling-builder">
+                            <label for="custom-word-list">你的英语单词</label>
+                            <textarea id="custom-word-list" rows="7" spellcheck="false" placeholder="because&#10;friend&#10;beautiful&#10;answer"></textarea>
+                            <div class="spelling-options">
+                                <label class="read-toggle"><input type="checkbox" id="hear-words-toggle"> 输入前朗读每个单词</label>
+                                <label class="read-toggle"><input type="checkbox" id="easy-mode-toggle"> 简单模式</label>
+                                <span id="spelling-status">已准备 8 个单词</span>
+                            </div>
+                            <div class="spelling-actions">
+                                <button type="button" onclick="loadSampleWords()">示例单词表</button>
+                                <button type="button" onclick="copyPracticeLink()">复制练习链接</button>
+                            </div>
+                        </div>
+                        <button class="start-btn spelling-start-btn" onclick="startGame()">开始练习</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-over-screen" id="game-over">
+                <div class="game-over-content">
+                    <div class="game-over-title" id="game-over-title">练习完成</div>
+                    <div class="final-stats">
+                        <p><span data-i18n="finalScore">最终得分</span>: <span id="final-score">0</span></p>
+                        <p><span data-i18n="levelReached">回合</span>: <span id="final-level">1</span></p>
+                        <p><span data-i18n="maxWPM">最高速度</span>: <span id="final-wpm">0</span></p>
+                        <p><span data-i18n="accuracy">准确率</span>: <span id="final-accuracy">100%</span></p>
+                        <p id="duration-row" style="display:none;"><span data-i18n="duration">Duration</span>: <span id="final-duration">0:00</span></p>
+                        <p><span data-i18n="wordsMatched">漏掉的单词</span>: <span id="final-missed">0</span></p>
+                    </div>
+                    <div class="spelling-summary" id="spelling-summary" hidden>
+                        <div id="spelling-result"></div>
+                        <div id="missed-word-list"></div>
+                        <button class="restart-btn" id="replay-missed-btn" onclick="replayMissedWords()">重练漏掉的单词</button>
+                    </div>
+                    <div class="game-over-buttons">
+                        <button class="restart-btn" onclick="restartGame(true)">用当前单词再来一局</button>
+                        <button class="share-score-btn" onclick="restartGame()">重新设置单词表</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="privacy-screen" id="privacy-policy">
+                <div class="privacy-content">
+                    <div class="privacy-title">隐私</div>
+                    <div class="privacy-text">
+                        <h3>数据如何保存</h3>
+                        <p>My Spelling Game 是一个浏览器里的轻量练习工具。数据处理方式如下：</p>
+
+                        <h4>本地保存</h4>
+                    <p>你的单词表和练习偏好会保存在当前浏览器里。</p>
+                    <p>单词表不会上传到我们的服务器。</p>
+                    <p>你可以在浏览器设置里清除，也可以用这里的清除按钮。</p>
+
+                        <h4>访问分析</h4>
+                    <p>我们使用 Google Analytics 了解页面和游戏的使用情况。</p>
+                    <p>这些数据用于改进练习体验。</p>
+                    <p>游戏本身不需要你提供个人身份信息。</p>
+
+                        <h4>广告</h4>
+                    <p>未来开启广告时，网站可能使用 Google AdSense。</p>
+                    <p>广告个性化遵循 Google 的相关政策。</p>
+
+                        <h4>你的选择</h4>
+                    <p>你可以随时清除保存的单词表。</p>
+                    <p>你也可以通过浏览器插件或设置屏蔽统计和广告。</p>
+
+                        <h4>联系</h4>
+                        <p>如果你对隐私有疑问，可以通过联系页面告诉我们。</p>
+
+                        <p class="privacy-update">最后更新： <span id="privacy-date"></span></p>
+                    </div>
+                    <div class="privacy-buttons">
+                        <button class="close-privacy-btn" onclick="closePrivacyPolicyLegacy()">关闭</button>
+                        <button class="clear-data-btn" onclick="clearLocalDataLegacy()">清除我的数据</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats" aria-label="Practice stats">
+                <div class="stat-item">
+                    <div class="stat-label">得分</div>
+                    <div class="stat-value" id="score">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">回合</div>
+                    <div class="stat-value" id="level">1</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">速度</div>
+                    <div class="stat-value" id="wpm">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">准确率</div>
+                    <div class="stat-value" id="accuracy">100%</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">漏词</div>
+                    <div class="stat-value" id="missed-words">0/5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <aside class="ad-slot ad-slot-after-game" aria-label="Advertisement">
+        <span>Advertisement</span>
+    </aside>
+
+    <div class="below-game">
+        <div class="practice-info-grid">
+            <div class="game-instructions">
+                <div class="instructions-content">
+                    <h3>适合这周的英语单词表</h3>
+                    <p>粘贴老师、教材或家长已经准备好的英语单词。</p>
+                    <p>孩子需要在单词掉到底部前把它拼出来。</p>
+                    <p>按 <kbd>Enter</kbd> 或 <kbd>Space</kbd> 提交。</p>
+                    <p>漏掉的单词会自动保存，方便一键重练。</p>
+                    <p>复制练习链接，就能让别人使用同一份单词表。</p>
+                    <h4>简单模式</h4>
+                    <p>开始前打开简单模式，单词会掉得更慢，适合刚开始练的孩子。</p>
+                </div>
+            </div>
+
+            <div class="power-ups-container practice-proof">
+                <div class="practice-proof-copy">
+                    <h3>为什么这个方式更有效</h3>
+                    <p>练的是本周真实单词，不是随机词库。</p>
+                    <p>适合家庭作业、课后辅导、ESL 和 homeschool 场景。</p>
+                    <p>重练只围绕漏掉的词，不浪费时间。</p>
+                    <p>简单模式只降低速度，不改变拼写规则。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="spelling-seo-copy">
+            <h2>用自己的单词表练英语拼写</h2>
+            <p>My Spelling Game 是一个<strong>免费的英语拼写练习小游戏</strong>，适合家长、老师和英语学习者把现有单词表快速变成可玩的练习，也可以当作轻量英语听写和默写练习。</p>
+
+            <h3>为什么不是随机词库</h3>
+            <p>很多英语小游戏会给一堆固定单词，但孩子真正要面对的往往是本周老师布置的那一份。这个工具解决的就是这件小事：粘贴真实单词表，马上练，漏掉的再练。</p>
+            <ul>
+                <li><strong>使用真实单词表：</strong> 可以来自作业、教材、老师 handout 或自学计划。</li>
+                <li><strong>自动记录漏词：</strong> 掉到底部的单词会进入下一轮。</li>
+                <li><strong>分享同一份练习：</strong> 复制链接即可，不需要注册账号。</li>
+                <li><strong>可选朗读：</strong> 用浏览器语音做接近英语听写的练习。</li>
+            </ul>
+
+            <h3>适合每周反复使用</h3>
+            <p>这个工具故意做得很小：每周拿到一份单词，练一遍，找到漏掉的词，再练一遍。免费、无需学生账号，也不绑定任何学习平台。</p>
+        </div>
+    </div>
+
+    <script>
+      window.disableLegacyLanguageUI = true;
+      window.pageLocale = 'zh';
+      window.currentLanguage = 'zh';
+    </script>
+    <script type="module" src="/src/js/index.js?v=spelling-mvp5"></script>
+
+    <footer>
+        <p>
+            <a href="/custom-spelling-words-game.html">自定义单词游戏</a> &middot; <a href="/spelling-list-game.html">单词表练习</a> &middot; <a href="/weekly-spelling-practice.html">每周拼写练习</a> &middot; <a href="/sight-word-typing-game.html">Sight words</a> &middot; <a href="/homeschool-spelling-practice.html">Homeschool</a> &middot; <a href="/vocabulary-typing-game.html">词汇练习</a><br>
+            <a href="/zh/privacy.html">隐私</a> &middot; <a href="/zh/about.html">关于</a> &middot; <a href="/zh/contact.html">联系</a><br>
+            &copy; 2026 My Spelling Game All rights reserved.
+        </p>
+    </footer>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "My Spelling Game",
+  "description": "粘贴英语单词表，玩免费的拼写打字小游戏，支持英语听写、漏词重练和练习链接分享。",
+  "url": "https://myspellinggame.com/zh/",
+  "author": {
+    "@type": "Organization",
+    "name": "My Spelling Game",
+    "url": "https://myspellinggame.com"
+  },
+  "genre": [
+    "Educational Game",
+    "Spelling Game",
+    "Typing Game"
+  ],
+  "gamePlatform": "Web Browser",
+  "operatingSystem": "Any",
+  "applicationCategory": "Game",
+  "inLanguage": "zh-CN",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "zh-CN",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "可以用自己的英语单词吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。粘贴本周单词表后，游戏会使用这些单词进行练习。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "能只重练漏掉的单词吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。每轮结束后，漏掉的单词会自动整理出来。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "需要注册账号吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不需要。游戏直接在浏览器里运行，不需要学生账号或班级设置。"
+      }
+    }
+  ]
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "My Spelling Game",
+      "item": "https://myspellinggame.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "英语拼写练习",
+      "item": "https://myspellinggame.com/zh/"
+    }
+  ]
+}
+    </script>
+</body>
+</html>

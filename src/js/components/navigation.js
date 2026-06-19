@@ -33,7 +33,7 @@ export function generateTopNavHTML() {
         </div>
         <button class="share-btn" onclick="shareToTwitterLegacy()" data-i18n-title="shareOnTwitter" title="Share on X (Twitter)">📤</button>
         <button class="privacy-btn" onclick="showPrivacyPolicyLegacy()" data-i18n-title="privacyPolicyTooltip" title="Privacy Policy">🔒</button>
-        <button class="sound-btn" onclick="toggleSound()" id="sound-toggle" data-i18n-title-dynamic="sound">🔊</button>
+        <button class="sound-btn" onclick="toggleSound()" id="sound-toggle" data-i18n-title-dynamic="sound">Sound</button>
     </div>
   `;
 }
@@ -52,15 +52,8 @@ export function generateGameInstructionsHTML() {
             <p>• Build combos by typing words consecutively</p>
             <p>• Higher levels bring faster and more challenging words</p>
             <p>• You have 5 chances to miss words before game over</p>
-            
-            <h4 style="color: #00f5ff; margin-top: 15px; margin-bottom: 8px;" data-i18n="powerUpsTitle">Power-ups</h4>
-            <p>• ⏰ <strong data-i18n="powerUpNames.slowTime">Slow Time</strong> (1) - <span data-i18n="powerUpDescriptions.slowTime">Slows word falling speed</span></p>
-            <p>• 🎯 <strong data-i18n="powerUpNames.precisionMode">Precision Mode</strong> (2) - <span data-i18n="powerUpDescriptions.precisionMode">Only need first 3 letters</span></p>
-            <p>• 💎 <strong data-i18n="powerUpNames.doubleScore">Double Score</strong> (3) - <span data-i18n="powerUpDescriptions.doubleScore">2x points for next words</span></p>
-            <p>• 🛡️ <strong data-i18n="powerUpNames.shield">Shield</strong> (4) - <span data-i18n="powerUpDescriptions.shield">Protects from missing words</span></p>
-            <p>• 🌟 <strong data-i18n="powerUpNames.comboProtect">Combo Protect</strong> (5) - <span data-i18n="powerUpDescriptions.comboProtect">Maintains combo streak</span></p>
-            <p>• 🔄 <strong data-i18n="powerUpNames.refreshWords">Word Refresh</strong> (6) - <span data-i18n="powerUpDescriptions.refreshWords">Clears screen, adds easy words</span></p>
-            <p style="font-size: 0.9em; color: #4ecdc4;" data-i18n="powerUpsDesc">Earn power-ups by completing words and building combos! Each power-up has a fixed key.</p>
+            <h4>Easy Mode</h4>
+            <p>Turn on Easy mode before playing to slow down falling words.</p>
         </div>
     </div>
   `;
@@ -72,13 +65,12 @@ export function generateGameInstructionsHTML() {
  */
 export function generatePowerUpsContainerHTML() {
   return `
-    <div class="power-ups-container">
-        <div class="power-ups-title" data-i18n="powerUpsKeysHint">Power-ups (1:⏰ 2:🎯 3:💎 4:🛡️ 5:🌟 6:🔄)</div>
-        <div class="power-ups-grid" id="power-ups-grid">
-            <!-- 道具将在这里动态显示 -->
-        </div>
-        <div class="active-effects" id="active-effects">
-            <!-- 激活的道具效果显示在这里 -->
+    <div class="power-ups-container practice-proof">
+        <div class="practice-proof-copy">
+            <h3>Why It Works</h3>
+            <p>Exact weekly words, not a random word bank.</p>
+            <p>Replay practice focuses on missed words.</p>
+            <p>Easy mode slows the round without changing the spelling rules.</p>
         </div>
     </div>
   `;
@@ -152,24 +144,26 @@ if (typeof window !== 'undefined') {
     bar.style.right = '0';
     bar.style.bottom = '0';
     bar.style.zIndex = '9999';
-    bar.style.background = 'rgba(0,0,0,0.8)';
-    bar.style.color = '#fff';
+    bar.style.background = '#ffffff';
+    bar.style.color = '#17202a';
     bar.style.padding = '10px 14px';
-    bar.style.fontFamily = "'Rajdhani', sans-serif";
+    bar.style.fontFamily = "'Inter', system-ui, sans-serif";
     bar.style.display = 'flex';
     bar.style.alignItems = 'center';
     bar.style.justifyContent = 'space-between';
     bar.style.gap = '10px';
     const text = document.createElement('div');
     text.style.fontSize = '14px';
-    text.innerHTML = 'We use cookies for analytics and ads (via Google). <a href="/privacy.html" style="color:#00f5ff">Learn more</a>.';
+    bar.style.borderTop = '1px solid #dce8e4';
+    bar.style.boxShadow = '0 -10px 24px rgba(39,62,70,0.08)';
+    text.innerHTML = 'We use cookies for analytics and ads (via Google). <a href="/privacy.html" style="color:#2f6f73">Learn more</a>.';
     const btn = document.createElement('button');
     btn.textContent = 'OK';
     btn.style.border = 'none';
     btn.style.padding = '6px 12px';
     btn.style.borderRadius = '6px';
-    btn.style.background = '#00f5ff';
-    btn.style.color = '#001219';
+    btn.style.background = '#2f6f73';
+    btn.style.color = '#ffffff';
     btn.style.cursor = 'pointer';
     btn.onclick = () => {
       try { localStorage.setItem('tr_cookie_consent', '1'); } catch (e) {}

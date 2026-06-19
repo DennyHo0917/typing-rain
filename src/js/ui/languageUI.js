@@ -143,7 +143,7 @@ if (typeof window !== 'undefined') {
       document.querySelectorAll('[data-i18n]').forEach((element) => {
         const key = element.getAttribute('data-i18n');
         if (key) {
-          // 支持嵌套属性访问，如 "powerUpNames.comboProtect"
+          // 支持嵌套属性访问，如 "powerUpNames.easyMode"
           const value = key.split('.').reduce((obj, prop) => obj && obj[prop], pack);
           if (value) {
             // 特殊处理模式选择器，保留图标emoji
@@ -172,7 +172,7 @@ if (typeof window !== 'undefined') {
       document.querySelectorAll('[data-i18n-title]').forEach((element) => {
         const key = element.getAttribute('data-i18n-title');
         if (key) {
-          // 支持嵌套属性访问，如 "powerUpNames.comboProtect"
+          // 支持嵌套属性访问，如 "powerUpNames.easyMode"
           const value = key.split('.').reduce((obj, prop) => obj && obj[prop], pack);
           if (value) {
             element.title = value;

@@ -1,5 +1,6 @@
 // 隐私政策与本地数据管理模块
 import { gameState } from './gameState.js';
+import { dateLocale, t } from './pageLocale.js';
 
 export function showPrivacyPolicy() {
   const policyScreen = document.getElementById('privacy-policy');
@@ -8,7 +9,7 @@ export function showPrivacyPolicy() {
   // 更新日期
   const dateEl = document.getElementById('privacy-date');
   if (dateEl) {
-    dateEl.textContent = new Date().toLocaleDateString('en-US', {
+    dateEl.textContent = new Date().toLocaleDateString(dateLocale(), {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
@@ -33,11 +34,13 @@ export function closePrivacyPolicy() {
 }
 
 export function clearLocalData() {
-  const confirmMsg = 'Clear the spelling list and read-aloud preference saved in this browser?';
-  const successMsg = 'Your local spelling practice data has been cleared.';
+  const confirmMsg = t('clearConfirm');
+  const successMsg = t('clearSuccess');
   if (confirm(confirmMsg)) {
     localStorage.removeItem('typingRainSpellingWords');
+    localStorage.removeItem('typingRainHearWords');
     localStorage.removeItem('typingRainReadWords');
+    localStorage.removeItem('typingRainEasyMode');
     alert(successMsg);
     closePrivacyPolicy();
   }

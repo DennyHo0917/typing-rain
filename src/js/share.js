@@ -9,13 +9,13 @@ export function shareToTwitter() {
   const accEl = document.getElementById('accuracy');
 
   let shareText = langPack.shareText2 ||
-    'SpellRain turns any weekly spelling list into a falling-word typing game. Paste your words, play, and replay missed words.';
+    'My Spelling Game turns any weekly spelling list into a falling-word typing game. Paste your words, play, and replay missed words.';
 
   if (gameState.gameRunning || gameState.score > 0) {
     const currentWPM = wpmEl ? wpmEl.textContent : '0';
     const currentAccuracy = accEl ? accEl.textContent : '0%';
     shareText = (langPack.shareText1 ||
-      'Just practiced spelling on SpellRain. Score: {score} | WPM: {wpm} | Accuracy: {accuracy} | Level: {level}\n\nPaste a spelling list and play.')
+      'Just practiced spelling on My Spelling Game. Score: {score} | WPM: {wpm} | Accuracy: {accuracy} | Level: {level}\n\nPaste a spelling list and play.')
       .replace('{score}', gameState.score)
       .replace('{wpm}', currentWPM)
       .replace('{accuracy}', currentAccuracy)

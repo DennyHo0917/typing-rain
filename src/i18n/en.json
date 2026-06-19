@@ -1,5 +1,5 @@
 {
-  "gameTitle": "SPELLRAIN",
+  "gameTitle": "MY SPELLING GAME",
   "gameSubtitle": "Level Mode",
   "levelModeTitle": "Level Mode",
   "practiceModeTitle": "Practice Mode",
@@ -27,42 +27,32 @@
     "• Higher levels bring faster and more challenging words",
     "• You have 5 chances to miss words before game over"
   ],
-  "powerUpsTitle": "Power-ups",
-  "powerUpsDesc": "Earn power-ups by completing words and building combos! Each power-up has a fixed key.",
+  "powerUpsTitle": "Easy Mode",
+  "powerUpsDesc": "Easy mode slows falling words without changing the spelling rules.",
   "powerUpNames": {
-    "slowTime": "Slow Time",
-    "precisionMode": "Precision Mode",
-    "doubleScore": "Double Score",
-    "shield": "Shield",
-    "comboProtect": "Combo Protect",
-    "refreshWords": "Word Refresh"
+    "easyMode": "Easy Mode"
   },
   "powerUpDescriptions": {
-    "slowTime": "Slows word falling speed",
-    "precisionMode": "Only need first 3 letters",
-    "doubleScore": "2x points for next words",
-    "shield": "Protects from missing words",
-    "comboProtect": "Maintains combo streak",
-    "refreshWords": "Clears screen, adds easy words"
+    "easyMode": "Slows falling words without changing the spelling rules"
   },
-  "powerUpsKeysHint": "Power-ups (1:⏰ 2:🎯 3:💎 4:🛡️ 5:🌟 6:🔄)",
+  "powerUpsKeysHint": "Easy mode",
   "emptySlot": "Empty",
-  "powerfulPowerUps": "Powerful Power-Ups:",
-  "powerfulPowerUpsDesc": "Unleash game-changing abilities like Slow Time, Precision Mode, and Shields to maximize your score.",
-  "mainTitle": "Custom Spelling Words Game",
-  "mainDesc1": "Paste this week's spelling list and turn it into a falling-word typing game.",
-  "mainDesc2": "SpellRain saves missed words, creates a replay round, and lets teachers or parents share the same practice link.",
+  "powerfulPowerUps": "Practice Assist:",
+  "powerfulPowerUpsDesc": "Use Easy mode to slow falling words while keeping full-word spelling practice.",
+  "mainTitle": "Free Spelling Game With Your Own Words",
+  "mainDesc1": "Paste this week's spelling list and play instantly.",
+  "mainDesc2": "My Spelling Game saves missed words, creates a replay round, and lets teachers or parents share the same practice link.",
   "levelModeDesc1": "Challenge three progressive difficulty levels!",
   "levelModeDesc2": "Beginner: 50 basic words | Intermediate: 100 advanced words | Expert: 150 complex words | Gradually improve your typing skills",
   "practiceModeDesc1": "Free practice mode to improve your typing skills!",
   "practiceModeDesc2": "Customize duration, difficulty and speed | No level restrictions, focus on skill improvement | Perfect for daily practice",
   "tournamentModeDesc1": "2-minute timed challenge, compete for rankings!",
   "tournamentModeDesc2": "Fixed 2-minute duration | Comprehensive scoring system | Compete with global players and showcase your skills",
-  "seoTitle1": "Turn Any Spelling List Into a Typing Game",
-  "seoPara1": "SpellRain is a custom spelling words game for parents, teachers, homeschool families, and ESL tutors who already have a weekly word list and need a quick way to make practice feel less repetitive.",
+  "seoTitle1": "Free Spelling Game With Your Own Words",
+  "seoPara1": "My Spelling Game is a free custom spelling words game for parents, teachers, homeschool families, and ESL tutors who already have a weekly word list and need a quick way to make practice feel less repetitive.",
   "seoTitle2": "Why Custom Spelling Words Matter",
-  "seoPara2": "Most spelling games use a fixed word bank. SpellRain lets you paste your own list, play immediately, and keep practice focused on the exact words that will appear on the next quiz.",
-  "seoTitle3": "How to Use SpellRain for Spelling Practice",
+  "seoPara2": "Most spelling games use a fixed word bank. My Spelling Game lets you paste your own list, play immediately, and keep practice focused on the exact words that will appear on the next quiz.",
+  "seoTitle3": "How to Use My Spelling Game for Spelling Practice",
   "seoPara3": "Paste words from a teacher handout, homework sheet, or homeschool curriculum. Start the falling-word game, type each word, then replay the words that were missed.",
   "seoRules": [
     "Use your own spelling list",
@@ -77,10 +67,10 @@
     "Replay missed words until the list is clean.",
     "Share the same practice link with students or parents."
   ],
-  "seoConclusion": "No student accounts, no lesson builder, no platform lock-in.",
+  "seoConclusion": "Free to play, with no student accounts, no lesson builder, and no platform lock-in.",
   "privacyPolicy": "Privacy Policy",
   "dataCollection": "Data Collection",
-  "privacyIntro": "SpellRain is committed to protecting your privacy. This policy explains how we handle your data:",
+  "privacyIntro": "My Spelling Game is committed to protecting your privacy. This policy explains how we handle your data:",
   "localStorage": "Local Storage",
   "localStorageDesc": [
     "• Your high scores and player names are stored locally in your browser using localStorage",
@@ -113,8 +103,8 @@
   "clearDataConfirm": "Are you sure you want to clear all your local data? This will permanently delete your leaderboard scores and cannot be undone.",
   "dataCleared": "Your local data has been cleared successfully.",
   "shareScore": "Share Score",
-  "shareText1": "Just practiced spelling on SpellRain. Score: {score} | WPM: {wpm} | Accuracy: {accuracy} | Level: {level}\n\nPaste a spelling list and play.",
-  "shareText2": "SpellRain turns any weekly spelling list into a falling-word typing game. Paste your words, play, and replay missed words.",
+  "shareText1": "Just practiced spelling on My Spelling Game. Score: {score} | WPM: {wpm} | Accuracy: {accuracy} | Level: {level}\n\nPaste a spelling list and play.",
+  "shareText2": "My Spelling Game turns any weekly spelling list into a falling-word typing game. Paste your words, play, and replay missed words.",
   "changeLanguage": "Change Language",
   "selectMode": "Select Mode",
   "shareOnTwitter": "Share on X (Twitter)",
@@ -138,27 +128,27 @@
   "emptyLeaderboard": "No scores yet. Be the first to play!",
   "pageSEO": {
     "index": {
-      "title": "Custom Spelling Words Game | SpellRain",
-      "description": "Paste any weekly spelling list and turn it into a custom spelling words game. Save missed words, replay them, and copy a shareable practice link.",
-      "ogTitle": "Custom Spelling Words Game",
-      "ogDescription": "Paste a spelling list, play it as falling words, then replay the missed words."
+      "title": "Free Spelling Game With Your Own Words | My Spelling Game",
+      "description": "Paste your weekly spelling list and play a free spelling game with your own words. Replay missed words and share a no-login practice link.",
+      "ogTitle": "Free Spelling Game With Your Own Words",
+      "ogDescription": "Paste your weekly spelling list, play instantly, then replay missed words."
     },
     "practice": {
-      "title": "SpellRain - Practice Mode | Free Typing Practice",
-      "description": "Practice your typing skills with SpellRain's Practice Mode. Customize duration, difficulty and speed. No level restrictions, focus on skill improvement. Perfect for daily typing practice.",
-      "ogTitle": "SpellRain - Practice Mode",
+      "title": "My Spelling Game - Practice Mode | Free Typing Practice",
+      "description": "Practice your typing skills with My Spelling Game's Practice Mode. Customize duration, difficulty and speed. No level restrictions, focus on skill improvement. Perfect for daily typing practice.",
+      "ogTitle": "My Spelling Game - Practice Mode",
       "ogDescription": "Improve your typing speed in Practice Mode with infinite play and customizable settings."
     },
     "tournament": {
-      "title": "SpellRain - Tournament Mode | Competitive Typing Challenge",
-      "description": "Challenge yourself in SpellRain Tournament Mode with 2-minute timed sessions. Compete for leaderboard rankings with comprehensive scoring system. Test your typing skills against global players.",
-      "ogTitle": "SpellRain - Tournament Mode",
+      "title": "My Spelling Game - Tournament Mode | Competitive Typing Challenge",
+      "description": "Challenge yourself in My Spelling Game Tournament Mode with 2-minute timed sessions. Compete for leaderboard rankings with comprehensive scoring system. Test your typing skills against global players.",
+      "ogTitle": "My Spelling Game - Tournament Mode",
       "ogDescription": "Challenge yourself in Tournament Mode with 2-minute timed sessions and compete for leaderboard rankings."
     }
   },
-  "aboutTitle": "About SpellRain",
+  "aboutTitle": "About My Spelling Game",
   "aboutMissionTitle": "Mission",
-  "aboutIntro1": "SpellRain turns any weekly spelling list into a falling-word typing game.",
+  "aboutIntro1": "My Spelling Game turns any weekly spelling list into a falling-word typing game.",
   "aboutIntro2": "It is built for parents, teachers, homeschool families, and ESL tutors who need quick spelling practice with missed-word replay and no student accounts.",
   "aboutDevTitle": "About the Developer",
   "aboutDev": "Hi! I'm an indie developer who enjoys building small, polished web experiences. I care about usability, accessibility, and language friendliness.",

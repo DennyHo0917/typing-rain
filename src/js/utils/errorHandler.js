@@ -65,7 +65,9 @@ class ErrorHandler {
     }
     
     // 显示用户友好的错误信息
-    this.showUserError(errorInfo);
+    if (errorInfo.type !== 'resource') {
+      this.showUserError(errorInfo);
+    }
     
     // 尝试自动恢复
     this.attemptRecovery(errorInfo);
@@ -115,16 +117,17 @@ class ErrorHandler {
       position: fixed;
       top: 20px;
       right: 20px;
-      background: rgba(255, 107, 107, 0.9);
+      background: #fff7f7;
       color: white;
       padding: 12px 20px;
       border-radius: 8px;
       z-index: 10000;
-      font-family: 'Rajdhani', sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       font-size: 14px;
       max-width: 300px;
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(216, 79, 79, 0.28);
+      color: #9a3333;
       animation: slideInRight 0.3s ease-out;
     `;
     
@@ -396,7 +399,7 @@ class CompatibilityChecker {
         padding: 15px;
         text-align: center;
         z-index: 10000;
-        font-family: 'Rajdhani', sans-serif;
+        font-family: 'Inter', system-ui, sans-serif;
         font-size: 16px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.3);
       `;

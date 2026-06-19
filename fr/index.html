@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
+    <link rel="preload" href="/src/js/index.js?v=spelling-mvp5" as="script">
+    <link rel="preload" href="/src/css/main.css" as="style">
+
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+
+    <title>Jeu d’Orthographe Anglaise | My Spelling Game</title>
+    <meta name="description" content="Collez votre liste de mots et lancez un jeu gratuit d’orthographe anglaise. Révisez les mots manqués et partagez un lien sans compte.">
+    <meta name="keywords" content="jeu d'orthographe anglais,orthographe anglaise,pratiquer l'orthographe anglaise,jeu de spelling anglais,épeler des mots anglais,liste de mots anglais,jeu avec vos propres mots,spelling bee anglais gratuit">
+    <meta name="author" content="My Spelling Game">
+    <meta name="robots" content="index, follow">
+    <meta name="google-adsense-account" content="ca-pub-9244949928133071">
+
+    <meta property="og:title" content="Jeu d’orthographe anglaise avec vos propres mots">
+    <meta property="og:description" content="Collez une liste de mots, jouez tout de suite et retravaillez les mots manqués. Sans compte.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://myspellinggame.com/fr/">
+    <meta property="og:image" content="https://myspellinggame.com/images/my-spelling-game-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Jeu d’orthographe anglaise avec vos propres mots preview">
+    <meta property="og:site_name" content="My Spelling Game">
+    <meta property="og:locale" content="fr_FR">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jeu d’orthographe anglaise avec vos propres mots">
+    <meta name="twitter:description" content="Collez une liste de mots, jouez tout de suite et retravaillez les mots manqués. Sans compte.">
+    <meta name="twitter:image" content="https://myspellinggame.com/images/my-spelling-game-og.png">
+
+    <meta name="theme-color" content="#2f6f73">
+    <meta name="application-name" content="My Spelling Game">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="My Spelling Game">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <link rel="canonical" href="https://myspellinggame.com/fr/">
+    <link rel="alternate" hreflang="en" href="https://myspellinggame.com/">
+    <link rel="alternate" hreflang="es" href="https://myspellinggame.com/es/">
+    <link rel="alternate" hreflang="pt-BR" href="https://myspellinggame.com/pt-br/">
+    <link rel="alternate" hreflang="fr" href="https://myspellinggame.com/fr/">
+    <link rel="alternate" hreflang="id" href="https://myspellinggame.com/id/">
+    <link rel="alternate" hreflang="zh-CN" href="https://myspellinggame.com/zh/">
+    <link rel="alternate" hreflang="x-default" href="https://myspellinggame.com/">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SMTNW9G4V5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SMTNW9G4V5');
+    </script>
+
+    <link rel="stylesheet" href="/src/css/main.css">
+</head>
+<body>
+    <div class="top-right-nav">
+        <details class="language-switcher">
+            <summary class="lang-btn" aria-label="Langue">Langue</summary>
+            <div class="lang-menu" id="language-menu">
+                <a class="lang-option" href="/" hreflang="en">English</a>
+                <a class="lang-option" href="/es/" hreflang="es">Español</a>
+                <a class="lang-option" href="/pt-br/" hreflang="pt-BR">Português</a>
+                <a class="lang-option" href="/fr/" hreflang="fr" aria-current="page">Français</a>
+                <a class="lang-option" href="/id/" hreflang="id">Bahasa Indonesia</a>
+                <a class="lang-option" href="/zh/" hreflang="zh-CN">中文</a>
+            </div>
+        </details>
+        <button class="privacy-btn" onclick="showPrivacyPolicyLegacy()" data-i18n-title="privacyPolicyTooltip" title="Confidentialité">Confidentialité</button>
+        <button class="sound-btn" onclick="toggleSound()" id="sound-toggle" data-i18n-title-dynamic="sound">Son</button>
+    </div>
+
+    <div class="seo-content" id="seo-content">
+        <h1>Jeu gratuit d’orthographe anglaise avec vos propres mots</h1>
+        <p>Collez la liste de mots de la semaine et commencez à jouer immédiatement.</p>
+        <p>My Spelling Game garde les mots manqués, crée une partie de révision et permet de partager la même liste par lien.</p>
+        <p>Pas de compte, pas de préparation de leçon, pas de liste de mots générique.</p>
+    </div>
+
+    <div class="main-content-wrapper">
+        <div id="game-container">
+            <div class="background-particles">
+                <canvas id="particles-canvas"></canvas>
+            </div>
+
+            <div class="top-bar">
+                <div class="game-title">Partie de pratique</div>
+                <div class="combo-display" id="combo-display">
+                    Streak <span id="combo-count">0</span>
+                </div>
+            </div>
+
+            <canvas id="game-canvas"></canvas>
+
+            <div class="input-container">
+                <input type="text" id="word-input" placeholder="Tapez un mot anglais..." autocomplete="off" spellcheck="false" disabled>
+            </div>
+
+            <div class="game-start-screen" id="game-start">
+                <div class="start-screen-content">
+                    <div class="start-title">Commencez avec votre liste de mots</div>
+                    <div class="spelling-start">
+                        <div class="spelling-subtitle">Jeu gratuit d’orthographe anglaise avec vos propres mots</div>
+                        <p class="spelling-intro">Collez la liste de la semaine et jouez immédiatement. Les mots manqués deviennent une partie de révision, et le lien fonctionne sans compte.</p>
+                        <div class="hero-proof-row" aria-label="My Spelling Game benefits">
+                            <span>Gratuit</span>
+                            <span>Vos propres mots</span>
+                            <span>Réviser les mots manqués</span>
+                            <span>Lien partageable, sans compte</span>
+                        </div>
+                        <div class="spelling-builder">
+                            <label for="custom-word-list">Vos mots anglais</label>
+                            <textarea id="custom-word-list" rows="7" spellcheck="false" placeholder="because&#10;friend&#10;beautiful&#10;answer"></textarea>
+                            <div class="spelling-options">
+                                <label class="read-toggle"><input type="checkbox" id="hear-words-toggle"> Écouter chaque mot avant de taper</label>
+                                <label class="read-toggle"><input type="checkbox" id="easy-mode-toggle"> Mode facile</label>
+                                <span id="spelling-status">8 mots prêts</span>
+                            </div>
+                            <div class="spelling-actions">
+                                <button type="button" onclick="loadSampleWords()">Liste exemple</button>
+                                <button type="button" onclick="copyPracticeLink()">Copier le lien</button>
+                            </div>
+                        </div>
+                        <button class="start-btn spelling-start-btn" onclick="startGame()">Commencer</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-over-screen" id="game-over">
+                <div class="game-over-content">
+                    <div class="game-over-title" id="game-over-title">Entraînement terminé</div>
+                    <div class="final-stats">
+                        <p><span data-i18n="finalScore">Score final</span>: <span id="final-score">0</span></p>
+                        <p><span data-i18n="levelReached">Partie atteinte</span>: <span id="final-level">1</span></p>
+                        <p><span data-i18n="maxWPM">Meilleure vitesse</span>: <span id="final-wpm">0</span></p>
+                        <p><span data-i18n="accuracy">Précision</span>: <span id="final-accuracy">100%</span></p>
+                        <p id="duration-row" style="display:none;"><span data-i18n="duration">Duration</span>: <span id="final-duration">0:00</span></p>
+                        <p><span data-i18n="wordsMatched">Mots manqués</span>: <span id="final-missed">0</span></p>
+                    </div>
+                    <div class="spelling-summary" id="spelling-summary" hidden>
+                        <div id="spelling-result"></div>
+                        <div id="missed-word-list"></div>
+                        <button class="restart-btn" id="replay-missed-btn" onclick="replayMissedWords()">Rejouer les mots manqués</button>
+                    </div>
+                    <div class="game-over-buttons">
+                        <button class="restart-btn" onclick="restartGame(true)">Rejouer la même liste</button>
+                        <button class="share-score-btn" onclick="restartGame()">Modifier la liste</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="privacy-screen" id="privacy-policy">
+                <div class="privacy-content">
+                    <div class="privacy-title">Confidentialité</div>
+                    <div class="privacy-text">
+                        <h3>Données enregistrées</h3>
+                        <p>My Spelling Game est conçu pour une pratique rapide dans le navigateur. Voici comment les données sont traitées :</p>
+
+                        <h4>Stockage local</h4>
+                    <p>Votre liste de mots et vos préférences sont enregistrées localement dans ce navigateur.</p>
+                    <p>La liste de mots n’est pas envoyée à nos serveurs.</p>
+                    <p>Vous pouvez effacer ces données depuis le navigateur ou depuis ce panneau.</p>
+
+                        <h4>Mesure d’audience</h4>
+                    <p>Nous utilisons Google Analytics pour comprendre l’usage du jeu.</p>
+                    <p>Ces données nous aident à améliorer la pratique.</p>
+                    <p>Le jeu n’a pas besoin de données personnelles pour fonctionner.</p>
+
+                        <h4>Publicité</h4>
+                    <p>Le site peut utiliser Google AdSense lorsque les annonces seront activées.</p>
+                    <p>La personnalisation dépend des règles de Google.</p>
+
+                        <h4>Vos choix</h4>
+                    <p>Vous pouvez effacer la liste enregistrée à tout moment.</p>
+                    <p>Vous pouvez bloquer l’analyse ou les annonces avec les réglages de votre navigateur.</p>
+
+                        <h4>Contact</h4>
+                        <p>Pour toute question sur la confidentialité, utilisez la page de contact.</p>
+
+                        <p class="privacy-update">Dernière mise à jour : <span id="privacy-date"></span></p>
+                    </div>
+                    <div class="privacy-buttons">
+                        <button class="close-privacy-btn" onclick="closePrivacyPolicyLegacy()">Fermer</button>
+                        <button class="clear-data-btn" onclick="clearLocalDataLegacy()">Effacer mes données</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats" aria-label="Practice stats">
+                <div class="stat-item">
+                    <div class="stat-label">POINTS</div>
+                    <div class="stat-value" id="score">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">PARTIE</div>
+                    <div class="stat-value" id="level">1</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">VITESSE</div>
+                    <div class="stat-value" id="wpm">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">PRÉCISION</div>
+                    <div class="stat-value" id="accuracy">100%</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">MANQUÉS</div>
+                    <div class="stat-value" id="missed-words">0/5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <aside class="ad-slot ad-slot-after-game" aria-label="Advertisement">
+        <span>Advertisement</span>
+    </aside>
+
+    <div class="below-game">
+        <div class="practice-info-grid">
+            <div class="game-instructions">
+                <div class="instructions-content">
+                    <h3>Pour la liste de cette semaine</h3>
+                    <p>Collez les mots anglais déjà donnés par le professeur ou le cours.</p>
+                    <p>L’élève tape chaque mot avant qu’il n’arrive en bas.</p>
+                    <p>Appuyez sur <kbd>Enter</kbd> ou <kbd>Space</kbd> pour valider.</p>
+                    <p>Les mots manqués sont gardés pour une révision en un clic.</p>
+                    <p>Copiez un lien pour partager la même liste.</p>
+                    <h4>Mode facile</h4>
+                    <p>Activez le mode facile avant de jouer pour ralentir les mots qui tombent.</p>
+                </div>
+            </div>
+
+            <div class="power-ups-container practice-proof">
+                <div class="practice-proof-copy">
+                    <h3>Pourquoi ça marche</h3>
+                    <p>On travaille les mots exacts de la semaine, pas une liste au hasard.</p>
+                    <p>Pratique pour les devoirs, le soutien, l’ESL et l’école à la maison.</p>
+                    <p>La révision se concentre sur les mots réellement manqués.</p>
+                    <p>Le mode facile ralentit la partie sans changer la règle.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="spelling-seo-copy">
+            <h2>Jeu d’orthographe anglaise avec vos propres mots</h2>
+            <p>My Spelling Game est un <strong>jeu gratuit d’orthographe anglaise</strong> pour les parents, enseignants et tuteurs qui ont déjà une liste de mots et veulent la transformer en pratique rapide de spelling anglais.</p>
+
+            <h3>Pourquoi utiliser sa propre liste</h3>
+            <p>Beaucoup de jeux d’anglais proposent des listes toutes faites. C’est moins utile quand le contrôle ou le devoir porte sur des mots précis. Ici, vous collez la vraie liste, jouez tout de suite et reprenez ce qui a posé problème.</p>
+            <ul>
+                <li><strong>Votre vraie liste :</strong> Collez les mots d’un devoir, d’un cours ou d’un support homeschool.</li>
+                <li><strong>Révision ciblée :</strong> Les mots manqués reviennent dans une autre partie.</li>
+                <li><strong>Lien partageable :</strong> Envoyez la même liste sans compte ni espace classe.</li>
+                <li><strong>Écoute du mot :</strong> Utilisez la voix du navigateur pour une pratique proche de la dictée.</li>
+            </ul>
+
+            <h3>Adapté à la pratique hebdomadaire</h3>
+            <p>L’outil reste volontairement simple : prendre une liste courte, faire pratiquer l’enfant, repérer les mots manqués, puis les refaire. Gratuit, sans compte élève et sans dépendre d’une plateforme scolaire.</p>
+        </div>
+    </div>
+
+    <script>
+      window.disableLegacyLanguageUI = true;
+      window.pageLocale = 'fr';
+      window.currentLanguage = 'fr';
+    </script>
+    <script type="module" src="/src/js/index.js?v=spelling-mvp5"></script>
+
+    <footer>
+        <p>
+            <a href="/custom-spelling-words-game.html">Jeu personnalisé</a> &middot; <a href="/spelling-list-game.html">Liste de mots</a> &middot; <a href="/weekly-spelling-practice.html">Pratique hebdomadaire</a> &middot; <a href="/sight-word-typing-game.html">Sight words</a> &middot; <a href="/homeschool-spelling-practice.html">Homeschool</a> &middot; <a href="/vocabulary-typing-game.html">Vocabulaire</a><br>
+            <a href="/fr/privacy.html">Confidentialité</a> &middot; <a href="/fr/about.html">À propos</a> &middot; <a href="/fr/contact.html">Contact</a><br>
+            &copy; 2026 My Spelling Game All rights reserved.
+        </p>
+    </footer>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "My Spelling Game",
+  "description": "Collez une liste de mots et jouez à un jeu gratuit d’orthographe anglaise avec révision des mots manqués et lien partageable.",
+  "url": "https://myspellinggame.com/fr/",
+  "author": {
+    "@type": "Organization",
+    "name": "My Spelling Game",
+    "url": "https://myspellinggame.com"
+  },
+  "genre": [
+    "Educational Game",
+    "Spelling Game",
+    "Typing Game"
+  ],
+  "gamePlatform": "Web Browser",
+  "operatingSystem": "Any",
+  "applicationCategory": "Game",
+  "inLanguage": "fr",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "fr",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Puis-je utiliser mes propres mots ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Collez une liste de la semaine et le jeu utilise exactement ces mots."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on rejouer seulement les mots manqués ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Les mots manqués restent disponibles pour une nouvelle partie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il créer un compte ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Le jeu fonctionne dans le navigateur, sans compte ni espace classe."
+      }
+    }
+  ]
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "My Spelling Game",
+      "item": "https://myspellinggame.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Jeu d’orthographe anglaise",
+      "item": "https://myspellinggame.com/fr/"
+    }
+  ]
+}
+    </script>
+</body>
+</html>

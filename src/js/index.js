@@ -4,6 +4,7 @@
 // Import empty module stubs to start building the new structure. These imports have
 // no runtime effect yet but allow us to progressively move logic file-by-file.
 import './gameState.js';
+import { getPageLocale } from './pageLocale.js';
 import './wordDatabase.js';
 import './powerUps.js';
 import './rendering.js';
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initErrorHandling();
   
   // Framework initializations (language, audio, rendering, SEO, events)
-  window.currentLanguage = 'en';
+  window.currentLanguage = getPageLocale();
   initAudio();
   resizeCanvas();
   initBackgroundParticles();

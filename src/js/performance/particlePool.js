@@ -163,7 +163,7 @@ class PooledBackgroundParticle {
     const particlesCtx = particlesCanvas.getContext('2d');
     particlesCtx.save();
     particlesCtx.globalAlpha = this.opacity;
-    particlesCtx.fillStyle = '#00f5ff';
+    particlesCtx.fillStyle = '#2f6f73';
     particlesCtx.beginPath();
     particlesCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     particlesCtx.fill();

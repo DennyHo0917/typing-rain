@@ -22,10 +22,8 @@ function createInitialState() {
     levelStarted: false,
     gameCompleted: false,
     gameStarted: false,
-    // 道具系统 - 6 个固定槽位
-    powerUpSlots: [null, null, null, null, null, null],
-    activePowerUps: {},
-    wordsSinceLastPowerUp: 0,
+    // Practice assist
+    easyMode: false,
     practiceDuration: 180, // 秒，默认 3 分钟
     practiceEndTime: null,
     practiceDifficulty: 1,
@@ -37,7 +35,7 @@ function createInitialState() {
     customWords: [],
     customWordCursor: 0,
     missedWordList: [],
-    readAloud: false,
+    hearWords: false,
     spellingRoundComplete: false,
     spellingWordsProcessed: 0,
   };

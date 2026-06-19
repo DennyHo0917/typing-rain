@@ -111,12 +111,12 @@ export class FallingWord {
   }
 
   getWordColor() {
-    const colors = ['#00f5ff', '#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7'];
+    const colors = ['#2563eb', '#2f6f73', '#b45309', '#be123c', '#6d28d9', '#047857'];
     return colors[Math.floor(Math.random() * colors.length)];
   }
 
   update() {
-    const speedMultiplier = gameState.activePowerUps.slowTime ? 0.5 : 1;
+    const speedMultiplier = gameState.easyMode ? 0.55 : 1;
     this.y += this.speed * speedMultiplier;
   }
 
@@ -126,14 +126,14 @@ export class FallingWord {
 
     ctx.save();
     ctx.shadowColor = this.color;
-    ctx.shadowBlur = 10;
-    ctx.font = `${this.fontSize}px 'Orbitron', monospace`;
+    ctx.shadowBlur = 4;
+    ctx.font = `700 ${this.fontSize}px Inter, system-ui, sans-serif`;
 
     const totalWidth = ctx.measureText(this.word).width;
     const startX = this.x - totalWidth / 2;
 
     if (this.progress > 0) {
-      ctx.fillStyle = '#00ff88';
+      ctx.fillStyle = '#2f946b';
       ctx.textAlign = 'left';
       const partialWord = this.word.substring(0, this.progress);
       ctx.fillText(partialWord, startX, this.y);
@@ -147,13 +147,6 @@ export class FallingWord {
   }
 
   checkMatch(typedWord) {
-    if (gameState.activePowerUps.precisionMode && typedWord.length >= 3) {
-      if (this.word.startsWith(typedWord.substring(0, 3))) {
-        this.matched = true;
-        return 'complete';
-      }
-    }
-
     if (this.word.startsWith(typedWord)) {
       this.progress = typedWord.length;
       if (typedWord === this.word) {

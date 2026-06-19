@@ -1,8 +1,11 @@
 import { gameState } from './gameState.js';
+import { t } from './pageLocale.js';
 
 const SAMPLE_WORDS = ['because', 'friend', 'beautiful', 'answer', 'enough', 'favorite', 'library', 'through'];
 const STORAGE_KEY = 'typingRainSpellingWords';
-const READ_KEY = 'typingRainReadWords';
+const HEAR_KEY = 'typingRainHearWords';
+const LEGACY_READ_KEY = 'typingRainReadWords';
+const EASY_KEY = 'typingRainEasyMode';
 
 export function parseWords(text) {
   return [...new Set((text || '')
@@ -45,18 +48,23 @@ export function initSpellingMode() {
   const saved = parseWords(localStorage.getItem(STORAGE_KEY) || '');
   input.value = (fromUrl.length ? fromUrl : saved.length ? saved : SAMPLE_WORDS).join('\n');
 
-  const readToggle = document.getElementById('read-words-aloud');
-  if (readToggle) readToggle.checked = localStorage.getItem(READ_KEY) === '1';
+  const hearToggle = document.getElementById('hear-words-toggle');
+  if (hearToggle) {
+    hearToggle.checked = localStorage.getItem(HEAR_KEY) === '1' || localStorage.getItem(LEGACY_READ_KEY) === '1';
+  }
 
-  status(`${currentWords().length} words ready`);
-  input.addEventListener('input', () => status(`${currentWords().length} words ready`));
+  const easyToggle = document.getElementById('easy-mode-toggle');
+  if (easyToggle) easyToggle.checked = localStorage.getItem(EASY_KEY) === '1';
+
+  status(t('wordsReady', { count: currentWords().length }));
+  input.addEventListener('input', () => status(t('wordsReady', { count: currentWords().length })));
 }
 
 export function loadSampleWords() {
   const input = textarea();
   if (!input) return;
   input.value = SAMPLE_WORDS.join('\n');
-  status(`${SAMPLE_WORDS.length} sample words loaded`);
+  status(t('sampleLoaded', { count: SAMPLE_WORDS.length }));
 }
 
 export function prepareSession() {
@@ -73,12 +81,16 @@ export function prepareSession() {
   gameState.level = 1;
   window.currentMode = 'spelling';
 
-  const readToggle = document.getElementById('read-words-aloud');
-  gameState.readAloud = !!readToggle?.checked;
+  const hearToggle = document.getElementById('hear-words-toggle');
+  gameState.hearWords = !!hearToggle?.checked;
+  const easyToggle = document.getElementById('easy-mode-toggle');
+  gameState.easyMode = !!easyToggle?.checked;
   localStorage.setItem(STORAGE_KEY, words.join('\n'));
-  localStorage.setItem(READ_KEY, gameState.readAloud ? '1' : '0');
-  status(`${words.length} words in this round`);
-  track('word_list_created', { word_count: words.length });
+  localStorage.setItem(HEAR_KEY, gameState.hearWords ? '1' : '0');
+  localStorage.removeItem(LEGACY_READ_KEY);
+  localStorage.setItem(EASY_KEY, gameState.easyMode ? '1' : '0');
+  status(t('wordsInRound', { count: words.length }));
+  track('word_list_created', { word_count: words.length, easy_mode: gameState.easyMode });
 }
 
 export function getCustomWord() {
@@ -95,7 +107,7 @@ export function isRoundComplete(activeWordCount) {
 }
 
 export function speakWord(word) {
-  if (!gameState.spellingMode || !gameState.readAloud || !window.speechSynthesis) return;
+  if (!gameState.spellingMode || !gameState.hearWords || !window.speechSynthesis) return;
   const utterance = new SpeechSynthesisUtterance(word);
   utterance.lang = 'en-US';
   utterance.rate = 0.85;
@@ -121,10 +133,10 @@ export function renderSummary() {
   if (!box || !gameState.spellingMode) return;
 
   const missed = gameState.missedWordList || [];
-  document.getElementById('game-over-title')?.replaceChildren(document.createTextNode('PRACTICE DONE'));
+  document.getElementById('game-over-title')?.replaceChildren(document.createTextNode(t('summaryTitle')));
   document.getElementById('spelling-result').textContent = missed.length
-    ? `${missed.length} words need another round`
-    : 'Clean round. No missed words left.';
+    ? t('summaryMissed', { count: missed.length })
+    : t('summaryClean');
 
   const list = document.getElementById('missed-word-list');
   list.textContent = '';
@@ -147,7 +159,7 @@ export function replayMissedWords() {
   if (!input || !missed.length) return;
   input.value = missed.join('\n');
   track('missed_words_replayed', { word_count: missed.length });
-  window.restartGame?.();
+  window.restartGame?.(true);
 }
 
 export async function copyPracticeLink() {
@@ -156,10 +168,10 @@ export async function copyPracticeLink() {
   url.searchParams.set('words', words.join(','));
   try {
     await navigator.clipboard.writeText(url.toString());
-    status('Practice link copied');
+    status(t('linkCopied'));
   } catch {
-    window.prompt('Copy this practice link:', url.toString());
-    status('Practice link ready');
+    window.prompt(t('copyPrompt'), url.toString());
+    status(t('linkReady'));
   }
   track('practice_link_copied', { word_count: words.length });
 }

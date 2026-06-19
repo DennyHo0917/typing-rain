@@ -6,7 +6,6 @@ import { resizeCanvas, initBackgroundParticles, createExplosion } from './render
 import { playMissSound } from './audio.js';
 import { updateStats } from './rendering.js';
 import { dom } from './domRefs.js';
-import { usePowerUp } from './powerUps.js';
 import { isRoundComplete, markMissed } from './spellingMode.js';
 
 // 背景与粒子数组与旧全局共享
@@ -95,24 +94,17 @@ export function gameLoop() {
 
     if (word.y > canvas.height) {
       fallingWords.splice(i, 1);
-      if (gameState.activePowerUps.shield) {
-        gameState.activePowerUps.shield--;
-        if (gameState.activePowerUps.shield <= 0) delete gameState.activePowerUps.shield;
-        createExplosion(word.x, canvas.height - 20, '#4ecdc4');
-      } else {
-        markMissed(word.word);
-        if (gameState.mode === 'practice') {
-          // 在练习模式中，不扣命，不结束游戏
-          continue;
-        }
-        gameState.missedWords++;
-        if (!gameState.activePowerUps.comboProtect) gameState.combo = 0;
-        createExplosion(word.x, canvas.height - 20, '#ff6b6b');
-        playMissSound();
-        if (gameState.missedWords >= gameState.maxMisses) {
-          if (typeof window.endGame === 'function') window.endGame();
-          return;
-        }
+      markMissed(word.word);
+      if (gameState.mode === 'practice') {
+        continue;
+      }
+      gameState.missedWords++;
+      gameState.combo = 0;
+      createExplosion(word.x, canvas.height - 20, '#ff6b6b');
+      playMissSound();
+      if (gameState.missedWords >= gameState.maxMisses) {
+        if (typeof window.endGame === 'function') window.endGame();
+        return;
       }
     }
   }

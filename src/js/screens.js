@@ -34,6 +34,7 @@ if (typeof window !== 'undefined') {
 import { dom } from './domRefs.js';
 import { gameState, resetGameState } from './gameState.js';
 import { initializeWords } from './gameLoop.js';
+import { fallingWords } from './words.js';
 import { updateStats } from './rendering.js';
 import { prepareSession, renderSummary } from './spellingMode.js';
 
@@ -47,18 +48,18 @@ export function showLevelStart() {
   const ctx = getCtx();
   if (!ctx) return;
   ctx.save();
-  ctx.fillStyle = 'rgba(0,0,0,0.7)';
+  ctx.fillStyle = 'rgba(246,250,248,0.88)';
   ctx.fillRect(0, 0, dom.canvas.width, dom.canvas.height);
 
-  ctx.fillStyle = '#00f5ff';
-  ctx.font = '48px "Orbitron", monospace';
+  ctx.fillStyle = '#2f6f73';
+  ctx.font = '700 44px Inter, system-ui, sans-serif';
   ctx.textAlign = 'center';
-  ctx.shadowColor = '#00f5ff';
-  ctx.shadowBlur = 20;
-  ctx.fillText(`LEVEL ${gameState.level}`, dom.canvas.width / 2, dom.canvas.height / 2);
+  ctx.shadowColor = 'rgba(47,111,115,0.18)';
+  ctx.shadowBlur = 8;
+  ctx.fillText(`ROUND ${gameState.level}`, dom.canvas.width / 2, dom.canvas.height / 2);
 
-  ctx.font = '24px "Orbitron", monospace';
-  ctx.fillStyle = '#ffffff';
+  ctx.font = '600 20px Inter, system-ui, sans-serif';
+  ctx.fillStyle = '#5f6d7a';
   let desc = '';
   if (gameState.level === 1) desc = 'Easy words with 10% medium words';
   else if (gameState.level === 2) desc = 'Medium words with 10% hard words';
@@ -72,29 +73,26 @@ export function showCongratulations() {
   const ctx = getCtx();
   if (!ctx) return;
   ctx.save();
-  ctx.fillStyle = 'rgba(0,0,0,0.8)';
+  ctx.fillStyle = 'rgba(246,250,248,0.92)';
   ctx.fillRect(0, 0, dom.canvas.width, dom.canvas.height);
 
   const gradient = ctx.createLinearGradient(0, 0, dom.canvas.width, 0);
-  gradient.addColorStop(0, '#ff6b6b');
-  gradient.addColorStop(0.2, '#feca57');
-  gradient.addColorStop(0.4, '#48dbfb');
-  gradient.addColorStop(0.6, '#ff9ff3');
-  gradient.addColorStop(0.8, '#54a0ff');
-  gradient.addColorStop(1, '#5f27cd');
+  gradient.addColorStop(0, '#2f6f73');
+  gradient.addColorStop(0.5, '#3468c2');
+  gradient.addColorStop(1, '#2f946b');
 
   ctx.fillStyle = gradient;
-  ctx.font = '64px "Orbitron", monospace';
+  ctx.font = '700 54px Inter, system-ui, sans-serif';
   ctx.textAlign = 'center';
-  ctx.shadowColor = '#ffffff';
-  ctx.shadowBlur = 30;
+  ctx.shadowColor = 'rgba(47,111,115,0.18)';
+  ctx.shadowBlur = 8;
   ctx.fillText('CONGRATULATIONS!', dom.canvas.width / 2, dom.canvas.height / 2 - 50);
 
-  ctx.fillStyle = '#ffffff';
-  ctx.font = '32px "Orbitron", monospace';
+  ctx.fillStyle = '#17202a';
+  ctx.font = '700 28px Inter, system-ui, sans-serif';
   ctx.fillText('You completed all levels!', dom.canvas.width / 2, dom.canvas.height / 2 + 20);
 
-  ctx.font = '24px "Orbitron", monospace';
+  ctx.font = '600 20px Inter, system-ui, sans-serif';
   ctx.fillText(`Final Score: ${gameState.score}`, dom.canvas.width / 2, dom.canvas.height / 2 + 70);
   ctx.restore();
 }
@@ -192,7 +190,7 @@ export function endGame() {
       if (!resEl) {
         resEl = document.createElement('div');
         resEl.id = 'tournament-result';
-        resEl.style.fontFamily = 'Orbitron, monospace';
+        resEl.style.fontFamily = 'Inter, system-ui, sans-serif';
         resEl.style.fontSize = '28px';
         resEl.style.marginBottom = '10px';
         resEl.style.textAlign = 'center';
@@ -209,10 +207,15 @@ export function endGame() {
   document.getElementById('game-over').style.display = 'flex';
 }
 
-export function restartGame() {
+export function restartGame(startImmediately = false) {
   resetGameState();
+  fallingWords.length = 0;
+  if (typeof window !== 'undefined') {
+    window.particles = [];
+  }
   if (dom.input) {
     dom.input.value = '';
+    dom.input.disabled = true;
   }
   // 隐藏所有覆盖层
   ['game-over', 'privacy-policy'].forEach((id) => {
@@ -220,8 +223,14 @@ export function restartGame() {
     if (el) el.style.display = 'none';
   });
   // 直接开始游戏，而不是显示开始界面
-  startGame();
   updateStats();
+  const startScreen = document.getElementById('game-start');
+  if (startScreen) startScreen.style.display = 'flex';
+  if (startImmediately) {
+    startGame();
+  } else {
+    document.getElementById('custom-word-list')?.focus();
+  }
 }
 
 // ---------- 名字输入 ----------

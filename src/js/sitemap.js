@@ -1,4 +1,4 @@
-const BASE_URL = 'https://your-domain.example';
+const BASE_URL = 'https://myspellinggame.com';
 
 export function generateSitemapXML() {
   const today = new Date().toISOString().slice(0, 10);
