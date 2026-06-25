@@ -2,10 +2,10 @@ import { gameState } from './gameState.js';
 import { t } from './pageLocale.js';
 
 const SAMPLE_WORDS = ['because', 'friend', 'beautiful', 'answer', 'enough', 'favorite', 'library', 'through'];
-const STORAGE_KEY = 'typingRainSpellingWords';
-const HEAR_KEY = 'typingRainHearWords';
-const LEGACY_READ_KEY = 'typingRainReadWords';
-const EASY_KEY = 'typingRainEasyMode';
+const STORAGE_KEY = 'mySpellingGameSpellingWords';
+const HEAR_KEY = 'mySpellingGameHearWords';
+const LEGACY_READ_KEY = 'mySpellingGameReadWords';
+const EASY_KEY = 'mySpellingGameEasyMode';
 
 export function parseWords(text) {
   return [...new Set((text || '')

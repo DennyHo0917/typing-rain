@@ -1,4 +1,4 @@
-// Typing Rain 词汇与掉落单词逻辑模块
+// My Spelling Game 词汇与掉落单词逻辑模块
 
 import { gameState } from './gameState.js';
 import { wordDatabase } from './wordDatabase.js';
