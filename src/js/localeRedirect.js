@@ -48,7 +48,7 @@
     const prefix = localePaths[locale];
     if (prefix === undefined) return null;
     if (slug === '') return `${prefix}/`;
-    return `${prefix}/${slug}.html`;
+    return `${prefix}/${slug}`;
   }
 
   function readStoredLocale() {

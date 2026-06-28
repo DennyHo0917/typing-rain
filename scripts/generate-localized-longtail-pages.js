@@ -4,7 +4,7 @@ const path = require('path');
 const root = path.resolve(__dirname, '..');
 const baseUrl = 'https://myspellinggame.com';
 const ogImage = `${baseUrl}/images/my-spelling-game-og.png`;
-const today = '2026-06-19';
+const today = new Date().toISOString().slice(0, 10);
 
 const languages = [
   { code: 'en', htmlLang: 'en', hreflang: 'en', label: 'English', dir: '', nav: 'Language', home: 'Home', privacy: 'Privacy', about: 'About', contact: 'Contact' },
@@ -1075,7 +1075,7 @@ function escapeAttr(value) {
 }
 
 function pagePath(lang, slug) {
-  return lang.dir ? `/${lang.dir}/${slug}.html` : `/${slug}.html`;
+  return lang.dir ? `/${lang.dir}/${slug}` : `/${slug}`;
 }
 
 function dirPath(lang) {
@@ -1084,7 +1084,7 @@ function dirPath(lang) {
 
 function alternateLinks(slug) {
   const links = languages.map((lang) => `    <link rel="alternate" hreflang="${lang.hreflang}" href="${baseUrl}${pagePath(lang, slug)}">`);
-  links.push(`    <link rel="alternate" hreflang="x-default" href="${baseUrl}/${slug}.html">`);
+  links.push(`    <link rel="alternate" hreflang="x-default" href="${baseUrl}/${slug}">`);
   return links.join('\n');
 }
 
@@ -1133,7 +1133,7 @@ function footerHtml(langCode) {
   return `    <footer>
         <p>
 ${footerSlugs.map((slug) => `            <a href="${pagePath(lang, slug)}">${footerLinks[langCode][slug]}</a>`).join(' &middot;\n')}<br>
-            <a href="${dirPath(lang)}privacy.html">${lang.privacy}</a> &middot; <a href="${dirPath(lang)}about.html">${lang.about}</a> &middot; <a href="${dirPath(lang)}contact.html">${lang.contact}</a><br>
+            <a href="${pagePath(lang, 'privacy')}">${lang.privacy}</a> &middot; <a href="${pagePath(lang, 'about')}">${lang.about}</a> &middot; <a href="${pagePath(lang, 'contact')}">${lang.contact}</a><br>
             &copy; 2026 My Spelling Game All rights reserved.
         </p>
     </footer>`;
@@ -1255,9 +1255,9 @@ ${schemaScripts(lang, slug, page)}
 function updateEnglishLongtail(slug) {
   const file = path.join(root, `${slug}.html`);
   let html = fs.readFileSync(file, 'utf8');
-  const canonical = `    <link rel="canonical" href="${baseUrl}/${slug}.html">\n`;
+  const canonical = `    <link rel="canonical" href="${baseUrl}/${slug}">\n`;
   html = html.replace(
-    new RegExp(`    <link rel="canonical" href="${baseUrl}/${slug}\\.html">\\n(?:    <link rel="alternate"[^\\n]+>\\n)*`),
+    new RegExp(`    <link rel="canonical" href="${baseUrl}/${slug}(?:\\.html)?">\\n(?:    <link rel="alternate"[^\\n]+>\\n)*`),
     canonical + alternateLinks(slug) + '\n',
   );
   if (!html.includes('/src/js/localeRedirect.js')) {
@@ -1316,16 +1316,50 @@ function localizeLongtailLinks() {
       const fullPath = path.join(root, lang.dir, file);
       let html = fs.readFileSync(fullPath, 'utf8');
       for (const slug of newLongtailSlugs) {
-        html = html.replaceAll(`href="/${slug}.html"`, `href="/${lang.dir}/${slug}.html"`);
+        html = html.replaceAll(`href="/${slug}.html"`, `href="/${lang.dir}/${slug}"`);
+        html = html.replaceAll(`href="/${slug}"`, `href="/${lang.dir}/${slug}"`);
+        html = html.replaceAll(`href="/${lang.dir}/${slug}.html"`, `href="/${lang.dir}/${slug}"`);
       }
       fs.writeFileSync(fullPath, html, 'utf8');
     }
   }
 }
 
+function normalizePublicUrls() {
+  const localizedDirs = languages.filter((lang) => lang.dir).map((lang) => `${lang.dir}/`).join('|');
+  const slugs = [...seoSlugs, ...legalSlugs].join('|');
+  const htmlUrl = new RegExp(`/(?:${localizedDirs})?(?:${slugs})\\.html`, 'g');
+  const files = ['sitemap.xml'];
+
+  function walk(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (entry.name.startsWith('.') || entry.name === 'scripts') continue;
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(fullPath);
+      } else if (entry.name.endsWith('.html')) {
+        files.push(path.relative(root, fullPath));
+      }
+    }
+  }
+
+  walk(root);
+
+  for (const file of files) {
+    const fullPath = path.join(root, file);
+    const original = fs.readFileSync(fullPath, 'utf8');
+    const updated = original
+      .replace(/\/index\.html/g, '/')
+      .replace(htmlUrl, (match) => match.slice(0, -5));
+    if (updated !== original) {
+      fs.writeFileSync(fullPath, updated, 'utf8');
+    }
+  }
+}
+
 function sitemapAlternateBlock(slug) {
   const links = languages.map((lang) => `    <xhtml:link rel="alternate" hreflang="${lang.hreflang}" href="${baseUrl}${slug ? pagePath(lang, slug) : dirPath(lang)}" />`);
-  links.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${baseUrl}${slug ? `/${slug}.html` : '/'}" />`);
+  links.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${baseUrl}${slug ? `/${slug}` : '/'}" />`);
   return links.join('\n');
 }
 
@@ -1367,14 +1401,11 @@ for (const lang of languages.filter((item) => item.code !== 'en')) {
 }
 
 for (const slug of newLongtailSlugs) {
-  if (longtailContentBoosts.en[slug]) {
-    fs.writeFileSync(path.join(root, `${slug}.html`), renderPage('en', slug), 'utf8');
-  } else {
-    updateEnglishLongtail(slug);
-  }
+  updateEnglishLongtail(slug);
 }
 
 localizeLongtailLinks();
 fs.writeFileSync(path.join(root, 'sitemap.xml'), renderSitemap(), 'utf8');
+normalizePublicUrls();
 
 console.log('Generated localized long-tail pages, updated localized SEO schema, and rebuilt sitemap.xml');
